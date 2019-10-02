@@ -1,11 +1,11 @@
 {
   "name": "@doggos/doggos-declaration",
-  "version": "0.0.2",
+  "version": "0.0.3",
   "description": "States and type declaration",
   "engines": {
     "node": ">= 10.13 <11"
   },
-  "main": "./build/",
+  "root": "./build/",
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "@types/node": "^10.14.10",
