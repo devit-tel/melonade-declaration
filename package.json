@@ -1,11 +1,11 @@
 {
   "name": "@doggos/doggos-declaration",
-  "version": "0.1.1",
+  "version": "0.1.2",
   "description": "States and type declaration",
   "engines": {
     "node": ">= 10.13 <11"
   },
-  "main": "./build/index",
+  "main": "./build/index.js",
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "@types/node": "^10.14.10",
