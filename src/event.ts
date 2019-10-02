@@ -1,15 +1,16 @@
 import { ITask } from './task';
 import { IWorkflow } from './workflow';
 import { ITransaction } from './transaction';
-import { TransactionStates } from './constants/transaction';
-import { WorkflowStates } from './constants/workflow';
-import { TaskStates } from './constants/task';
+import { TransactionStates } from './state';
+import { WorkflowStates } from './state';
+import { TaskStates } from './state';
 
 export interface ITransactionUpdate {
   transactionId: string;
   status: TransactionStates;
   output?: any;
 }
+
 export interface IWorkflowUpdate {
   transactionId: string;
   workflowId: string;

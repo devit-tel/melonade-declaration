@@ -1,7 +1,7 @@
 import * as R from 'ramda';
-import { FailureStrategies } from './constants/workflow';
-import { TaskTypes, TaskTypesList } from './constants/task';
-import { isValidName, isValidRev } from './utils/common';
+import { WorkflowFailureStrategies } from './state';
+import { TaskTypes, TaskTypesList } from './task';
+import { isNumber, isString, isValidName, isValidRev } from './utils/common';
 
 export interface IBaseTask {
   name: string;
@@ -58,7 +58,7 @@ export interface IWorkflowDefinition {
   rev: string;
   description?: string;
   tasks: AllTaskType[];
-  failureStrategy: FailureStrategies;
+  failureStrategy: WorkflowFailureStrategies;
   retry?: {
     limit: number;
   };
@@ -71,20 +71,18 @@ export interface IWorkflowDefinition {
   };
 }
 
-const isNumber = R.is(Number);
-const isString = R.is(String);
-
 const isRecoveryWorkflowConfigValid = (
   workflowDefinition: IWorkflowDefinition,
 ): boolean =>
-  workflowDefinition.failureStrategy === FailureStrategies.RecoveryWorkflow &&
+  workflowDefinition.failureStrategy ===
+    WorkflowFailureStrategies.RecoveryWorkflow &&
   (!isString(R.path(['recoveryWorkflow', 'name'], workflowDefinition)) ||
     !isString(R.path(['recoveryWorkflow', 'rev'], workflowDefinition)));
 
 const isFailureStrategiesConfigValid = (
   workflowDefinition: IWorkflowDefinition,
 ): boolean =>
-  workflowDefinition.failureStrategy === FailureStrategies.Retry &&
+  workflowDefinition.failureStrategy === WorkflowFailureStrategies.Retry &&
   (!isNumber(R.path(['retry', 'limit'], workflowDefinition)) ||
     !isNumber(R.path(['retry', 'delay'], workflowDefinition)));
 
@@ -115,6 +113,7 @@ interface TasksValidateOutput {
   };
 }
 
+// Recursively validate tasks
 const validateTasks = (
   tasks: AllTaskType[],
   root: string,
@@ -239,7 +238,7 @@ export class WorkflowDefinition implements IWorkflowDefinition {
   rev: string;
   description?: string = 'No description';
   tasks: AllTaskType[];
-  failureStrategy: FailureStrategies;
+  failureStrategy: WorkflowFailureStrategies;
   retry?: {
     limit: number;
   };
@@ -249,11 +248,11 @@ export class WorkflowDefinition implements IWorkflowDefinition {
   };
   outputParameters: {};
 
-  constructor(workflowDefinitionData: IWorkflowDefinition) {
-    const workflowValidationErrors = workflowValidation(workflowDefinitionData);
+  constructor(workflowDefinition: IWorkflowDefinition) {
+    const workflowValidationErrors = workflowValidation(workflowDefinition);
 
     const validateTasksResult = validateTasks(
-      R.propOr([], 'tasks', workflowDefinitionData),
+      R.propOr([], 'tasks', workflowDefinition),
       'workflowDefinition',
       {
         errors: workflowValidationErrors,
@@ -263,27 +262,21 @@ export class WorkflowDefinition implements IWorkflowDefinition {
     if (validateTasksResult.errors.length)
       throw new Error(validateTasksResult.errors.join('\n'));
 
-    Object.assign(this, workflowDefinitionData);
-    this.tasks = workflowDefinitionData.tasks;
-  }
-
-  toObject = (): any => {
-    return R.pick(
-      [
-        'name',
-        'rev',
-        'description',
-        'tasks',
-        'failureStrategy',
-        'retry',
-        'recoveryWorkflow',
-        'outputParameters',
-      ],
+    Object.assign(
       this,
+      R.pick(
+        [
+          'name',
+          'rev',
+          'description',
+          'tasks',
+          'failureStrategy',
+          'retry',
+          'recoveryWorkflow',
+          'outputParameters',
+        ],
+        workflowDefinition,
+      ),
     );
-  };
-
-  toJSON = (): string => {
-    return JSON.stringify(this.toObject());
-  };
+  }
 }

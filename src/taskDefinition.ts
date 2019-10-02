@@ -65,17 +65,12 @@ export class TaskDefinition implements ITaskDefinition {
     if (taskValidationErrors.length)
       throw new Error(taskValidationErrors.join('\n'));
 
-    Object.assign(this, taskDefinition);
-  }
-
-  toObject = (): any => {
-    return R.pick(
-      ['name', 'description', 'ackTimeout', 'timeout', 'retry', 'document'],
+    Object.assign(
       this,
+      R.pick(
+        ['name', 'description', 'ackTimeout', 'timeout', 'retry', 'document'],
+        taskDefinition,
+      ),
     );
-  };
-
-  toJSON = (): string => {
-    return JSON.stringify(this.toObject());
-  };
+  }
 }

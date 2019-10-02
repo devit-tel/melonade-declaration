@@ -1,5 +1,5 @@
 {
-  "name": "doggos-declaration",
+  "name": "@doggos/doggos-declaration",
   "version": "0.0.1",
   "description": "States and type declaration",
   "engines": {
@@ -27,8 +27,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch"
   },
-  "author": "Jakub Synowiec <github@jakubsynowiec.info>",
-  "license": "Apache-2.0",
+  "license": "MIT",
   "dependencies": {
     "@types/ramda": "^0.26.16",
     "ramda": "^0.26.1",

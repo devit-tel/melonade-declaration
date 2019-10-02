@@ -1,4 +1,4 @@
-import { TransactionStates } from './constants/transaction';
+import { TransactionStates } from './state';
 import { IWorkflowDefinition } from './workflowDefinition';
 
 export interface ITransaction {
