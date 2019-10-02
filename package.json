@@ -1,11 +1,11 @@
 {
   "name": "@doggos/doggos-declaration",
-  "version": "0.0.4",
+  "version": "0.1.0",
   "description": "States and type declaration",
   "engines": {
     "node": ">= 10.13 <11"
   },
-  "main": "./build/index.js",
+  "main": "./index",
   "devDependencies": {
     "@types/jest": "^24.0.15",
     "@types/node": "^10.14.10",
@@ -32,6 +32,7 @@
   "license": "MIT",
   "dependencies": {
     "@types/ramda": "^0.26.16",
+    "lodash": "^4.17.15",
     "ramda": "^0.26.1",
     "tslib": "~1.10.0"
   }
