@@ -27,17 +27,69 @@ export interface ITaskUpdate {
   isSystem: boolean;
 }
 
-export interface IEvent {
+interface IBaseEvent {
   transactionId: string;
-  type: 'TRANSACTION' | 'WORKFLOW' | 'TASK' | 'SYSTEM';
-  details?:
-    | ITransaction
-    | IWorkflow
-    | ITask
-    | ITransactionUpdate
-    | IWorkflowUpdate
-    | ITaskUpdate;
   timestamp: number;
-  isError: boolean;
-  error?: string;
 }
+
+export interface ITransactionEvent extends IBaseEvent {
+  type: 'TRANSACTION';
+  details: ITransaction;
+  isError: false;
+}
+
+export interface ITransactionErrorEvent extends IBaseEvent {
+  type: 'TRANSACTION';
+  details: ITransactionUpdate;
+  isError: true;
+  error: string;
+}
+
+export interface IWorkflowEvent extends IBaseEvent {
+  type: 'WORKFLOW';
+  details: IWorkflow;
+  isError: false;
+}
+
+export interface IWorkflowErrorEvent extends IBaseEvent {
+  type: 'WORKFLOW';
+  details: IWorkflowUpdate;
+  isError: true;
+  error: string;
+}
+
+export interface ITaskEvent extends IBaseEvent {
+  type: 'TASK';
+  details: ITask;
+  isError: false;
+}
+
+export interface ITaskErrorEvent extends IBaseEvent {
+  type: 'TASK';
+  details: ITaskUpdate;
+  isError: true;
+  error: string;
+}
+
+export interface ISystemEvent extends IBaseEvent {
+  type: 'SYSTEM';
+  details: any;
+  isError: false;
+}
+
+export interface ISystemErrorEvent extends IBaseEvent {
+  type: 'SYSTEM';
+  details: any;
+  isError: true;
+  error: string;
+}
+
+export type AllEvent =
+  | ITransactionEvent
+  | ITransactionErrorEvent
+  | IWorkflowEvent
+  | IWorkflowErrorEvent
+  | ITaskEvent
+  | ITaskErrorEvent
+  | ISystemEvent
+  | ISystemErrorEvent;
