@@ -1,4 +1,4 @@
-# Doggos-declaration
+# melonade-declaration
 
 The type declaration of doggos
 

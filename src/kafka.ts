@@ -8,6 +8,15 @@ export enum topicSuffix {
   command = 'command',
 }
 
+export interface kafkaConsumerMessage {
+  value: Buffer;
+  size: number;
+  key: string;
+  topic: string;
+  offset: number;
+  partition: number;
+}
+
 // https://docs.confluent.io/current/installation/configuration/topic-configs.html
 export interface TopicConfigurations {
   'cleanup.policy'?: 'compact' | 'delete';

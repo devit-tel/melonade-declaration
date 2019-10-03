@@ -1,6 +1,6 @@
 {
-  "name": "@doggos/doggos-declaration",
-  "version": "0.1.2",
+  "name": "@melonade/melonade-declaration",
+  "version": "0.1.3",
   "description": "States and type declaration",
   "engines": {
     "node": ">= 10.13 <11"

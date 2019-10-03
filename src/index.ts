@@ -1,4 +1,5 @@
 import * as Event from './event';
+import * as Command from './command';
 import * as Kafka from './kafka';
 import * as State from './state';
 import * as Task from './task';
@@ -9,6 +10,7 @@ import * as WorkflowDefinition from './workflowDefinition';
 
 export {
   Event,
+  Command,
   Kafka,
   State,
   Task,
