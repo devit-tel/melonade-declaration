@@ -1,8 +1,8 @@
 # melonade-declaration
 
-The type declaration of doggos
+The type declaration
 
 ## Tasks
 
-- [ ] Tesk
+- [ ] Test
 - [ ] Coverage

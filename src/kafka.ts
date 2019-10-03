@@ -1,4 +1,4 @@
-export const topicPrefix = 'doggos';
+export const topicPrefix = 'melonade';
 
 export enum topicSuffix {
   event = 'event',
