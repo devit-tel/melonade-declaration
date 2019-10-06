@@ -9,3 +9,5 @@ package-lock.json
 README.md
 tslint.json
 README.md
+tsconfig.json
+tsconfig.release.json
