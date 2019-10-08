@@ -22,3 +22,5 @@ export interface ICronWorkflowTimer {
   cron: string;
   workflow: {};
 }
+
+export type AllTimerType = IDelayTaskTimer | ICronWorkflowTimer;
