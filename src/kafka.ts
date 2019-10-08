@@ -6,6 +6,7 @@ export enum topicSuffix {
   systemTask = 'system-task',
   task = 'task',
   command = 'command',
+  timer = 'timer'
 }
 
 export interface kafkaConsumerMessage {

@@ -1,5 +1,5 @@
 import { TaskStates } from './state';
-import { AllTaskType } from './workflowDefinition';
+import { AllTaskType, IWorkflowRef } from './workflowDefinition';
 import { enumToList } from './utils/common';
 
 export enum TaskTypes {
@@ -29,10 +29,7 @@ export interface ITask {
   logs?: any[];
   type: TaskTypes;
   parallelTasks?: AllTaskType[][];
-  workflow?: {
-    name: string;
-    rev: string;
-  };
+  workflow?: IWorkflowRef;
   decisions?: {
     [decision: string]: AllTaskType[];
   };

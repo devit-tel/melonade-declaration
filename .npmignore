@@ -1,13 +1,14 @@
-src
 .vscode
+src
 .editorconfig
 .gitignore
+.npmignore
 .nvmrc
 .prettierrc
+jest.config.json
 LICENSE
 package-lock.json
 README.md
-tslint.json
-README.md
 tsconfig.json
 tsconfig.release.json
+tslint.json

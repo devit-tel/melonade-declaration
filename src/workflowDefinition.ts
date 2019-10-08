@@ -3,6 +3,11 @@ import { WorkflowFailureStrategies } from './state';
 import { TaskTypes, TaskTypesList } from './task';
 import { isNumber, isString, isValidName, isValidRev } from './utils/common';
 
+export interface IWorkflowRef {
+  name: string;
+  rev: string;
+}
+
 export interface IBaseTask {
   name: string;
   taskReferenceName: string;
@@ -32,10 +37,7 @@ export interface IParallelTask extends IBaseTask {
 
 export interface ISubWorkflowTask extends IBaseTask {
   type: TaskTypes.SubWorkflow;
-  workflow: {
-    name: string;
-    rev: string;
-  };
+  workflow: IWorkflowRef;
 }
 
 export interface IDecisionTask extends IBaseTask {
@@ -62,10 +64,7 @@ export interface IWorkflowDefinition {
   retry?: {
     limit: number;
   };
-  recoveryWorkflow?: {
-    name: string;
-    rev: string;
-  };
+  recoveryWorkflow?: IWorkflowRef;
   outputParameters: {
     [key: string]: string | any;
   };
@@ -242,10 +241,7 @@ export class WorkflowDefinition implements IWorkflowDefinition {
   retry?: {
     limit: number;
   };
-  recoveryWorkflow?: {
-    name: string;
-    rev: string;
-  };
+  recoveryWorkflow?: IWorkflowRef;
   outputParameters: {};
 
   constructor(workflowDefinition: IWorkflowDefinition) {

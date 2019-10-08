@@ -1,3 +1,5 @@
+import { IWorkflowRef } from './workflowDefinition';
+
 export enum CommandTypes {
   StartTransaction = 'START_TRANSACTION',
   CancelTransaction = 'CANCEL_TRANSACTION',
@@ -11,10 +13,7 @@ export interface ICommand {
 
 export interface IStartTransactionCommand extends ICommand {
   type: CommandTypes.StartTransaction;
-  workflow: {
-    name: string;
-    rev: string;
-  };
+  workflow: IWorkflowRef;
   input: any;
 }
 
