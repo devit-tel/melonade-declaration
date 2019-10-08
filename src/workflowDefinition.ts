@@ -117,8 +117,13 @@ const validateTasks = (
   tasks: AllTaskType[],
   root: string,
   defaultResult: TasksValidateOutput,
-) =>
-  tasks.reduce(
+) => {
+  if (!tasks.length) {
+    defaultResult.errors.push(`${root} cannot empty`);
+    return defaultResult;
+  }
+
+  return tasks.reduce(
     (
       result: TasksValidateOutput,
       task: AllTaskType,
@@ -179,6 +184,10 @@ const validateTasks = (
           task,
         );
 
+        if (!parallelTasks.length) {
+          result.errors.push(`${currentRoot}.parallelTasks cannot empty`);
+        }
+
         return parallelTasks.reduce(
           (
             parallelResult: TasksValidateOutput,
@@ -209,6 +218,7 @@ const validateTasks = (
     },
     defaultResult,
   );
+};
 
 const workflowValidation = (
   workflowDefinition: IWorkflowDefinition,
