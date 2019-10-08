@@ -1,4 +1,5 @@
 import { ITask } from './task';
+import { IWorkflowRef } from './workflowDefinition';
 
 export interface ITimerData {
   ackTimeout: number;
@@ -20,7 +21,7 @@ export interface IDelayTaskTimer {
 export interface ICronWorkflowTimer {
   type: TimerType.cronWorkflow;
   cron: string;
-  workflow: {};
+  workflow: IWorkflowRef;
 }
 
 export type AllTimerType = IDelayTaskTimer | ICronWorkflowTimer;
