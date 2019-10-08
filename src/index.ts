@@ -7,6 +7,8 @@ import * as TaskDefinition from './taskDefinition';
 import * as Transaction from './transaction';
 import * as Workflow from './workflow';
 import * as WorkflowDefinition from './workflowDefinition';
+import * as Timer from './timer';
+import * as Store from './store';
 
 export {
   Event,
@@ -18,4 +20,6 @@ export {
   Transaction,
   Workflow,
   WorkflowDefinition,
+  Timer,
+  Store,
 };
