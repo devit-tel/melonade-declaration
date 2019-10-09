@@ -112,19 +112,20 @@ export enum TaskStates {
   Completed = 'COMPLETED',
   Failed = 'FAILED',
   Timeout = 'TIMEOUT',
+  AckTimeOut = 'ACK_TIMEOUT',
 }
 
 export const TaskNextStates = {
-  [TaskStates.Scheduled]: [TaskStates.Inprogress, TaskStates.Timeout],
+  [TaskStates.Scheduled]: [TaskStates.Inprogress],
   [TaskStates.Inprogress]: [
     TaskStates.Completed,
     TaskStates.Failed,
     TaskStates.Inprogress,
-    TaskStates.Timeout,
   ],
   [TaskStates.Completed]: [],
   [TaskStates.Failed]: [],
   [TaskStates.Timeout]: [],
+  [TaskStates.AckTimeOut]: [],
 };
 
 const taskPrevStateGetter = getPrevState(TaskNextStates);
@@ -140,18 +141,21 @@ export const TaskPrevStates = {
 export const TaskNextStatesSystem = {
   [TaskStates.Scheduled]: [
     TaskStates.Inprogress,
-    TaskStates.Timeout,
-    TaskStates.Completed,
-  ],
-  [TaskStates.Inprogress]: [
     TaskStates.Completed,
     TaskStates.Failed,
     TaskStates.Timeout,
+    TaskStates.AckTimeOut,
+  ],
+  [TaskStates.Inprogress]: [
     TaskStates.Inprogress,
+    TaskStates.Completed,
+    TaskStates.Failed,
+    TaskStates.Timeout,
   ],
   [TaskStates.Completed]: [],
-  [TaskStates.Failed]: [TaskStates.Scheduled],
-  [TaskStates.Timeout]: [TaskStates.Scheduled],
+  [TaskStates.Failed]: [],
+  [TaskStates.Timeout]: [],
+  [TaskStates.AckTimeOut]: [],
 };
 
 const systemTaskPrevStateGetter = getPrevState(TaskNextStatesSystem);
