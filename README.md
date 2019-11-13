@@ -1,6 +1,6 @@
 # melonade-declaration
 
-The type declaration
+Type declaration of melonade
 
 ## Tasks
 
