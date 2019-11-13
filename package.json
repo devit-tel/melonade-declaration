@@ -1,6 +1,6 @@
 {
   "name": "@melonade/melonade-declaration",
-  "version": "0.6.0",
+  "version": "0.6.1",
   "description": "States and type declaration",
   "engines": {
     "node": ">= 10.13 <11"

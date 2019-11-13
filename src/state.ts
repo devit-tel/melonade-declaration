@@ -136,6 +136,7 @@ export const TaskPrevStates = {
   [TaskStates.Completed]: taskPrevStateGetter(TaskStates.Completed),
   [TaskStates.Failed]: taskPrevStateGetter(TaskStates.Failed),
   [TaskStates.Timeout]: taskPrevStateGetter(TaskStates.Timeout),
+  [TaskStates.AckTimeOut]: taskPrevStateGetter(TaskStates.AckTimeOut),
 };
 
 export const TaskNextStatesSystem = {
@@ -166,4 +167,5 @@ export const SystemTaskPrevStates = {
   [TaskStates.Completed]: systemTaskPrevStateGetter(TaskStates.Completed),
   [TaskStates.Failed]: systemTaskPrevStateGetter(TaskStates.Failed),
   [TaskStates.Timeout]: systemTaskPrevStateGetter(TaskStates.Timeout),
+  [TaskStates.AckTimeOut]: systemTaskPrevStateGetter(TaskStates.AckTimeOut),
 };
