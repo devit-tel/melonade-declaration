@@ -1,14 +1,16 @@
 import { TaskStates } from './state';
-import { AllTaskType, IWorkflowRef } from './workflowDefinition';
 import { enumToList } from './utils/common';
+import { AllTaskType, IWorkflowRef } from './workflowDefinition';
 
 export enum TaskTypes {
   Task = 'TASK',
   Compensate = 'COMPENSATE',
   Parallel = 'PARALLEL',
-  SubWorkflow = 'SUB_WORKFLOW',
   Decision = 'DECISION',
 }
+
+export const SYSTEM_TASKS = [TaskTypes.Parallel, TaskTypes.Decision];
+export const WORKER_TASKS = [TaskTypes.Task, TaskTypes.Compensate];
 
 export const TaskTypesList = enumToList(TaskTypes);
 

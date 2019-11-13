@@ -3,10 +3,9 @@ export const topicPrefix = 'melonade';
 export enum topicSuffix {
   event = 'event',
   store = 'store',
-  systemTask = 'system-task',
   task = 'task',
   command = 'command',
-  timer = 'timer'
+  timer = 'timer',
 }
 
 export interface kafkaConsumerMessage {

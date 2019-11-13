@@ -35,11 +35,6 @@ export interface IParallelTask extends IBaseTask {
   parallelTasks: AllTaskType[][];
 }
 
-export interface ISubWorkflowTask extends IBaseTask {
-  type: TaskTypes.SubWorkflow;
-  workflow: IWorkflowRef;
-}
-
 export interface IDecisionTask extends IBaseTask {
   type: TaskTypes.Decision;
   decisions: {
@@ -52,7 +47,6 @@ export type AllTaskType =
   | ITaskTask
   | ICompensateTask
   | IParallelTask
-  | ISubWorkflowTask
   | IDecisionTask;
 
 export interface IWorkflowDefinition {
@@ -85,25 +79,9 @@ const isFailureStrategiesConfigValid = (
   (!isNumber(R.path(['retry', 'limit'], workflowDefinition)) ||
     !isNumber(R.path(['retry', 'delay'], workflowDefinition)));
 
-const isEmptyTasks = R.compose(
-  R.isEmpty,
-  R.prop('tasks'),
-);
+const isEmptyTasks = R.compose(R.isEmpty, R.prop('tasks'));
 
-const getTaskDecisions = R.compose(
-  R.toPairs,
-  R.propOr({}, 'decisions'),
-);
-
-const isValidWorkflowName = R.compose(
-  isValidName,
-  R.pathOr('', ['workflow', 'name']),
-);
-
-const isValidWorkflowRev = R.compose(
-  isValidRev,
-  R.path(['workflow', 'rev']),
-);
+const getTaskDecisions = R.compose(R.toPairs, R.propOr({}, 'decisions'));
 
 interface TasksValidateOutput {
   errors: string[];
@@ -113,6 +91,7 @@ interface TasksValidateOutput {
 }
 
 // Recursively validate tasks
+// tslint:disable-next-line: max-func-body-length
 const validateTasks = (
   tasks: AllTaskType[],
   root: string,
@@ -141,8 +120,6 @@ const validateTasks = (
       else
         result.taskReferenceName[task.taskReferenceName] =
           task.taskReferenceName;
-
-      // TODO Validate inputParameters
 
       if (!TaskTypesList.includes(task.type))
         result.errors.push(`${currentRoot}.type is invalid`);
@@ -202,16 +179,6 @@ const validateTasks = (
           },
           result,
         );
-      }
-
-      if (task.type === TaskTypes.SubWorkflow) {
-        if (!isValidWorkflowName(task))
-          result.errors.push(`${currentRoot}.workflow.name is invalid`);
-
-        if (!isValidWorkflowRev(task))
-          result.errors.push(`${currentRoot}.workflow.rev is invalid`);
-
-        // TODO check if workflow/rev is exists
       }
 
       return result;
