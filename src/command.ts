@@ -1,3 +1,4 @@
+import { ITask } from './task';
 import { IWorkflowRef } from './workflowDefinition';
 
 export enum CommandTypes {
@@ -5,6 +6,7 @@ export enum CommandTypes {
   CancelTransaction = 'CANCEL_TRANSACTION',
   PauseTransaction = 'PAUSE_TRANSACTION',
   ResumeTransaction = 'RESUME_TRANSACTION',
+  ReloadTask = 'RELOAD_TASK',
 }
 
 export interface ICommand {
@@ -30,8 +32,14 @@ export interface IResumeTransactionCommand extends ICommand {
   type: CommandTypes.ResumeTransaction;
 }
 
+export interface IReloadTaskCommand extends ICommand {
+  type: CommandTypes.ReloadTask;
+  task: ITask;
+}
+
 export type AllCommand =
   | IStartTransactionCommand
   | ICancelTransactionCommand
   | IPauseTransactionCommand
-  | IResumeTransactionCommand;
+  | IResumeTransactionCommand
+  | IReloadTaskCommand;
