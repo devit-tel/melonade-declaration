@@ -24,5 +24,4 @@ export interface IWorkflow {
   startTime: number;
   endTime: number;
   workflowDefinition: IWorkflowDefinition;
-  childOf?: string;
 }
