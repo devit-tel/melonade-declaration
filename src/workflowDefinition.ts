@@ -116,7 +116,7 @@ const validateTasks = (
       index: number,
     ): TasksValidateOutput => {
       const currentRoot = `${root}.tasks[${index}]`;
-      if (!isValidName(task.name) && task.type === TaskTypes.Task)
+      if (task.type === TaskTypes.Task && !isValidName(task.name))
         result.errors.push(`${currentRoot}.name is invalid`);
 
       if (!isValidName(task.taskReferenceName))
