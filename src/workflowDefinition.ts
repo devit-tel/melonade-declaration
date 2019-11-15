@@ -9,7 +9,6 @@ export interface IWorkflowRef {
 }
 
 export interface IBaseTask {
-  name: string;
   taskReferenceName: string;
   inputParameters: {
     [key: string]: string | number;
@@ -17,6 +16,7 @@ export interface IBaseTask {
 }
 
 export interface ITaskTask extends IBaseTask {
+  name: string;
   type: TaskTypes.Task;
   retry?: {
     limit: number;
@@ -27,6 +27,7 @@ export interface ITaskTask extends IBaseTask {
 }
 
 export interface ICompensateTask extends IBaseTask {
+  name: string;
   type: TaskTypes.Compensate;
 }
 
@@ -79,9 +80,15 @@ const isFailureStrategiesConfigValid = (
   (!isNumber(R.path(['retry', 'limit'], workflowDefinition)) ||
     !isNumber(R.path(['retry', 'delay'], workflowDefinition)));
 
-const isEmptyTasks = R.compose(R.isEmpty, R.prop('tasks'));
+const isEmptyTasks = R.compose(
+  R.isEmpty,
+  R.prop('tasks'),
+);
 
-const getTaskDecisions = R.compose(R.toPairs, R.propOr({}, 'decisions'));
+const getTaskDecisions = R.compose(
+  R.toPairs,
+  R.propOr({}, 'decisions'),
+);
 
 interface TasksValidateOutput {
   errors: string[];

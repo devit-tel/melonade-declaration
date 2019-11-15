@@ -1,5 +1,5 @@
 import * as R from 'ramda';
-import { isValidName, isNumber } from './utils/common';
+import { isNumber, isValidName } from './utils/common';
 
 interface IDocIO {
   field: string;
