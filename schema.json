@@ -1,0 +1,1345 @@
+{
+    "$schema": "http://json-schema.org/draft-07/schema#",
+    "definitions": {
+        "AllCommand": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/IStartTransactionCommand"
+                },
+                {
+                    "$ref": "#/definitions/ICancelTransactionCommand"
+                },
+                {
+                    "$ref": "#/definitions/IPauseTransactionCommand"
+                },
+                {
+                    "$ref": "#/definitions/IResumeTransactionCommand"
+                },
+                {
+                    "$ref": "#/definitions/IReloadTaskCommand"
+                }
+            ]
+        },
+        "AllEvent": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/ITransactionEvent"
+                },
+                {
+                    "$ref": "#/definitions/ITransactionErrorEvent"
+                },
+                {
+                    "$ref": "#/definitions/IWorkflowEvent"
+                },
+                {
+                    "$ref": "#/definitions/IWorkflowErrorEvent"
+                },
+                {
+                    "$ref": "#/definitions/ITaskEvent"
+                },
+                {
+                    "$ref": "#/definitions/ITaskErrorEvent"
+                },
+                {
+                    "$ref": "#/definitions/ISystemEvent"
+                },
+                {
+                    "$ref": "#/definitions/ISystemErrorEvent"
+                }
+            ]
+        },
+        "AllTaskType": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/ITaskTask"
+                },
+                {
+                    "$ref": "#/definitions/ICompensateTask"
+                },
+                {
+                    "$ref": "#/definitions/IParallelTask"
+                },
+                {
+                    "$ref": "#/definitions/IDecisionTask"
+                }
+            ]
+        },
+        "AllTimerType": {
+            "anyOf": [
+                {
+                    "$ref": "#/definitions/IDelayTaskTimer"
+                },
+                {
+                    "$ref": "#/definitions/ICronWorkflowTimer"
+                }
+            ]
+        },
+        "CommandTypes": {
+            "enum": [
+                "CANCEL_TRANSACTION",
+                "PAUSE_TRANSACTION",
+                "RELOAD_TASK",
+                "RESUME_TRANSACTION",
+                "START_TRANSACTION"
+            ],
+            "type": "string"
+        },
+        "IBaseEvent": {
+            "properties": {
+                "timestamp": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IBaseTask": {
+            "properties": {
+                "inputParameters": {
+                    "additionalProperties": {
+                        "type": [
+                            "string",
+                            "number"
+                        ]
+                    },
+                    "type": "object"
+                },
+                "taskReferenceName": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ICancelTransactionCommand": {
+            "properties": {
+                "reason": {
+                    "type": "string"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "CANCEL_TRANSACTION"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ICommand": {
+            "properties": {
+                "transactionId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ICompensateTask": {
+            "properties": {
+                "inputParameters": {
+                    "additionalProperties": {
+                        "type": [
+                            "string",
+                            "number"
+                        ]
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "taskReferenceName": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "COMPENSATE"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ICronWorkflowTimer": {
+            "properties": {
+                "cron": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "CRON_WORKFLOW"
+                    ],
+                    "type": "string"
+                },
+                "workflow": {
+                    "$ref": "#/definitions/IWorkflowRef"
+                }
+            },
+            "type": "object"
+        },
+        "IDecisionTask": {
+            "properties": {
+                "decisions": {
+                    "additionalProperties": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/definitions/ITaskTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/ICompensateTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/IParallelTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/IDecisionTask"
+                                }
+                            ]
+                        },
+                        "type": "array"
+                    },
+                    "type": "object"
+                },
+                "defaultDecision": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/ITaskTask"
+                            },
+                            {
+                                "$ref": "#/definitions/ICompensateTask"
+                            },
+                            {
+                                "$ref": "#/definitions/IParallelTask"
+                            },
+                            {
+                                "$ref": "#/definitions/IDecisionTask"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                },
+                "inputParameters": {
+                    "additionalProperties": {
+                        "type": [
+                            "string",
+                            "number"
+                        ]
+                    },
+                    "type": "object"
+                },
+                "taskReferenceName": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "DECISION"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IDelayTaskTimer": {
+            "properties": {
+                "task": {
+                    "$ref": "#/definitions/ITask"
+                },
+                "type": {
+                    "enum": [
+                        "DELAY_TASK"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IDocIO": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "field": {
+                    "type": "string"
+                },
+                "required": {
+                    "type": "boolean"
+                },
+                "type": {
+                    "enum": [
+                        "mixed",
+                        "number",
+                        "string"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IParallelTask": {
+            "properties": {
+                "inputParameters": {
+                    "additionalProperties": {
+                        "type": [
+                            "string",
+                            "number"
+                        ]
+                    },
+                    "type": "object"
+                },
+                "parallelTasks": {
+                    "items": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/definitions/ITaskTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/ICompensateTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/IParallelTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/IDecisionTask"
+                                }
+                            ]
+                        },
+                        "type": "array"
+                    },
+                    "type": "array"
+                },
+                "taskReferenceName": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "PARALLEL"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IPauseTransactionCommand": {
+            "properties": {
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "PAUSE_TRANSACTION"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IReloadTaskCommand": {
+            "properties": {
+                "task": {
+                    "$ref": "#/definitions/ITask"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "RELOAD_TASK"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IResumeTransactionCommand": {
+            "properties": {
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "RESUME_TRANSACTION"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IStartTransactionCommand": {
+            "properties": {
+                "input": {
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "START_TRANSACTION"
+                    ],
+                    "type": "string"
+                },
+                "workflow": {
+                    "$ref": "#/definitions/IWorkflowRef"
+                }
+            },
+            "type": "object"
+        },
+        "ISystemErrorEvent": {
+            "properties": {
+                "details": {
+                },
+                "error": {
+                    "type": "string"
+                },
+                "isError": {
+                    "enum": [
+                        true
+                    ],
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "SYSTEM"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ISystemEvent": {
+            "properties": {
+                "details": {
+                },
+                "isError": {
+                    "enum": [
+                        false
+                    ],
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "SYSTEM"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ITask": {
+            "properties": {
+                "ackTimeout": {
+                    "type": "number"
+                },
+                "createTime": {
+                    "type": "number"
+                },
+                "decisions": {
+                    "additionalProperties": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/definitions/ITaskTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/ICompensateTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/IParallelTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/IDecisionTask"
+                                }
+                            ]
+                        },
+                        "type": "array"
+                    },
+                    "type": "object"
+                },
+                "defaultDecision": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/ITaskTask"
+                            },
+                            {
+                                "$ref": "#/definitions/ICompensateTask"
+                            },
+                            {
+                                "$ref": "#/definitions/IParallelTask"
+                            },
+                            {
+                                "$ref": "#/definitions/IDecisionTask"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                },
+                "endTime": {
+                    "type": "number"
+                },
+                "input": {
+                },
+                "isRetried": {
+                    "type": "boolean"
+                },
+                "logs": {
+                    "items": {
+                    },
+                    "type": "array"
+                },
+                "output": {
+                },
+                "parallelTasks": {
+                    "items": {
+                        "items": {
+                            "anyOf": [
+                                {
+                                    "$ref": "#/definitions/ITaskTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/ICompensateTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/IParallelTask"
+                                },
+                                {
+                                    "$ref": "#/definitions/IDecisionTask"
+                                }
+                            ]
+                        },
+                        "type": "array"
+                    },
+                    "type": "array"
+                },
+                "retries": {
+                    "type": "number"
+                },
+                "retryDelay": {
+                    "type": "number"
+                },
+                "startTime": {
+                    "type": "number"
+                },
+                "status": {
+                    "$ref": "#/definitions/TaskStates"
+                },
+                "taskId": {
+                    "type": "string"
+                },
+                "taskName": {
+                    "type": "string"
+                },
+                "taskReferenceName": {
+                    "type": "string"
+                },
+                "timeout": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/TaskTypes"
+                },
+                "workflowId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ITaskDefinition": {
+            "properties": {
+                "ackTimeout": {
+                    "type": "number"
+                },
+                "description": {
+                    "type": "string"
+                },
+                "document": {
+                    "properties": {
+                        "inputs": {
+                            "items": {
+                                "$ref": "#/definitions/IDocIO"
+                            },
+                            "type": "array"
+                        },
+                        "output": {
+                            "items": {
+                                "$ref": "#/definitions/IDocIO"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "retry": {
+                    "properties": {
+                        "delay": {
+                            "type": "number"
+                        },
+                        "limit": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "timeout": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "ITaskErrorEvent": {
+            "properties": {
+                "details": {
+                    "$ref": "#/definitions/ITaskUpdate"
+                },
+                "error": {
+                    "type": "string"
+                },
+                "isError": {
+                    "enum": [
+                        true
+                    ],
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "TASK"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ITaskEvent": {
+            "properties": {
+                "details": {
+                    "$ref": "#/definitions/ITask"
+                },
+                "isError": {
+                    "enum": [
+                        false
+                    ],
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "TASK"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ITaskTask": {
+            "properties": {
+                "ackTimeout": {
+                    "type": "number"
+                },
+                "inputParameters": {
+                    "additionalProperties": {
+                        "type": [
+                            "string",
+                            "number"
+                        ]
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "retry": {
+                    "properties": {
+                        "delay": {
+                            "type": "number"
+                        },
+                        "limit": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "taskReferenceName": {
+                    "type": "string"
+                },
+                "timeout": {
+                    "type": "number"
+                },
+                "type": {
+                    "enum": [
+                        "TASK"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ITaskUpdate": {
+            "properties": {
+                "isSystem": {
+                    "type": "boolean"
+                },
+                "logs": {
+                },
+                "output": {
+                },
+                "status": {
+                    "$ref": "#/definitions/TaskStates"
+                },
+                "taskId": {
+                    "type": "string"
+                },
+                "transactionId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ITimerData": {
+            "properties": {
+                "ackTimeout": {
+                    "type": "number"
+                },
+                "delay": {
+                    "type": "number"
+                },
+                "task": {
+                    "$ref": "#/definitions/ITask"
+                },
+                "timeout": {
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "ITransaction": {
+            "properties": {
+                "createTime": {
+                    "type": "number"
+                },
+                "endTime": {
+                    "type": "number"
+                },
+                "input": {
+                },
+                "output": {
+                },
+                "status": {
+                    "$ref": "#/definitions/TransactionStates"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "workflowDefinition": {
+                    "$ref": "#/definitions/IWorkflowDefinition"
+                }
+            },
+            "type": "object"
+        },
+        "ITransactionErrorEvent": {
+            "properties": {
+                "details": {
+                    "$ref": "#/definitions/ITransactionUpdate"
+                },
+                "error": {
+                    "type": "string"
+                },
+                "isError": {
+                    "enum": [
+                        true
+                    ],
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "TRANSACTION"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ITransactionEvent": {
+            "properties": {
+                "details": {
+                    "$ref": "#/definitions/ITransaction"
+                },
+                "isError": {
+                    "enum": [
+                        false
+                    ],
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "TRANSACTION"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "ITransactionUpdate": {
+            "properties": {
+                "output": {
+                },
+                "status": {
+                    "$ref": "#/definitions/TransactionStates"
+                },
+                "transactionId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IWorkflow": {
+            "properties": {
+                "createTime": {
+                    "type": "number"
+                },
+                "endTime": {
+                    "type": "number"
+                },
+                "input": {
+                    "additionalProperties": {
+                    },
+                    "type": "object"
+                },
+                "output": {
+                    "additionalProperties": {
+                    },
+                    "type": "object"
+                },
+                "retries": {
+                    "type": "number"
+                },
+                "startTime": {
+                    "type": "number"
+                },
+                "status": {
+                    "$ref": "#/definitions/WorkflowStates"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "$ref": "#/definitions/WorkflowTypes"
+                },
+                "workflowDefinition": {
+                    "$ref": "#/definitions/IWorkflowDefinition"
+                },
+                "workflowId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IWorkflowDefinition": {
+            "properties": {
+                "description": {
+                    "type": "string"
+                },
+                "failureStrategy": {
+                    "$ref": "#/definitions/WorkflowFailureStrategies"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "outputParameters": {
+                    "additionalProperties": {
+                    },
+                    "type": "object"
+                },
+                "recoveryWorkflow": {
+                    "$ref": "#/definitions/IWorkflowRef"
+                },
+                "retry": {
+                    "properties": {
+                        "limit": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "rev": {
+                    "type": "string"
+                },
+                "tasks": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/ITaskTask"
+                            },
+                            {
+                                "$ref": "#/definitions/ICompensateTask"
+                            },
+                            {
+                                "$ref": "#/definitions/IParallelTask"
+                            },
+                            {
+                                "$ref": "#/definitions/IDecisionTask"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "IWorkflowErrorEvent": {
+            "properties": {
+                "details": {
+                    "$ref": "#/definitions/IWorkflowUpdate"
+                },
+                "error": {
+                    "type": "string"
+                },
+                "isError": {
+                    "enum": [
+                        true
+                    ],
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "WORKFLOW"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IWorkflowEvent": {
+            "properties": {
+                "details": {
+                    "$ref": "#/definitions/IWorkflow"
+                },
+                "isError": {
+                    "enum": [
+                        false
+                    ],
+                    "type": "boolean"
+                },
+                "timestamp": {
+                    "type": "number"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "type": {
+                    "enum": [
+                        "WORKFLOW"
+                    ],
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IWorkflowRef": {
+            "properties": {
+                "name": {
+                    "type": "string"
+                },
+                "rev": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "IWorkflowUpdate": {
+            "properties": {
+                "output": {
+                },
+                "status": {
+                    "$ref": "#/definitions/WorkflowStates"
+                },
+                "transactionId": {
+                    "type": "string"
+                },
+                "workflowId": {
+                    "type": "string"
+                }
+            },
+            "type": "object"
+        },
+        "StoreType": {
+            "enum": [
+                "MEMORY",
+                "MONGODB",
+                "REDIS",
+                "ZOOKEEPER"
+            ],
+            "type": "string"
+        },
+        "TaskDefinition": {
+            "properties": {
+                "ackTimeout": {
+                    "default": 0,
+                    "type": "number"
+                },
+                "description": {
+                    "default": "No description",
+                    "type": "string"
+                },
+                "document": {
+                    "properties": {
+                        "inputs": {
+                            "items": {
+                                "$ref": "#/definitions/IDocIO"
+                            },
+                            "type": "array"
+                        },
+                        "output": {
+                            "items": {
+                                "$ref": "#/definitions/IDocIO"
+                            },
+                            "type": "array"
+                        }
+                    },
+                    "type": "object"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "retry": {
+                    "properties": {
+                        "delay": {
+                            "type": "number"
+                        },
+                        "limit": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "timeout": {
+                    "default": 0,
+                    "type": "number"
+                }
+            },
+            "type": "object"
+        },
+        "TaskStates": {
+            "enum": [
+                "ACK_TIMEOUT",
+                "COMPLETED",
+                "FAILED",
+                "INPROGRESS",
+                "SCHEDULED",
+                "TIMEOUT"
+            ],
+            "type": "string"
+        },
+        "TaskTypes": {
+            "enum": [
+                "COMPENSATE",
+                "DECISION",
+                "PARALLEL",
+                "TASK"
+            ],
+            "type": "string"
+        },
+        "TasksValidateOutput": {
+            "properties": {
+                "errors": {
+                    "items": {
+                        "type": "string"
+                    },
+                    "type": "array"
+                },
+                "taskReferenceName": {
+                    "additionalProperties": {
+                        "type": "string"
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "TimerType": {
+            "enum": [
+                "CRON_WORKFLOW",
+                "DELAY_TASK"
+            ],
+            "type": "string"
+        },
+        "TopicConfigurations": {
+            "properties": {
+                "cleanup.policy": {
+                    "enum": [
+                        "compact",
+                        "delete"
+                    ],
+                    "type": "string"
+                },
+                "compression.type": {
+                    "enum": [
+                        "gzip",
+                        "lz4",
+                        "producer",
+                        "snappy",
+                        "uncompressed",
+                        "zstd"
+                    ],
+                    "type": "string"
+                },
+                "delete.retention.ms": {
+                    "type": "string"
+                },
+                "file.delete.delay.ms": {
+                    "type": "string"
+                },
+                "flush.messages": {
+                    "type": "string"
+                },
+                "flush.ms": {
+                    "type": "string"
+                },
+                "follower.replication.throttled.replicas": {
+                    "type": "string"
+                },
+                "index.interval.bytes": {
+                    "type": "string"
+                },
+                "leader.replication.throttled.replicas": {
+                    "type": "string"
+                },
+                "max.message.bytes": {
+                    "type": "string"
+                },
+                "message.downconversion.enable": {
+                    "type": "boolean"
+                },
+                "message.format.version": {
+                    "type": "string"
+                },
+                "message.timestamp.difference.max.ms": {
+                    "type": "string"
+                },
+                "message.timestamp.type": {
+                    "type": "string"
+                },
+                "min.cleanable.dirty.ratio": {
+                    "type": "string"
+                },
+                "min.compaction.lag.ms": {
+                    "type": "string"
+                },
+                "min.insync.replicas": {
+                    "type": "string"
+                },
+                "preallocate": {
+                    "type": "string"
+                },
+                "retention.bytes": {
+                    "type": "string"
+                },
+                "retention.ms": {
+                    "type": "string"
+                },
+                "segment.bytes": {
+                    "type": "string"
+                },
+                "segment.index.bytes": {
+                    "type": "string"
+                },
+                "segment.jitter.ms": {
+                    "type": "string"
+                },
+                "segment.ms": {
+                    "type": "string"
+                },
+                "unclean.leader.election.enable": {
+                    "type": "boolean"
+                }
+            },
+            "type": "object"
+        },
+        "TransactionStates": {
+            "enum": [
+                "CANCELLED",
+                "COMPENSATED",
+                "COMPLETED",
+                "FAILED",
+                "PAUSED",
+                "RUNNING"
+            ],
+            "type": "string"
+        },
+        "WorkflowDefinition": {
+            "properties": {
+                "description": {
+                    "default": "No description",
+                    "type": "string"
+                },
+                "failureStrategy": {
+                    "$ref": "#/definitions/WorkflowFailureStrategies"
+                },
+                "name": {
+                    "type": "string"
+                },
+                "outputParameters": {
+                    "properties": {
+                    },
+                    "type": "object"
+                },
+                "recoveryWorkflow": {
+                    "$ref": "#/definitions/IWorkflowRef"
+                },
+                "retry": {
+                    "properties": {
+                        "limit": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                },
+                "rev": {
+                    "type": "string"
+                },
+                "tasks": {
+                    "items": {
+                        "anyOf": [
+                            {
+                                "$ref": "#/definitions/ITaskTask"
+                            },
+                            {
+                                "$ref": "#/definitions/ICompensateTask"
+                            },
+                            {
+                                "$ref": "#/definitions/IParallelTask"
+                            },
+                            {
+                                "$ref": "#/definitions/IDecisionTask"
+                            }
+                        ]
+                    },
+                    "type": "array"
+                }
+            },
+            "type": "object"
+        },
+        "WorkflowFailureStrategies": {
+            "enum": [
+                "COMPENSATE",
+                "COMPENSATE_THEN_RETRY",
+                "FAILED",
+                "RECOVERY_WORKFLOW",
+                "RETRY"
+            ],
+            "type": "string"
+        },
+        "WorkflowStates": {
+            "enum": [
+                "CANCELLED",
+                "COMPLETED",
+                "FAILED",
+                "PAUSED",
+                "RUNNING",
+                "TIMEOUT"
+            ],
+            "type": "string"
+        },
+        "WorkflowTypes": {
+            "enum": [
+                "CANCEL_WORKFLOW",
+                "COMPENSATE_THEN_RETRY_WORKFLOW",
+                "COMPENSATE_WORKFLOW",
+                "WORKFLOW"
+            ],
+            "type": "string"
+        },
+        "kafkaConsumerMessage": {
+            "properties": {
+                "key": {
+                    "type": "string"
+                },
+                "offset": {
+                    "type": "number"
+                },
+                "partition": {
+                    "type": "number"
+                },
+                "size": {
+                    "type": "number"
+                },
+                "topic": {
+                    "type": "string"
+                },
+                "value": {
+                    "additionalProperties": false,
+                    "description": "Raw data is stored in instances of the Buffer class.\nA Buffer is similar to an array of integers but corresponds to a raw memory allocation outside the V8 heap.  A Buffer cannot be resized.\nValid string encodings: 'ascii'|'utf8'|'utf16le'|'ucs2'(alias of 'utf16le')|'base64'|'binary'(deprecated)|'hex'",
+                    "patternProperties": {
+                        "^[0-9]+$": {
+                            "type": "number"
+                        }
+                    },
+                    "type": "object"
+                }
+            },
+            "type": "object"
+        },
+        "topicSuffix": {
+            "enum": [
+                "command",
+                "event",
+                "store",
+                "task",
+                "timer"
+            ],
+            "type": "string"
+        }
+    }
+}
+
