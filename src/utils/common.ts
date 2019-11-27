@@ -12,11 +12,9 @@ export const ajv = new AJV({
 
 export const validate = (schemaRef: string, data: any): any => {
   if (ajv.validate(schemaRef, data)) {
-    console.log(JSON.stringify(data));
     return data;
   }
 
-  console.log(JSON.stringify(ajv.errors));
   throw ajv.errors;
 };
 
