@@ -18,6 +18,7 @@ jobs:
         uses: actions/setup-node@v1
         with:
           node-version: 10.x
+      - name: npm install and publish
         run: |
           npm set registry "https://npmjs.com"
           npm set //npmjs.com/:_authToken ${{secrets.NPM_TOKEN}}
