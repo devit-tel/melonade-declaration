@@ -84,4 +84,51 @@ describe('TaskDefinition', () => {
       ] as any),
     );
   });
+
+  test('Test invalid other field', () => {
+    expect(
+      () =>
+        new TaskDefinition({
+          ackTimeout: -3,
+          description: '-',
+          retry: {
+            delay: -20,
+            limit: -10,
+          },
+          timeout: -110,
+          name: 'aa',
+        }),
+    ).toThrow(
+      new Error([
+        {
+          keyword: 'minimum',
+          dataPath: '.ackTimeout',
+          schemaPath: '#/properties/ackTimeout/minimum',
+          params: { comparison: '>=', limit: 0, exclusive: false },
+          message: 'should be >= 0',
+        },
+        {
+          keyword: 'minimum',
+          dataPath: '.retry.delay',
+          schemaPath: '#/properties/retry/properties/delay/minimum',
+          params: { comparison: '>=', limit: 0, exclusive: false },
+          message: 'should be >= 0',
+        },
+        {
+          keyword: 'minimum',
+          dataPath: '.retry.limit',
+          schemaPath: '#/properties/retry/properties/limit/minimum',
+          params: { comparison: '>=', limit: 0, exclusive: false },
+          message: 'should be >= 0',
+        },
+        {
+          keyword: 'minimum',
+          dataPath: '.timeout',
+          schemaPath: '#/properties/timeout/minimum',
+          params: { comparison: '>=', limit: 0, exclusive: false },
+          message: 'should be >= 0',
+        },
+      ] as any),
+    );
+  });
 });

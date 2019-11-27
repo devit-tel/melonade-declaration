@@ -13,7 +13,6 @@ export const validate = (schemaRef: string, data: any): any => {
   if (ajv.validate(schemaRef, data)) {
     return data;
   }
-
   throw ajv.errors;
 };
 
