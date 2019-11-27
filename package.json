@@ -24,13 +24,13 @@
   },
   "scripts": {
     "clean": "rimraf coverage build tmp",
-    "build": "npm run clean & tsc -p tsconfig.release.json",
-    "build:watch": "npm run clean & tsc -w -p tsconfig.release.json",
+    "build": "npm run clean & npm run jsonschema & tsc -p tsconfig.release.json",
+    "build:watch": "npm run clean & npm run jsonschema  & tsc -w -p tsconfig.release.json",
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "prepublishOnly": "npm run build",
-    "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" > ./schema.json"
+    "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" > ./src/schema.json"
   },
   "license": "MIT",
   "dependencies": {
