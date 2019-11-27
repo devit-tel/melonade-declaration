@@ -121,7 +121,6 @@
                             }
                         ]
                     },
-                    "default": {},
                     "defaultProperties": [],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
@@ -135,6 +134,7 @@
                 }
             },
             "required": [
+                "inputParameters",
                 "taskReferenceName"
             ],
             "type": "object"
@@ -196,7 +196,6 @@
                             }
                         ]
                     },
-                    "default": {},
                     "defaultProperties": [],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
@@ -223,6 +222,7 @@
                 }
             },
             "required": [
+                "inputParameters",
                 "name",
                 "taskReferenceName",
                 "type"
@@ -317,7 +317,6 @@
                             }
                         ]
                     },
-                    "default": {},
                     "defaultProperties": [],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
@@ -339,6 +338,7 @@
             "required": [
                 "decisions",
                 "defaultDecision",
+                "inputParameters",
                 "taskReferenceName",
                 "type"
             ],
@@ -384,7 +384,6 @@
                             }
                         ]
                     },
-                    "default": {},
                     "defaultProperties": [],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
@@ -428,6 +427,7 @@
                 }
             },
             "required": [
+                "inputParameters",
                 "parallelTasks",
                 "taskReferenceName",
                 "type"
@@ -897,7 +897,6 @@
             "defaultProperties": [],
             "properties": {
                 "ackTimeout": {
-                    "default": 0,
                     "description": "The given time that task can ack before it timeout in miliseconds (0 is no timeout)",
                     "minimum": 0,
                     "type": "number"
@@ -918,7 +917,6 @@
                             }
                         ]
                     },
-                    "default": {},
                     "defaultProperties": [],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
@@ -932,30 +930,20 @@
                 },
                 "retry": {
                     "additionalProperties": false,
-                    "default": {
-                        "delay": 0,
-                        "limit": 0
-                    },
                     "defaultProperties": [],
                     "description": "Retry object",
                     "properties": {
                         "delay": {
-                            "default": 0,
                             "description": "The delay before dispatch task",
                             "minimum": 0,
                             "type": "number"
                         },
                         "limit": {
-                            "default": 0,
                             "description": "Retry limit number (0 is no retry)",
                             "minimum": 0,
                             "type": "number"
                         }
                     },
-                    "required": [
-                        "delay",
-                        "limit"
-                    ],
                     "type": "object"
                 },
                 "taskReferenceName": {
@@ -966,7 +954,6 @@
                     "type": "string"
                 },
                 "timeout": {
-                    "default": 0,
                     "description": "The given time that task can finish before it timeout in miliseconds (0 is no timeout)",
                     "minimum": 0,
                     "type": "number"
@@ -979,6 +966,7 @@
                 }
             },
             "required": [
+                "inputParameters",
                 "name",
                 "taskReferenceName",
                 "type"

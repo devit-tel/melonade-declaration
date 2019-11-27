@@ -441,9 +441,8 @@ The input to be mapping to workflow's data
 
 `inputParameters`
 
-- is optional
+- is **required**
 - type: `object`
-- default: `{}`
 - defined in this schema
 
 ### inputParameters Type
