@@ -1,6 +1,6 @@
 {
   "name": "@melonade/melonade-declaration",
-  "version": "0.6.3",
+  "version": "0.6.8",
   "description": "States and type declaration",
   "engines": {
     "node": ">= 10.13 <11"
@@ -30,7 +30,7 @@
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
-    "prepublishOnly": "npm run build",
+    "prepublishOnly": "npm run build & npm run build:docs",
     "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" --required --defaultProps --noExtraProps --out ./src/schema.json",
     "build:docs": "jsonschema2md -d src/schema.json -o ./docs"
   },
