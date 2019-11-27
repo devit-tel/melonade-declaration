@@ -9,9 +9,8 @@ describe('WorkflowDefinition', () => {
         rev: '01',
         tasks: [
           {
-            name:
-              'hihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihihi',
-            taskReferenceName: 'hi',
+            name: 'hihi',
+            taskReferenceName: 'hihi',
             type: TaskTypes.Task,
           } as any,
         ],
@@ -27,8 +26,8 @@ describe('WorkflowDefinition', () => {
       rev: '01',
       tasks: [
         {
-          name: 'hi',
-          taskReferenceName: 'hi',
+          name: 'hihi',
+          taskReferenceName: 'hihi',
           type: 'TASK',
           inputParameters: {},
         },

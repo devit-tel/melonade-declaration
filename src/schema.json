@@ -85,6 +85,9 @@
             "type": "string"
         },
         "IBaseEvent": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "timestamp": {
                     "type": "number"
@@ -93,9 +96,16 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "timestamp",
+                "transactionId"
+            ],
             "type": "object"
         },
         "IBaseTask": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "inputParameters": {
                     "additionalProperties": {
@@ -115,8 +125,9 @@
                         ]
                     },
                     "default": {
-                        "a": 0
                     },
+                    "defaultProperties": [
+                    ],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
@@ -128,9 +139,15 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "taskReferenceName"
+            ],
             "type": "object"
         },
         "ICancelTransactionCommand": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "reason": {
                     "type": "string"
@@ -145,17 +162,31 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "reason",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "ICommand": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "transactionId": {
                     "type": "string"
                 }
             },
+            "required": [
+                "transactionId"
+            ],
             "type": "object"
         },
         "ICompensateTask": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "inputParameters": {
                     "additionalProperties": {
@@ -175,8 +206,9 @@
                         ]
                     },
                     "default": {
-                        "a": 0
                     },
+                    "defaultProperties": [
+                    ],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
@@ -201,9 +233,17 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "name",
+                "taskReferenceName",
+                "type"
+            ],
             "type": "object"
         },
         "ICronWorkflowTimer": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "cron": {
                     "type": "string"
@@ -218,9 +258,17 @@
                     "$ref": "#/definitions/IWorkflowRef"
                 }
             },
+            "required": [
+                "cron",
+                "type",
+                "workflow"
+            ],
             "type": "object"
         },
         "IDecisionTask": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "decisions": {
                     "additionalProperties": {
@@ -242,6 +290,8 @@
                         },
                         "type": "array"
                     },
+                    "defaultProperties": [
+                    ],
                     "type": "object"
                 },
                 "defaultDecision": {
@@ -283,8 +333,9 @@
                         ]
                     },
                     "default": {
-                        "a": 0
                     },
+                    "defaultProperties": [
+                    ],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
@@ -302,9 +353,18 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "decisions",
+                "defaultDecision",
+                "taskReferenceName",
+                "type"
+            ],
             "type": "object"
         },
         "IDelayTaskTimer": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "task": {
                     "$ref": "#/definitions/ITask"
@@ -316,9 +376,16 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "task",
+                "type"
+            ],
             "type": "object"
         },
         "IParallelTask": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "inputParameters": {
                     "additionalProperties": {
@@ -338,8 +405,9 @@
                         ]
                     },
                     "default": {
-                        "a": 0
                     },
+                    "defaultProperties": [
+                    ],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
@@ -381,9 +449,17 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "parallelTasks",
+                "taskReferenceName",
+                "type"
+            ],
             "type": "object"
         },
         "IPauseTransactionCommand": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "transactionId": {
                     "type": "string"
@@ -395,9 +471,16 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "IReloadTaskCommand": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "task": {
                     "$ref": "#/definitions/ITask"
@@ -412,9 +495,17 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "task",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "IResumeTransactionCommand": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "transactionId": {
                     "type": "string"
@@ -426,9 +517,16 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "IStartTransactionCommand": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "input": {
                 },
@@ -445,9 +543,18 @@
                     "$ref": "#/definitions/IWorkflowRef"
                 }
             },
+            "required": [
+                "input",
+                "transactionId",
+                "type",
+                "workflow"
+            ],
             "type": "object"
         },
         "ISystemErrorEvent": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "details": {
                 },
@@ -473,9 +580,20 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "details",
+                "error",
+                "isError",
+                "timestamp",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "ISystemEvent": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "details": {
                 },
@@ -498,9 +616,19 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "details",
+                "isError",
+                "timestamp",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "ITask": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "ackTimeout": {
                     "type": "number"
@@ -528,6 +656,8 @@
                         },
                         "type": "array"
                     },
+                    "defaultProperties": [
+                    ],
                     "type": "object"
                 },
                 "defaultDecision": {
@@ -620,9 +750,31 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "ackTimeout",
+                "createTime",
+                "endTime",
+                "input",
+                "isRetried",
+                "output",
+                "retries",
+                "retryDelay",
+                "startTime",
+                "status",
+                "taskId",
+                "taskName",
+                "taskReferenceName",
+                "timeout",
+                "transactionId",
+                "type",
+                "workflowId"
+            ],
             "type": "object"
         },
         "ITaskDefinition": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "ackTimeout": {
                     "default": 0,
@@ -636,6 +788,9 @@
                     "type": "string"
                 },
                 "document": {
+                    "additionalProperties": false,
+                    "defaultProperties": [
+                    ],
                     "properties": {
                         "inputs": {
                             "additionalProperties": true,
@@ -665,10 +820,13 @@
                     "type": "string"
                 },
                 "retry": {
+                    "additionalProperties": false,
                     "default": {
                         "delay": 0,
                         "limit": 0
                     },
+                    "defaultProperties": [
+                    ],
                     "description": "Retry object",
                     "properties": {
                         "delay": {
@@ -684,6 +842,10 @@
                             "type": "number"
                         }
                     },
+                    "required": [
+                        "delay",
+                        "limit"
+                    ],
                     "type": "object"
                 },
                 "timeout": {
@@ -693,9 +855,15 @@
                     "type": "number"
                 }
             },
+            "required": [
+                "name"
+            ],
             "type": "object"
         },
         "ITaskErrorEvent": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "details": {
                     "$ref": "#/definitions/ITaskUpdate"
@@ -722,9 +890,20 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "details",
+                "error",
+                "isError",
+                "timestamp",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "ITaskEvent": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "details": {
                     "$ref": "#/definitions/ITask"
@@ -748,9 +927,19 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "details",
+                "isError",
+                "timestamp",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "ITaskTask": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "ackTimeout": {
                     "default": 0,
@@ -776,8 +965,9 @@
                         ]
                     },
                     "default": {
-                        "a": 0
                     },
+                    "defaultProperties": [
+                    ],
                     "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
@@ -789,10 +979,13 @@
                     "type": "string"
                 },
                 "retry": {
+                    "additionalProperties": false,
                     "default": {
                         "delay": 0,
                         "limit": 0
                     },
+                    "defaultProperties": [
+                    ],
                     "description": "Retry object",
                     "properties": {
                         "delay": {
@@ -808,6 +1001,10 @@
                             "type": "number"
                         }
                     },
+                    "required": [
+                        "delay",
+                        "limit"
+                    ],
                     "type": "object"
                 },
                 "taskReferenceName": {
@@ -830,9 +1027,17 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "name",
+                "taskReferenceName",
+                "type"
+            ],
             "type": "object"
         },
         "ITaskUpdate": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "isSystem": {
                     "type": "boolean"
@@ -851,9 +1056,18 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "isSystem",
+                "status",
+                "taskId",
+                "transactionId"
+            ],
             "type": "object"
         },
         "ITimerData": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "ackTimeout": {
                     "type": "number"
@@ -868,9 +1082,18 @@
                     "type": "number"
                 }
             },
+            "required": [
+                "ackTimeout",
+                "delay",
+                "task",
+                "timeout"
+            ],
             "type": "object"
         },
         "ITransaction": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "createTime": {
                     "type": "number"
@@ -892,9 +1115,21 @@
                     "$ref": "#/definitions/IWorkflowDefinition"
                 }
             },
+            "required": [
+                "createTime",
+                "endTime",
+                "input",
+                "output",
+                "status",
+                "transactionId",
+                "workflowDefinition"
+            ],
             "type": "object"
         },
         "ITransactionErrorEvent": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "details": {
                     "$ref": "#/definitions/ITransactionUpdate"
@@ -921,9 +1156,20 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "details",
+                "error",
+                "isError",
+                "timestamp",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "ITransactionEvent": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "details": {
                     "$ref": "#/definitions/ITransaction"
@@ -947,9 +1193,19 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "details",
+                "isError",
+                "timestamp",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "ITransactionUpdate": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "output": {
                 },
@@ -960,9 +1216,16 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "status",
+                "transactionId"
+            ],
             "type": "object"
         },
         "IWorkflow": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "createTime": {
                     "type": "number"
@@ -973,11 +1236,15 @@
                 "input": {
                     "additionalProperties": {
                     },
+                    "defaultProperties": [
+                    ],
                     "type": "object"
                 },
                 "output": {
                     "additionalProperties": {
                     },
+                    "defaultProperties": [
+                    ],
                     "type": "object"
                 },
                 "retries": {
@@ -1002,9 +1269,25 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "createTime",
+                "endTime",
+                "input",
+                "output",
+                "retries",
+                "startTime",
+                "status",
+                "transactionId",
+                "type",
+                "workflowDefinition",
+                "workflowId"
+            ],
             "type": "object"
         },
         "IWorkflowDefinition": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "description": {
                     "default": "-",
@@ -1028,16 +1311,21 @@
                     },
                     "default": {
                     },
-                    "description": "The workflow's name",
+                    "defaultProperties": [
+                    ],
+                    "description": "The workflow's output mapping",
                     "type": "object"
                 },
                 "recoveryWorkflow": {
                     "$ref": "#/definitions/IWorkflowRef"
                 },
                 "retry": {
+                    "additionalProperties": false,
                     "default": {
                         "limit": 0
                     },
+                    "defaultProperties": [
+                    ],
                     "description": "Retry object",
                     "properties": {
                         "limit": {
@@ -1047,6 +1335,9 @@
                             "type": "number"
                         }
                     },
+                    "required": [
+                        "limit"
+                    ],
                     "type": "object"
                 },
                 "rev": {
@@ -1078,9 +1369,17 @@
                     "type": "array"
                 }
             },
+            "required": [
+                "name",
+                "rev",
+                "tasks"
+            ],
             "type": "object"
         },
         "IWorkflowErrorEvent": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "details": {
                     "$ref": "#/definitions/IWorkflowUpdate"
@@ -1107,9 +1406,20 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "details",
+                "error",
+                "isError",
+                "timestamp",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "IWorkflowEvent": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "details": {
                     "$ref": "#/definitions/IWorkflow"
@@ -1133,9 +1443,19 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "details",
+                "isError",
+                "timestamp",
+                "transactionId",
+                "type"
+            ],
             "type": "object"
         },
         "IWorkflowRef": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "name": {
                     "type": "string"
@@ -1144,9 +1464,16 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "name",
+                "rev"
+            ],
             "type": "object"
         },
         "IWorkflowUpdate": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "output": {
                 },
@@ -1160,6 +1487,11 @@
                     "type": "string"
                 }
             },
+            "required": [
+                "status",
+                "transactionId",
+                "workflowId"
+            ],
             "type": "object"
         },
         "StoreType": {
@@ -1172,6 +1504,9 @@
             "type": "string"
         },
         "TaskDefinition": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "ackTimeout": {
                     "description": "The given time that task can ack before it timeout in miliseconds (0 is no timeout)",
@@ -1182,6 +1517,9 @@
                     "type": "string"
                 },
                 "document": {
+                    "additionalProperties": false,
+                    "defaultProperties": [
+                    ],
                     "properties": {
                         "inputs": {
                             "additionalProperties": true,
@@ -1208,6 +1546,9 @@
                     "type": "string"
                 },
                 "retry": {
+                    "additionalProperties": false,
+                    "defaultProperties": [
+                    ],
                     "description": "Retry object",
                     "properties": {
                         "delay": {
@@ -1223,6 +1564,10 @@
                             "type": "number"
                         }
                     },
+                    "required": [
+                        "delay",
+                        "limit"
+                    ],
                     "type": "object"
                 },
                 "timeout": {
@@ -1230,6 +1575,14 @@
                     "type": "number"
                 }
             },
+            "required": [
+                "ackTimeout",
+                "description",
+                "document",
+                "name",
+                "retry",
+                "timeout"
+            ],
             "type": "object"
         },
         "TaskStates": {
@@ -1281,6 +1634,9 @@
             "type": "string"
         },
         "TopicConfigurations": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "cleanup.policy": {
                     "enum": [
@@ -1384,6 +1740,9 @@
             "type": "string"
         },
         "WorkflowDefinition": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "description": {
                     "description": "The task's description",
@@ -1407,13 +1766,18 @@
                 "outputParameters": {
                     "additionalProperties": {
                     },
-                    "description": "The workflow's name",
+                    "defaultProperties": [
+                    ],
+                    "description": "The workflow's output mapping",
                     "type": "object"
                 },
                 "recoveryWorkflow": {
                     "$ref": "#/definitions/IWorkflowRef"
                 },
                 "retry": {
+                    "additionalProperties": false,
+                    "defaultProperties": [
+                    ],
                     "description": "Retry object",
                     "properties": {
                         "limit": {
@@ -1423,6 +1787,9 @@
                             "type": "number"
                         }
                     },
+                    "required": [
+                        "limit"
+                    ],
                     "type": "object"
                 },
                 "rev": {
@@ -1449,6 +1816,16 @@
                     "type": "array"
                 }
             },
+            "required": [
+                "description",
+                "failureStrategy",
+                "name",
+                "outputParameters",
+                "recoveryWorkflow",
+                "retry",
+                "rev",
+                "tasks"
+            ],
             "type": "object"
         },
         "WorkflowFailureStrategies": {
@@ -1482,6 +1859,9 @@
             "type": "string"
         },
         "kafkaConsumerMessage": {
+            "additionalProperties": false,
+            "defaultProperties": [
+            ],
             "properties": {
                 "key": {
                     "type": "string"
@@ -1509,6 +1889,14 @@
                     "type": "object"
                 }
             },
+            "required": [
+                "key",
+                "offset",
+                "partition",
+                "size",
+                "topic",
+                "value"
+            ],
             "type": "object"
         },
         "topicSuffix": {

@@ -30,7 +30,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "prepublishOnly": "npm run build",
-    "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" > ./src/schema.json"
+    "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" --required --defaultProps --noExtraProps --out ./src/schema.json"
   },
   "license": "MIT",
   "dependencies": {

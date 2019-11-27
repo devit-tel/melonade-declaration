@@ -20,7 +20,7 @@ export interface IBaseTask {
   /**
    * The input to be mapping to workflow's data
    *
-   * @default {"a":0}
+   * @default {}
    * @TJS-type object
    */
   inputParameters?: {
@@ -177,7 +177,7 @@ export interface IWorkflowDefinition {
   };
   recoveryWorkflow?: IWorkflowRef;
   /**
-   * The workflow's name
+   * The workflow's output mapping
    *
    * @default {}
    * @TJS-type object
