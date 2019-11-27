@@ -21,6 +21,6 @@ jobs:
       - name: npm install and publish
         run: |
           npm set //npmjs.com/:_authToken ${{secrets.NPM_TOKEN}}
-          npm install
           npm version ${{ steps.get_version.outputs.VERSION }}
+          npm install
           npm publish
