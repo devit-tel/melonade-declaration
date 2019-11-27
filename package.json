@@ -31,7 +31,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "prepublishOnly": "npm run build & npm run build:docs",
-    "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" --required --defaultProps --noExtraProps --out ./src/schema.json",
+    "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" --required --defaultProps --noExtraProps --refs true --out ./src/schema.json",
     "build:docs": "jsonschema2md -d src/schema.json -o ./docs"
   },
   "license": "MIT",

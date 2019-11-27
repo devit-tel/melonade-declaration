@@ -20,10 +20,9 @@ export interface IBaseTask {
   /**
    * The input to be mapping to workflow's data
    *
-   * @default {}
    * @TJS-type object
    */
-  inputParameters?: {
+  inputParameters: {
     [key: string]: string | number | object;
   };
 }
@@ -43,7 +42,6 @@ export interface ITaskTask extends IBaseTask {
    * The given time that task can ack before it timeout in miliseconds (0 is no timeout)
    *
    * @minimum 0
-   * @default 0
    * @TJS-type integer
    */
   ackTimeout?: number;
@@ -51,32 +49,28 @@ export interface ITaskTask extends IBaseTask {
    * The given time that task can finish before it timeout in miliseconds (0 is no timeout)
    *
    * @minimum 0
-   * @default 0
    * @TJS-type integer
    */
   timeout?: number;
   /**
    * Retry object
    *
-   * @default {"limit":0,"delay":0}
    */
   retry?: {
     /**
      * Retry limit number (0 is no retry)
      *
      * @minimum 0
-     * @default 0
      * @TJS-type integer
      */
-    limit: number;
+    limit?: number;
     /**
      * The delay before dispatch task
      *
      * @minimum 0
-     * @default 0
      * @TJS-type integer
      */
-    delay: number;
+    delay?: number;
   };
 }
 
