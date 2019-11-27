@@ -1,13 +1,12 @@
-import * as R from 'ramda';
 import { validate } from './utils/common';
 
 export interface ITaskDefinition {
   /**
-   * The task name
+   * The task's name
    *
-   * @minimum 4
-   * @maximum 64
-   * @pattern ^[a-zA-Z0-9-_]$
+   * @minLength 1
+   * @maxLength 64
+   * @pattern ^[a-zA-Z0-9-_]+$
    * @TJS-type string
    */
   name: string;
@@ -23,7 +22,7 @@ export interface ITaskDefinition {
    *
    * @minimum 0
    * @default 0
-   * @TJS-type Integer
+   * @TJS-type integer
    */
   ackTimeout?: number;
   /**
@@ -31,7 +30,7 @@ export interface ITaskDefinition {
    *
    * @minimum 0
    * @default 0
-   * @TJS-type Integer
+   * @TJS-type integer
    */
   timeout?: number;
   /**
@@ -45,7 +44,7 @@ export interface ITaskDefinition {
      *
      * @minimum 0
      * @default 0
-     * @TJS-type Integer
+     * @TJS-type integer
      */
     limit: number;
     /**
@@ -53,7 +52,7 @@ export interface ITaskDefinition {
      *
      * @minimum 0
      * @default 0
-     * @TJS-type Integer
+     * @TJS-type integer
      */
     delay: number;
   };
@@ -84,12 +83,6 @@ export class TaskDefinition implements ITaskDefinition {
   constructor(taskDefinition: ITaskDefinition) {
     const result = validate('#/definitions/ITaskDefinition', taskDefinition);
 
-    Object.assign(
-      this,
-      R.pick(
-        ['name', 'description', 'ackTimeout', 'timeout', 'retry', 'document'],
-        result,
-      ),
-    );
+    Object.assign(this, result);
   }
 }

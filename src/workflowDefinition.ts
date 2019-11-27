@@ -1,7 +1,6 @@
-import * as R from 'ramda';
 import { WorkflowFailureStrategies } from './state';
-import { TaskTypes, TaskTypesList } from './task';
-import { isNumber, isString, isValidName, isValidRev } from './utils/common';
+import { TaskTypes } from './task';
+import { validate } from './utils/common';
 
 export interface IWorkflowRef {
   name: string;
@@ -9,39 +8,116 @@ export interface IWorkflowRef {
 }
 
 export interface IBaseTask {
+  /**
+   * The referance name using in workflow
+   *
+   * @minLength 1
+   * @maxLength 64
+   * @pattern ^[a-zA-Z0-9-_]+$
+   * @TJS-type string
+   */
   taskReferenceName: string;
-  inputParameters: {
-    [key: string]: string | number;
+  /**
+   * The input to be mapping to workflow's data
+   *
+   * @default {"a":0}
+   * @TJS-type object
+   */
+  inputParameters?: {
+    [key: string]: string | number | object;
   };
 }
 
 export interface ITaskTask extends IBaseTask {
+  /**
+   * The task's name
+   *
+   * @minLength 1
+   * @maxLength 64
+   * @pattern ^[a-zA-Z0-9-_]+$
+   * @TJS-type string
+   */
   name: string;
   type: TaskTypes.Task;
+  /**
+   * The given time that task can ack before it timeout in miliseconds (0 is no timeout)
+   *
+   * @minimum 0
+   * @default 0
+   * @TJS-type integer
+   */
+  ackTimeout?: number;
+  /**
+   * The given time that task can finish before it timeout in miliseconds (0 is no timeout)
+   *
+   * @minimum 0
+   * @default 0
+   * @TJS-type integer
+   */
+  timeout?: number;
+  /**
+   * Retry object
+   *
+   * @default {"limit":0,"delay":0}
+   */
   retry?: {
+    /**
+     * Retry limit number (0 is no retry)
+     *
+     * @minimum 0
+     * @default 0
+     * @TJS-type integer
+     */
     limit: number;
+    /**
+     * The delay before dispatch task
+     *
+     * @minimum 0
+     * @default 0
+     * @TJS-type integer
+     */
     delay: number;
   };
-  ackTimeout?: number;
-  timeout?: number;
 }
 
+/**
+ * The tasks in workflow (can not be empty)
+ *
+ * @minItems 1
+ * @TJS-type array
+ */
+export type Tasks = AllTaskType[];
+
 export interface ICompensateTask extends IBaseTask {
+  /**
+   * The task's name
+   *
+   * @minLength 1
+   * @maxLength 64
+   * @pattern ^[a-zA-Z0-9-_]+$
+   * @TJS-type string
+   */
   name: string;
   type: TaskTypes.Compensate;
 }
 
 export interface IParallelTask extends IBaseTask {
   type: TaskTypes.Parallel;
-  parallelTasks: AllTaskType[][];
+  /**
+   * The list of tasks that run parallely
+   *
+   * @minItems 1
+   * @TJS-type array
+   */
+  parallelTasks: Tasks[];
 }
 
 export interface IDecisionTask extends IBaseTask {
   type: TaskTypes.Decision;
   decisions: {
-    [decision: string]: AllTaskType[];
+    [decision: string]: Tasks;
   };
-  defaultDecision: AllTaskType[];
+  defaultDecision: Tasks;
 }
 
 export type AllTaskType =
@@ -51,212 +127,82 @@ export type AllTaskType =
   | IDecisionTask;
 
 export interface IWorkflowDefinition {
+  /**
+   * The workflow's name
+   *
+   * @minLength 1
+   * @maxLength 64
+   * @pattern ^[a-zA-Z0-9-_]+$
+   * @TJS-type string
+   */
   name: string;
+  /**
+   * The workflow's revision
+   *
+   * @minLength 1
+   * @maxLength 64
+   * @pattern ^[a-zA-Z0-9-_]+$
+   * @TJS-type string
+   */
   rev: string;
+  /**
+   * The task's description
+   *
+   * @default -
+   * @TJS-type string
+   */
   description?: string;
-  tasks: AllTaskType[];
-  failureStrategy: WorkflowFailureStrategies;
+  tasks: Tasks;
+  /**
+   * The workflow's failure strategies
+   *
+   * @default FAILED
+   * @TJS-type string
+   */
+  failureStrategy?: WorkflowFailureStrategies;
+  /**
+   * Retry object
+   *
+   * @default {"limit":0}
+   */
   retry?: {
+    /**
+     * Retry limit number (0 is no retry)
+     *
+     * @minimum 0
+     * @default 0
+     * @TJS-type integer
+     */
     limit: number;
   };
   recoveryWorkflow?: IWorkflowRef;
-  outputParameters: {
+  /**
+   * The workflow's name
+   *
+   * @default {}
+   * @TJS-type object
+   */
+  outputParameters?: {
     [key: string]: string | any;
   };
 }
 
-const isRecoveryWorkflowConfigValid = (
-  workflowDefinition: IWorkflowDefinition,
-): boolean =>
-  workflowDefinition.failureStrategy ===
-    WorkflowFailureStrategies.RecoveryWorkflow &&
-  (!isString(R.path(['recoveryWorkflow', 'name'], workflowDefinition)) ||
-    !isString(R.path(['recoveryWorkflow', 'rev'], workflowDefinition)));
-
-const isFailureStrategiesConfigValid = (
-  workflowDefinition: IWorkflowDefinition,
-): boolean =>
-  workflowDefinition.failureStrategy === WorkflowFailureStrategies.Retry &&
-  (!isNumber(R.path(['retry', 'limit'], workflowDefinition)) ||
-    !isNumber(R.path(['retry', 'delay'], workflowDefinition)));
-
-const isEmptyTasks = R.compose(
-  R.isEmpty,
-  R.prop('tasks'),
-);
-
-const getTaskDecisions = R.compose(
-  R.toPairs,
-  R.propOr({}, 'decisions'),
-);
-
-interface TasksValidateOutput {
-  errors: string[];
-  taskReferenceName: {
-    [taskName: string]: string;
-  };
-}
-
-// Recursively validate tasks
-// tslint:disable-next-line: max-func-body-length
-const validateTasks = (
-  tasks: AllTaskType[],
-  root: string,
-  defaultResult: TasksValidateOutput,
-) => {
-  if (!tasks.length) {
-    defaultResult.errors.push(`${root} cannot empty`);
-    return defaultResult;
-  }
-
-  return tasks.reduce(
-    (
-      result: TasksValidateOutput,
-      task: AllTaskType,
-      index: number,
-    ): TasksValidateOutput => {
-      const currentRoot = `${root}.tasks[${index}]`;
-      if (task.type === TaskTypes.Task && !isValidName(task.name))
-        result.errors.push(`${currentRoot}.name is invalid`);
-
-      if (!isValidName(task.taskReferenceName))
-        result.errors.push(`${currentRoot}.taskReferenceName is invalid`);
-
-      if (result.taskReferenceName[task.taskReferenceName])
-        result.errors.push(`${currentRoot}.taskReferenceName is duplicated`);
-      else
-        result.taskReferenceName[task.taskReferenceName] =
-          task.taskReferenceName;
-
-      if (!TaskTypesList.includes(task.type))
-        result.errors.push(`${currentRoot}.type is invalid`);
-
-      if (task.type === TaskTypes.Decision) {
-        const defaultDecision: AllTaskType[] = R.propOr(
-          [],
-          'defaultDecision',
-          task,
-        );
-        if (R.isEmpty(defaultDecision))
-          result.errors.push(`${currentRoot}.defaultDecision cannot be empty`);
-
-        const defaultDecisionResult = validateTasks(
-          defaultDecision,
-          `${currentRoot}.defaultDecision`,
-          result,
-        );
-
-        return getTaskDecisions(task).reduce(
-          (
-            decisionResult: TasksValidateOutput,
-            [decision, decisionTasks]: [string, AllTaskType[]],
-          ): TasksValidateOutput => {
-            return validateTasks(
-              decisionTasks,
-              `${currentRoot}.decisions["${decision}"]`,
-              decisionResult,
-            );
-          },
-          defaultDecisionResult,
-        );
-      }
-
-      if (task.type === TaskTypes.Parallel) {
-        const parallelTasks: AllTaskType[][] = R.propOr(
-          [],
-          'parallelTasks',
-          task,
-        );
-
-        if (!parallelTasks.length) {
-          result.errors.push(`${currentRoot}.parallelTasks cannot empty`);
-        }
-
-        return parallelTasks.reduce(
-          (
-            parallelResult: TasksValidateOutput,
-            parallelTasks: AllTaskType[],
-            index: number,
-          ): TasksValidateOutput => {
-            return validateTasks(
-              parallelTasks,
-              `${currentRoot}.parallelTasks[${index}]`,
-              parallelResult,
-            );
-          },
-          result,
-        );
-      }
-
-      return result;
-    },
-    defaultResult,
-  );
-};
-
-const workflowValidation = (
-  workflowDefinition: IWorkflowDefinition,
-): string[] => {
-  const errors = [];
-  if (!isValidName(workflowDefinition.name))
-    errors.push('workflowDefinition.name is invalid');
-
-  if (!isValidRev(workflowDefinition.rev))
-    errors.push('workflowDefinition.rev is invalid');
-
-  if (isRecoveryWorkflowConfigValid(workflowDefinition))
-    errors.push('workflowDefinition.recoveryWorkflow is invalid');
-
-  if (isFailureStrategiesConfigValid(workflowDefinition))
-    errors.push('workflowDefinition.retry is invalid');
-
-  if (isEmptyTasks(workflowDefinition))
-    errors.push('workflowDefinition.tasks cannot be empty');
-
-  return errors;
-};
-
 export class WorkflowDefinition implements IWorkflowDefinition {
-  name: string;
-  rev: string;
-  description?: string = 'No description';
-  tasks: AllTaskType[];
-  failureStrategy: WorkflowFailureStrategies;
-  retry?: {
-    limit: number;
-  };
-  recoveryWorkflow?: IWorkflowRef;
-  outputParameters: {};
+  name: IWorkflowDefinition['name'];
+  rev: IWorkflowDefinition['rev'];
+  description: IWorkflowDefinition['description'];
+  tasks: IWorkflowDefinition['tasks'];
+  failureStrategy: IWorkflowDefinition['failureStrategy'];
+  retry: IWorkflowDefinition['retry'];
+  recoveryWorkflow: IWorkflowDefinition['recoveryWorkflow'];
+  outputParameters: IWorkflowDefinition['outputParameters'];
 
   constructor(workflowDefinition: IWorkflowDefinition) {
-    const workflowValidationErrors = workflowValidation(workflowDefinition);
-
-    const validateTasksResult = validateTasks(
-      R.propOr([], 'tasks', workflowDefinition),
-      'workflowDefinition',
-      {
-        errors: workflowValidationErrors,
-        taskReferenceName: {},
-      },
+    const result = validate(
+      '#/definitions/IWorkflowDefinition',
+      workflowDefinition,
     );
-    if (validateTasksResult.errors.length)
-      throw new Error(validateTasksResult.errors.join('\n'));
 
-    Object.assign(
-      this,
-      R.pick(
-        [
-          'name',
-          'rev',
-          'description',
-          'tasks',
-          'failureStrategy',
-          'retry',
-          'recoveryWorkflow',
-          'outputParameters',
-        ],
-        workflowDefinition,
-      ),
-    );
+    Object.assign(this, result);
   }
 }

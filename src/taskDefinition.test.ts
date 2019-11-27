@@ -76,10 +76,10 @@ describe('TaskDefinition', () => {
       new Error([
         {
           dataPath: '.name',
-          keyword: 'pattern',
-          message: 'should match pattern "^[a-zA-Z0-9-_]{1,64}$"',
-          params: { pattern: '^[a-zA-Z0-9-_]{1,64}$' },
-          schemaPath: '#/properties/name/pattern',
+          keyword: 'maxLength',
+          message: 'should NOT be longer than 64 characters',
+          params: { limit: 64 },
+          schemaPath: '#/properties/name/maxLength',
         },
       ] as any),
     );
@@ -101,32 +101,32 @@ describe('TaskDefinition', () => {
     ).toThrow(
       new Error([
         {
-          keyword: 'minimum',
           dataPath: '.ackTimeout',
+          keyword: 'minimum',
+          message: 'should be >= 0',
+          params: { comparison: '>=', exclusive: false, limit: 0 },
           schemaPath: '#/properties/ackTimeout/minimum',
-          params: { comparison: '>=', limit: 0, exclusive: false },
-          message: 'should be >= 0',
         },
         {
-          keyword: 'minimum',
           dataPath: '.retry.delay',
+          keyword: 'minimum',
+          message: 'should be >= 0',
+          params: { comparison: '>=', exclusive: false, limit: 0 },
           schemaPath: '#/properties/retry/properties/delay/minimum',
-          params: { comparison: '>=', limit: 0, exclusive: false },
-          message: 'should be >= 0',
         },
         {
-          keyword: 'minimum',
           dataPath: '.retry.limit',
-          schemaPath: '#/properties/retry/properties/limit/minimum',
-          params: { comparison: '>=', limit: 0, exclusive: false },
+          keyword: 'minimum',
           message: 'should be >= 0',
+          params: { comparison: '>=', exclusive: false, limit: 0 },
+          schemaPath: '#/properties/retry/properties/limit/minimum',
         },
         {
-          keyword: 'minimum',
           dataPath: '.timeout',
-          schemaPath: '#/properties/timeout/minimum',
-          params: { comparison: '>=', limit: 0, exclusive: false },
+          keyword: 'minimum',
           message: 'should be >= 0',
+          params: { comparison: '>=', exclusive: false, limit: 0 },
+          schemaPath: '#/properties/timeout/minimum',
         },
       ] as any),
     );

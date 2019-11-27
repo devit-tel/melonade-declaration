@@ -99,14 +99,32 @@
             "properties": {
                 "inputParameters": {
                     "additionalProperties": {
-                        "type": [
-                            "string",
-                            "number"
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "properties": {
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": [
+                                    "string",
+                                    "number"
+                                ]
+                            }
                         ]
                     },
+                    "default": {
+                        "a": 0
+                    },
+                    "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
                 "taskReferenceName": {
+                    "description": "The referance name using in workflow",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 }
             },
@@ -141,17 +159,39 @@
             "properties": {
                 "inputParameters": {
                     "additionalProperties": {
-                        "type": [
-                            "string",
-                            "number"
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "properties": {
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": [
+                                    "string",
+                                    "number"
+                                ]
+                            }
                         ]
                     },
+                    "default": {
+                        "a": 0
+                    },
+                    "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
                 "name": {
+                    "description": "The task's name",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 },
                 "taskReferenceName": {
+                    "description": "The referance name using in workflow",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 },
                 "type": {
@@ -205,6 +245,7 @@
                     "type": "object"
                 },
                 "defaultDecision": {
+                    "description": "The tasks in workflow (can not be empty)",
                     "items": {
                         "anyOf": [
                             {
@@ -221,18 +262,37 @@
                             }
                         ]
                     },
+                    "minItems": 1,
                     "type": "array"
                 },
                 "inputParameters": {
                     "additionalProperties": {
-                        "type": [
-                            "string",
-                            "number"
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "properties": {
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": [
+                                    "string",
+                                    "number"
+                                ]
+                            }
                         ]
                     },
+                    "default": {
+                        "a": 0
+                    },
+                    "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
                 "taskReferenceName": {
+                    "description": "The referance name using in workflow",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 },
                 "type": {
@@ -262,14 +322,29 @@
             "properties": {
                 "inputParameters": {
                     "additionalProperties": {
-                        "type": [
-                            "string",
-                            "number"
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "properties": {
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": [
+                                    "string",
+                                    "number"
+                                ]
+                            }
                         ]
                     },
+                    "default": {
+                        "a": 0
+                    },
+                    "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
                 "parallelTasks": {
+                    "description": "The list of tasks that run parallely",
                     "items": {
                         "items": {
                             "anyOf": [
@@ -289,9 +364,14 @@
                         },
                         "type": "array"
                     },
+                    "minItems": 1,
                     "type": "array"
                 },
                 "taskReferenceName": {
+                    "description": "The referance name using in workflow",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 },
                 "type": {
@@ -578,10 +658,10 @@
                     "type": "object"
                 },
                 "name": {
-                    "description": "The task name",
-                    "maximum": 64,
-                    "minimum": 4,
-                    "pattern": "^[a-zA-Z0-9-_]{1,64}$",
+                    "description": "The task's name",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 },
                 "retry": {
@@ -673,35 +753,74 @@
         "ITaskTask": {
             "properties": {
                 "ackTimeout": {
+                    "default": 0,
+                    "description": "The given time that task can ack before it timeout in miliseconds (0 is no timeout)",
+                    "minimum": 0,
                     "type": "number"
                 },
                 "inputParameters": {
                     "additionalProperties": {
-                        "type": [
-                            "string",
-                            "number"
+                        "anyOf": [
+                            {
+                                "additionalProperties": true,
+                                "properties": {
+                                },
+                                "type": "object"
+                            },
+                            {
+                                "type": [
+                                    "string",
+                                    "number"
+                                ]
+                            }
                         ]
                     },
+                    "default": {
+                        "a": 0
+                    },
+                    "description": "The input to be mapping to workflow's data",
                     "type": "object"
                 },
                 "name": {
+                    "description": "The task's name",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 },
                 "retry": {
+                    "default": {
+                        "delay": 0,
+                        "limit": 0
+                    },
+                    "description": "Retry object",
                     "properties": {
                         "delay": {
+                            "default": 0,
+                            "description": "The delay before dispatch task",
+                            "minimum": 0,
                             "type": "number"
                         },
                         "limit": {
+                            "default": 0,
+                            "description": "Retry limit number (0 is no retry)",
+                            "minimum": 0,
                             "type": "number"
                         }
                     },
                     "type": "object"
                 },
                 "taskReferenceName": {
+                    "description": "The referance name using in workflow",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 },
                 "timeout": {
+                    "default": 0,
+                    "description": "The given time that task can finish before it timeout in miliseconds (0 is no timeout)",
+                    "minimum": 0,
                     "type": "number"
                 },
                 "type": {
@@ -888,34 +1007,57 @@
         "IWorkflowDefinition": {
             "properties": {
                 "description": {
+                    "default": "-",
+                    "description": "The task's description",
                     "type": "string"
                 },
                 "failureStrategy": {
-                    "$ref": "#/definitions/WorkflowFailureStrategies"
+                    "$ref": "#/definitions/WorkflowFailureStrategies",
+                    "default": "FAILED",
+                    "description": "The workflow's failure strategies"
                 },
                 "name": {
+                    "description": "The workflow's name",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 },
                 "outputParameters": {
                     "additionalProperties": {
                     },
+                    "default": {
+                    },
+                    "description": "The workflow's name",
                     "type": "object"
                 },
                 "recoveryWorkflow": {
                     "$ref": "#/definitions/IWorkflowRef"
                 },
                 "retry": {
+                    "default": {
+                        "limit": 0
+                    },
+                    "description": "Retry object",
                     "properties": {
                         "limit": {
+                            "default": 0,
+                            "description": "Retry limit number (0 is no retry)",
+                            "minimum": 0,
                             "type": "number"
                         }
                     },
                     "type": "object"
                 },
                 "rev": {
+                    "description": "The workflow's revision",
+                    "maxLength": 64,
+                    "minLength": 1,
+                    "pattern": "^[a-zA-Z0-9-_]+$",
                     "type": "string"
                 },
                 "tasks": {
+                    "description": "The tasks in workflow (can not be empty)",
                     "items": {
                         "anyOf": [
                             {
@@ -932,6 +1074,7 @@
                             }
                         ]
                     },
+                    "minItems": 1,
                     "type": "array"
                 }
             },
@@ -1031,12 +1174,10 @@
         "TaskDefinition": {
             "properties": {
                 "ackTimeout": {
-                    "default": 0,
                     "description": "The given time that task can ack before it timeout in miliseconds (0 is no timeout)",
                     "type": "number"
                 },
                 "description": {
-                    "default": "No description",
                     "description": "The task's description",
                     "type": "string"
                 },
@@ -1063,7 +1204,7 @@
                     "type": "object"
                 },
                 "name": {
-                    "description": "The task name",
+                    "description": "The task's name",
                     "type": "string"
                 },
                 "retry": {
@@ -1085,7 +1226,6 @@
                     "type": "object"
                 },
                 "timeout": {
-                    "default": 0,
                     "description": "The given time that task can finish before it timeout in miliseconds (0 is no timeout)",
                     "type": "number"
                 }
@@ -1112,22 +1252,26 @@
             ],
             "type": "string"
         },
-        "TasksValidateOutput": {
-            "properties": {
-                "errors": {
-                    "items": {
-                        "type": "string"
+        "Tasks": {
+            "description": "The tasks in workflow (can not be empty)",
+            "items": {
+                "anyOf": [
+                    {
+                        "$ref": "#/definitions/ITaskTask"
                     },
-                    "type": "array"
-                },
-                "taskReferenceName": {
-                    "additionalProperties": {
-                        "type": "string"
+                    {
+                        "$ref": "#/definitions/ICompensateTask"
                     },
-                    "type": "object"
-                }
+                    {
+                        "$ref": "#/definitions/IParallelTask"
+                    },
+                    {
+                        "$ref": "#/definitions/IDecisionTask"
+                    }
+                ]
             },
-            "type": "object"
+            "minItems": 1,
+            "type": "array"
         },
         "TimerType": {
             "enum": [
@@ -1242,32 +1386,47 @@
         "WorkflowDefinition": {
             "properties": {
                 "description": {
-                    "default": "No description",
+                    "description": "The task's description",
                     "type": "string"
                 },
                 "failureStrategy": {
-                    "$ref": "#/definitions/WorkflowFailureStrategies"
+                    "description": "The workflow's failure strategies",
+                    "enum": [
+                        "COMPENSATE",
+                        "COMPENSATE_THEN_RETRY",
+                        "FAILED",
+                        "RECOVERY_WORKFLOW",
+                        "RETRY"
+                    ],
+                    "type": "string"
                 },
                 "name": {
+                    "description": "The workflow's name",
                     "type": "string"
                 },
                 "outputParameters": {
-                    "properties": {
+                    "additionalProperties": {
                     },
+                    "description": "The workflow's name",
                     "type": "object"
                 },
                 "recoveryWorkflow": {
                     "$ref": "#/definitions/IWorkflowRef"
                 },
                 "retry": {
+                    "description": "Retry object",
                     "properties": {
                         "limit": {
+                            "default": 0,
+                            "description": "Retry limit number (0 is no retry)",
+                            "minimum": 0,
                             "type": "number"
                         }
                     },
                     "type": "object"
                 },
                 "rev": {
+                    "description": "The workflow's revision",
                     "type": "string"
                 },
                 "tasks": {
