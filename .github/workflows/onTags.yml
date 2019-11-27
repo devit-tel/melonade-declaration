@@ -21,7 +21,7 @@ jobs:
       - name: npm install
         run: |
           npm set registry "https://npmjs.com"
-          npm set //npmjs.com/:_authToken="${{NPM_TOKEN}}"
+          npm set //npmjs.com/:_authToken="${{secrets.NPM_TOKEN}}"
           npm install
           npm version ${{ steps.get_version.outputs.VERSION }}
           npm publish
