@@ -29,7 +29,7 @@ describe('WorkflowDefinition', () => {
           name: 'hihi',
           taskReferenceName: 'hihi',
           type: 'TASK',
-          inputParameters: {},
+          // inputParameters: {}, // IDK why AJV skip the $ref's default value, LOL
         },
       ],
     });
