@@ -1,4 +1,21 @@
+import * as AJV from 'ajv';
 import * as R from 'ramda';
+
+export const schema = require('../schema.json');
+
+export const ajv = new AJV({
+  schemas: [schema],
+  useDefaults: true,
+  allErrors: true,
+});
+
+export const validate = (schemaRef: string, data: any): any => {
+  if (ajv.validate(schemaRef, data)) {
+    return data;
+  }
+
+  throw ajv.errors;
+};
 
 export const isString = R.is(String);
 
@@ -10,10 +27,7 @@ export const isValidName = (name: string): boolean =>
 export const isValidRev = (rev: string): boolean =>
   isString(rev) && /^[a-zA-Z0-9-_]{1,64}$/.test(rev);
 
-export const enumToList = R.compose(
-  R.map(R.prop('1')),
-  R.toPairs,
-);
+export const enumToList = R.compose(R.map(R.prop('1')), R.toPairs);
 
 export const concatArray = (target: any[] = [], items: any[] | any): any[] => {
   if (R.isNil(items)) return target;

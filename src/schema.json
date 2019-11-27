@@ -258,28 +258,6 @@
             },
             "type": "object"
         },
-        "IDocIO": {
-            "properties": {
-                "description": {
-                    "type": "string"
-                },
-                "field": {
-                    "type": "string"
-                },
-                "required": {
-                    "type": "boolean"
-                },
-                "type": {
-                    "enum": [
-                        "mixed",
-                        "number",
-                        "string"
-                    ],
-                    "type": "string"
-                }
-            },
-            "type": "object"
-        },
         "IParallelTask": {
             "properties": {
                 "inputParameters": {
@@ -567,43 +545,71 @@
         "ITaskDefinition": {
             "properties": {
                 "ackTimeout": {
+                    "default": 0,
+                    "description": "The given time that task can ack before it timeout in miliseconds (0 is no timeout)",
+                    "minimum": 0,
                     "type": "number"
                 },
                 "description": {
+                    "default": "-",
+                    "description": "The task's description",
                     "type": "string"
                 },
                 "document": {
                     "properties": {
                         "inputs": {
-                            "items": {
-                                "$ref": "#/definitions/IDocIO"
+                            "additionalProperties": true,
+                            "default": {
                             },
-                            "type": "array"
+                            "description": "Embedded json schema",
+                            "properties": {
+                            },
+                            "type": "object"
                         },
                         "output": {
-                            "items": {
-                                "$ref": "#/definitions/IDocIO"
+                            "additionalProperties": true,
+                            "default": 0,
+                            "description": "Embedded json schema",
+                            "properties": {
                             },
-                            "type": "array"
+                            "type": "object"
                         }
                     },
                     "type": "object"
                 },
                 "name": {
+                    "description": "The task name",
+                    "maximum": 64,
+                    "minimum": 4,
+                    "pattern": "^[a-zA-Z0-9-_]{1,64}$",
                     "type": "string"
                 },
                 "retry": {
+                    "default": {
+                        "delay": 0,
+                        "limit": 0
+                    },
+                    "description": "Retry object",
                     "properties": {
                         "delay": {
+                            "default": 0,
+                            "description": "The delay before dispatch task",
+                            "minimum": 0,
                             "type": "number"
                         },
                         "limit": {
+                            "default": 0,
+                            "description": "Retry limit number (0 is no retry)",
+                            "minimum": 0,
                             "type": "number"
                         }
                     },
                     "type": "object"
                 },
                 "timeout": {
+                    "default": 0,
+                    "description": "The given time that task can finish before it timeout in miliseconds (0 is no timeout)",
+                    "minimum": 0,
                     "type": "number"
                 }
             },
@@ -1026,38 +1032,53 @@
             "properties": {
                 "ackTimeout": {
                     "default": 0,
+                    "description": "The given time that task can ack before it timeout in miliseconds (0 is no timeout)",
                     "type": "number"
                 },
                 "description": {
                     "default": "No description",
+                    "description": "The task's description",
                     "type": "string"
                 },
                 "document": {
                     "properties": {
                         "inputs": {
-                            "items": {
-                                "$ref": "#/definitions/IDocIO"
+                            "additionalProperties": true,
+                            "default": {
                             },
-                            "type": "array"
+                            "description": "Embedded json schema",
+                            "properties": {
+                            },
+                            "type": "object"
                         },
                         "output": {
-                            "items": {
-                                "$ref": "#/definitions/IDocIO"
+                            "additionalProperties": true,
+                            "default": 0,
+                            "description": "Embedded json schema",
+                            "properties": {
                             },
-                            "type": "array"
+                            "type": "object"
                         }
                     },
                     "type": "object"
                 },
                 "name": {
+                    "description": "The task name",
                     "type": "string"
                 },
                 "retry": {
+                    "description": "Retry object",
                     "properties": {
                         "delay": {
+                            "default": 0,
+                            "description": "The delay before dispatch task",
+                            "minimum": 0,
                             "type": "number"
                         },
                         "limit": {
+                            "default": 0,
+                            "description": "Retry limit number (0 is no retry)",
+                            "minimum": 0,
                             "type": "number"
                         }
                     },
@@ -1065,6 +1086,7 @@
                 },
                 "timeout": {
                     "default": 0,
+                    "description": "The given time that task can finish before it timeout in miliseconds (0 is no timeout)",
                     "type": "number"
                 }
             },

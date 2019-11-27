@@ -1,75 +1,94 @@
 import * as R from 'ramda';
-import { isNumber, isValidName } from './utils/common';
-
-interface IDocIO {
-  field: string;
-  type: 'string' | 'number' | 'mixed';
-  description: string;
-  required?: boolean;
-}
+import { validate } from './utils/common';
 
 export interface ITaskDefinition {
+  /**
+   * The task name
+   *
+   * @minimum 4
+   * @maximum 64
+   * @pattern ^[a-zA-Z0-9-_]$
+   * @TJS-type string
+   */
   name: string;
+  /**
+   * The task's description
+   *
+   * @default -
+   * @TJS-type string
+   */
   description?: string;
+  /**
+   * The given time that task can ack before it timeout in miliseconds (0 is no timeout)
+   *
+   * @minimum 0
+   * @default 0
+   * @TJS-type Integer
+   */
   ackTimeout?: number;
+  /**
+   * The given time that task can finish before it timeout in miliseconds (0 is no timeout)
+   *
+   * @minimum 0
+   * @default 0
+   * @TJS-type Integer
+   */
   timeout?: number;
+  /**
+   * Retry object
+   *
+   * @default {"limit":0,"delay":0}
+   */
   retry?: {
+    /**
+     * Retry limit number (0 is no retry)
+     *
+     * @minimum 0
+     * @default 0
+     * @TJS-type Integer
+     */
     limit: number;
+    /**
+     * The delay before dispatch task
+     *
+     * @minimum 0
+     * @default 0
+     * @TJS-type Integer
+     */
     delay: number;
   };
   document?: {
-    inputs?: IDocIO[];
-    output?: IDocIO[];
+    /**
+     * Embedded json schema
+     *
+     * @default {}
+     */
+    inputs?: object;
+    /**
+     * Embedded json schema
+     *
+     * @default 0
+     */
+    output?: object;
   };
 }
 
-const isRetryValid = (taskDefinition: ITaskDefinition): boolean =>
-  taskDefinition.retry &&
-  (!isNumber(R.path(['retry', 'limit'], taskDefinition)) ||
-    !isNumber(R.path(['retry', 'delay'], taskDefinition)));
-
-const taskValidation = (taskDefinition: ITaskDefinition): string[] => {
-  const errors = [];
-  if (!isValidName(taskDefinition.name))
-    errors.push('taskDefinition.name is invalid');
-
-  if (isRetryValid(TaskDefinition))
-    errors.push('taskDefinition.retry is invalid');
-
-  if (taskDefinition.ackTimeout && !isNumber(taskDefinition.ackTimeout))
-    errors.push('taskDefinition.ackTimeout is invalid');
-
-  if (taskDefinition.timeout && !isNumber(taskDefinition.timeout))
-    errors.push('taskDefinition.timeout is invalid');
-
-  return errors;
-};
-
 export class TaskDefinition implements ITaskDefinition {
-  name: string;
-  description: string = 'No description';
-  ackTimeout: number = 0;
-  timeout: number = 0;
-  retry: ITaskDefinition['retry'] = {
-    limit: 0,
-    delay: 1000,
-  };
-  document: ITaskDefinition['document'] = {
-    inputs: [],
-    output: [],
-  };
+  name: ITaskDefinition['name'];
+  description: ITaskDefinition['description'];
+  ackTimeout: ITaskDefinition['ackTimeout'];
+  timeout: ITaskDefinition['timeout'];
+  retry: ITaskDefinition['retry'];
+  document: ITaskDefinition['document'];
 
   constructor(taskDefinition: ITaskDefinition) {
-    const taskValidationErrors = taskValidation(taskDefinition);
-
-    if (taskValidationErrors.length)
-      throw new Error(taskValidationErrors.join('\n'));
+    const result = validate('#/definitions/ITaskDefinition', taskDefinition);
 
     Object.assign(
       this,
       R.pick(
         ['name', 'description', 'ackTimeout', 'timeout', 'retry', 'document'],
-        taskDefinition,
+        result,
       ),
     );
   }
