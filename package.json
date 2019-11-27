@@ -7,6 +7,7 @@
   },
   "main": "./build/index.js",
   "devDependencies": {
+    "@adobe/jsonschema2md": "^3.3.1",
     "@types/jest": "^24.0.23",
     "@types/node": "^10.17.5",
     "@types/ramda": "^0.26.33",
@@ -30,7 +31,8 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "prepublishOnly": "npm run build",
-    "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" --required --defaultProps --noExtraProps --out ./src/schema.json"
+    "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" --required --defaultProps --noExtraProps --out ./src/schema.json",
+    "build:docs": "jsonschema2md -d src/schema.json -o ./docs"
   },
   "license": "MIT",
   "dependencies": {
