@@ -3,7 +3,7 @@ name: On tags
 on:
   push:
     tags:
-      - ^[0-9].*
+      - '*'
 
 jobs:
   push-docker:
