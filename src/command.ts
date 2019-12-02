@@ -9,30 +9,30 @@ export enum CommandTypes {
   ReloadTask = 'RELOAD_TASK',
 }
 
-export interface ICommand {
+export interface IBaseCommand {
   transactionId: string;
 }
 
-export interface IStartTransactionCommand extends ICommand {
+export interface IStartTransactionCommand extends IBaseCommand {
   type: CommandTypes.StartTransaction;
   workflow: IWorkflowRef;
   input: any;
 }
 
-export interface ICancelTransactionCommand extends ICommand {
+export interface ICancelTransactionCommand extends IBaseCommand {
   type: CommandTypes.CancelTransaction;
   reason: string;
 }
 
-export interface IPauseTransactionCommand extends ICommand {
+export interface IPauseTransactionCommand extends IBaseCommand {
   type: CommandTypes.PauseTransaction;
 }
 
-export interface IResumeTransactionCommand extends ICommand {
+export interface IResumeTransactionCommand extends IBaseCommand {
   type: CommandTypes.ResumeTransaction;
 }
 
-export interface IReloadTaskCommand extends ICommand {
+export interface IReloadTaskCommand extends IBaseCommand {
   type: CommandTypes.ReloadTask;
   task: ITask;
 }
