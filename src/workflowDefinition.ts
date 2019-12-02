@@ -204,13 +204,14 @@ const checkDuplicateReferenceName = (
 const validateAllTaskReferenceName = (
   tasks: Tasks,
   path: (string | number)[] = [],
+  extraTasksReferenceName: string[] = [],
 ): string[] =>
   tasks.reduce(
     (tasksReferenceName: string[], task: AllTaskType, index: number) => {
       const currentPath = [...path, index];
       checkDuplicateReferenceName(
         task.taskReferenceName,
-        tasksReferenceName,
+        [...tasksReferenceName, ...extraTasksReferenceName],
         currentPath,
       );
 
@@ -219,14 +220,14 @@ const validateAllTaskReferenceName = (
         case Task.TaskTypes.Decision:
           const defaultDecisionsReferenceName = validateAllTaskReferenceName(
             task.defaultDecision,
-            [...path, 'defaultDecision'],
+            [...currentPath, 'defaultDecision'],
           );
 
           const eachDecisionsNames = Object.keys(
             task.decisions,
           ).map((decisionCase: string) =>
             validateAllTaskReferenceName(task.decisions[decisionCase], [
-              ...path,
+              ...currentPath,
               'decisions',
               decisionCase,
             ]),
@@ -253,12 +254,20 @@ const validateAllTaskReferenceName = (
           ];
         case Task.TaskTypes.Parallel:
           const allParallelReferenceNames = R.flatten(
-            task.parallelTasks.map((Paralleltasks: Tasks, index: number) =>
-              validateAllTaskReferenceName(Paralleltasks, [
-                ...path,
-                'parallelTasks',
-                index,
-              ]),
+            task.parallelTasks.reduce(
+              (
+                parallelReferenceNames: string[],
+                paralleltasks: Tasks,
+                index: number,
+              ) => [
+                ...parallelReferenceNames,
+                ...validateAllTaskReferenceName(
+                  paralleltasks,
+                  [...currentPath, 'parallelTasks', index],
+                  parallelReferenceNames,
+                ),
+              ],
+              [],
             ),
           );
           checkDuplicateReferenceName(
