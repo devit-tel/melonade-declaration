@@ -552,4 +552,446 @@ describe('WorkflowDefinition', () => {
       ],
     });
   });
+
+  test('Complicated tasks', () => {
+    expect(
+      new WorkflowDefinition({
+        name: 'test',
+        rev: '01',
+        tasks: [
+          {
+            taskReferenceName: 'hihi1',
+            type: TaskTypes.Parallel,
+            inputParameters: {},
+            parallelTasks: [
+              [
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihi2',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihi3',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+              ],
+              [
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihi4',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+                {
+                  taskReferenceName: 'hihi5',
+                  type: TaskTypes.Decision,
+                  inputParameters: {},
+                  decisions: {
+                    a: [
+                      {
+                        name: 'hihi',
+                        taskReferenceName: 'hihi6',
+                        type: TaskTypes.Task,
+                        inputParameters: {},
+                      },
+                    ],
+                  },
+                  defaultDecision: [
+                    {
+                      name: 'hihi',
+                      taskReferenceName: 'hihi6',
+                      type: TaskTypes.Task,
+                      inputParameters: {},
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        ],
+      }),
+    ).toEqual({
+      description: '-',
+      failureStrategy: 'FAILED',
+      name: 'test',
+      outputParameters: {},
+      retry: {
+        limit: 0,
+      },
+      rev: '01',
+      tasks: [
+        {
+          inputParameters: {},
+          parallelTasks: [
+            [
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihi2',
+                type: 'TASK',
+              },
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihi3',
+                type: 'TASK',
+              },
+            ],
+            [
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihi4',
+                type: 'TASK',
+              },
+              {
+                decisions: {
+                  a: [
+                    {
+                      inputParameters: {},
+                      name: 'hihi',
+                      taskReferenceName: 'hihi6',
+                      type: 'TASK',
+                    },
+                  ],
+                },
+                defaultDecision: [
+                  {
+                    inputParameters: {},
+                    name: 'hihi',
+                    taskReferenceName: 'hihi6',
+                    type: 'TASK',
+                  },
+                ],
+                inputParameters: {},
+                taskReferenceName: 'hihi5',
+                type: 'DECISION',
+              },
+            ],
+          ],
+          taskReferenceName: 'hihi1',
+          type: 'PARALLEL',
+        },
+      ],
+    });
+  });
+
+  test('More Complicated tasks', () => {
+    expect(
+      new WorkflowDefinition({
+        name: 'test',
+        rev: '01',
+        tasks: [
+          {
+            taskReferenceName: 'hihi1',
+            type: TaskTypes.Parallel,
+            inputParameters: {},
+            parallelTasks: [
+              [
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihi2',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihi3',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+              ],
+              [
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihi4',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+                {
+                  taskReferenceName: 'hihi5',
+                  type: TaskTypes.Decision,
+                  inputParameters: {},
+                  decisions: {
+                    a: [
+                      {
+                        taskReferenceName: 'hihix',
+                        type: TaskTypes.Parallel,
+                        inputParameters: {},
+                        parallelTasks: [
+                          [
+                            {
+                              name: 'hihi',
+                              taskReferenceName: 'hihixx',
+                              type: TaskTypes.Task,
+                              inputParameters: {},
+                            },
+                            {
+                              name: 'hihi',
+                              taskReferenceName: 'hihixxx',
+                              type: TaskTypes.Task,
+                              inputParameters: {},
+                            },
+                          ],
+                          [
+                            {
+                              name: 'hihi',
+                              taskReferenceName: 'hihiyy',
+                              type: TaskTypes.Task,
+                              inputParameters: {},
+                            },
+                            {
+                              name: 'hihi',
+                              taskReferenceName: 'hihiyyy',
+                              type: TaskTypes.Task,
+                              inputParameters: {},
+                            },
+                          ],
+                        ],
+                      },
+                    ],
+                    c: [
+                      {
+                        taskReferenceName: 'hihix',
+                        type: TaskTypes.Parallel,
+                        inputParameters: {},
+                        parallelTasks: [
+                          [
+                            {
+                              name: 'hihi',
+                              taskReferenceName: 'hihixx',
+                              type: TaskTypes.Task,
+                              inputParameters: {},
+                            },
+                            {
+                              name: 'hihi',
+                              taskReferenceName: 'hihixxx',
+                              type: TaskTypes.Task,
+                              inputParameters: {},
+                            },
+                          ],
+                          [
+                            {
+                              name: 'hihi',
+                              taskReferenceName: 'hihiyy',
+                              type: TaskTypes.Task,
+                              inputParameters: {},
+                            },
+                            {
+                              name: 'hihi',
+                              taskReferenceName: 'hihiyyy',
+                              type: TaskTypes.Task,
+                              inputParameters: {},
+                            },
+                          ],
+                        ],
+                      },
+                    ],
+                  },
+                  defaultDecision: [
+                    {
+                      taskReferenceName: 'hihix',
+                      type: TaskTypes.Parallel,
+                      inputParameters: {},
+                      parallelTasks: [
+                        [
+                          {
+                            name: 'hihi',
+                            taskReferenceName: 'hihixx',
+                            type: TaskTypes.Task,
+                            inputParameters: {},
+                          },
+                          {
+                            name: 'hihi',
+                            taskReferenceName: 'hihixxx',
+                            type: TaskTypes.Task,
+                            inputParameters: {},
+                          },
+                        ],
+                        [
+                          {
+                            name: 'hihi',
+                            taskReferenceName: 'hihiyy',
+                            type: TaskTypes.Task,
+                            inputParameters: {},
+                          },
+                          {
+                            name: 'hihi',
+                            taskReferenceName: 'hihiyyy',
+                            type: TaskTypes.Task,
+                            inputParameters: {},
+                          },
+                        ],
+                      ],
+                    },
+                  ],
+                },
+              ],
+            ],
+          },
+        ],
+      }),
+    ).toEqual({
+      description: '-',
+      failureStrategy: 'FAILED',
+      name: 'test',
+      outputParameters: {},
+      retry: {
+        limit: 0,
+      },
+      rev: '01',
+      tasks: [
+        {
+          inputParameters: {},
+          parallelTasks: [
+            [
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihi2',
+                type: 'TASK',
+              },
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihi3',
+                type: 'TASK',
+              },
+            ],
+            [
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihi4',
+                type: 'TASK',
+              },
+              {
+                decisions: {
+                  a: [
+                    {
+                      inputParameters: {},
+                      parallelTasks: [
+                        [
+                          {
+                            inputParameters: {},
+                            name: 'hihi',
+                            taskReferenceName: 'hihixx',
+                            type: 'TASK',
+                          },
+                          {
+                            inputParameters: {},
+                            name: 'hihi',
+                            taskReferenceName: 'hihixxx',
+                            type: 'TASK',
+                          },
+                        ],
+                        [
+                          {
+                            inputParameters: {},
+                            name: 'hihi',
+                            taskReferenceName: 'hihiyy',
+                            type: 'TASK',
+                          },
+                          {
+                            inputParameters: {},
+                            name: 'hihi',
+                            taskReferenceName: 'hihiyyy',
+                            type: 'TASK',
+                          },
+                        ],
+                      ],
+                      taskReferenceName: 'hihix',
+                      type: 'PARALLEL',
+                    },
+                  ],
+                  c: [
+                    {
+                      inputParameters: {},
+                      parallelTasks: [
+                        [
+                          {
+                            inputParameters: {},
+                            name: 'hihi',
+                            taskReferenceName: 'hihixx',
+                            type: 'TASK',
+                          },
+                          {
+                            inputParameters: {},
+                            name: 'hihi',
+                            taskReferenceName: 'hihixxx',
+                            type: 'TASK',
+                          },
+                        ],
+                        [
+                          {
+                            inputParameters: {},
+                            name: 'hihi',
+                            taskReferenceName: 'hihiyy',
+                            type: 'TASK',
+                          },
+                          {
+                            inputParameters: {},
+                            name: 'hihi',
+                            taskReferenceName: 'hihiyyy',
+                            type: 'TASK',
+                          },
+                        ],
+                      ],
+                      taskReferenceName: 'hihix',
+                      type: 'PARALLEL',
+                    },
+                  ],
+                },
+                defaultDecision: [
+                  {
+                    inputParameters: {},
+                    parallelTasks: [
+                      [
+                        {
+                          inputParameters: {},
+                          name: 'hihi',
+                          taskReferenceName: 'hihixx',
+                          type: 'TASK',
+                        },
+                        {
+                          inputParameters: {},
+                          name: 'hihi',
+                          taskReferenceName: 'hihixxx',
+                          type: 'TASK',
+                        },
+                      ],
+                      [
+                        {
+                          inputParameters: {},
+                          name: 'hihi',
+                          taskReferenceName: 'hihiyy',
+                          type: 'TASK',
+                        },
+                        {
+                          inputParameters: {},
+                          name: 'hihi',
+                          taskReferenceName: 'hihiyyy',
+                          type: 'TASK',
+                        },
+                      ],
+                    ],
+                    taskReferenceName: 'hihix',
+                    type: 'PARALLEL',
+                  },
+                ],
+                inputParameters: {},
+                taskReferenceName: 'hihi5',
+                type: 'DECISION',
+              },
+            ],
+          ],
+          taskReferenceName: 'hihi1',
+          type: 'PARALLEL',
+        },
+      ],
+    });
+  });
 });
