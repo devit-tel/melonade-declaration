@@ -1,3 +1,5 @@
+import * as R from 'ramda';
+import { Task } from '.';
 import { WorkflowFailureStrategies } from './state';
 import { TaskTypes } from './task';
 import { validate } from './utils/common';
@@ -181,6 +183,65 @@ export interface IWorkflowDefinition {
   };
 }
 
+const validateAllTaskReferenceName = (
+  tasks: Tasks,
+  path: (string | number)[] = [],
+): string[] =>
+  tasks.reduce((tasksReference: string[], task: AllTaskType, index: number) => {
+    if (tasksReference.includes(task.taskReferenceName)) {
+      throw [
+        {
+          dataPath: ['.tasks', ...path, index, 'taskReferenceName'].join('.'),
+          keyword: 'uniq',
+          message: "should have uniq property 'taskReferenceName'",
+          params: {
+            value: task.taskReferenceName,
+          },
+        },
+      ];
+    }
+
+    switch (task.type) {
+      case Task.TaskTypes.Decision:
+        return [
+          ...tasksReference,
+          task.taskReferenceName,
+          ...R.flatten(
+            Object.keys(task.decisions).map((decisionCase: string) =>
+              validateAllTaskReferenceName(task.decisions[decisionCase], [
+                ...path,
+                'decisions',
+                decisionCase,
+              ]),
+            ),
+          ),
+          ...validateAllTaskReferenceName(task.defaultDecision, [
+            ...path,
+            'defaultDecision',
+          ]),
+        ];
+      case Task.TaskTypes.Parallel:
+        return [
+          ...tasksReference,
+          task.taskReferenceName,
+
+          ...R.flatten(
+            task.parallelTasks.map((Paralleltasks: Tasks, index: number) =>
+              validateAllTaskReferenceName(Paralleltasks, [
+                ...path,
+                'parallelTasks',
+                index,
+              ]),
+            ),
+          ),
+        ];
+      case Task.TaskTypes.Compensate:
+      case Task.TaskTypes.Task:
+      default:
+        return [...tasksReference, task.taskReferenceName];
+    }
+  }, []);
+
 export class WorkflowDefinition implements IWorkflowDefinition {
   name: IWorkflowDefinition['name'];
   rev: IWorkflowDefinition['rev'];
@@ -196,6 +257,8 @@ export class WorkflowDefinition implements IWorkflowDefinition {
       '#/definitions/IWorkflowDefinition',
       workflowDefinition,
     );
+
+    validateAllTaskReferenceName(workflowDefinition.tasks);
 
     Object.assign(this, result);
   }
