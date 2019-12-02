@@ -37,7 +37,7 @@ describe('WorkflowDefinition', () => {
   });
 
   test('Duplicate taskReferenceName', () => {
-    try {
+    expect(() => {
       new WorkflowDefinition({
         name: 'test',
         rev: '01',
@@ -62,22 +62,20 @@ describe('WorkflowDefinition', () => {
           },
         ],
       });
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
-    } catch (e) {
-      expect(e).toEqual([
+    }).toThrow(
+      new Error([
         {
           dataPath: '.tasks.1.taskReferenceName',
           keyword: 'uniq',
           message: "should have uniq property 'taskReferenceName'",
           params: { value: 'hihi' },
         },
-      ]);
-    }
+      ] as any),
+    );
   });
 
   test('Duplicate taskReferenceName Decision (Parent-Child)', () => {
-    try {
+    expect(() => {
       new WorkflowDefinition({
         name: 'test',
         rev: '01',
@@ -107,10 +105,8 @@ describe('WorkflowDefinition', () => {
           },
         ],
       });
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
-    } catch (e) {
-      expect(e).toEqual([
+    }).toThrow(
+      new Error([
         {
           dataPath: '.tasks.0.taskReferenceName',
           keyword: 'uniq',
@@ -119,12 +115,12 @@ describe('WorkflowDefinition', () => {
             value: 'hihi2',
           },
         },
-      ]);
-    }
+      ] as any),
+    );
   });
 
   test('Duplicate taskReferenceName Decision (Child-Child)', () => {
-    try {
+    expect(() => {
       new WorkflowDefinition({
         name: 'test',
         rev: '01',
@@ -160,10 +156,8 @@ describe('WorkflowDefinition', () => {
           },
         ],
       });
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
-    } catch (e) {
-      expect(e).toEqual([
+    }).toThrow(
+      new Error([
         {
           dataPath: '.tasks.0.decisions.a.1.taskReferenceName',
           keyword: 'uniq',
@@ -172,8 +166,8 @@ describe('WorkflowDefinition', () => {
             value: 'hihix',
           },
         },
-      ]);
-    }
+      ] as any),
+    );
   });
 
   test('Duplicate taskReferenceName Decision Diffrent case (Valid)', () => {
@@ -297,7 +291,7 @@ describe('WorkflowDefinition', () => {
   });
 
   test('Duplicate taskReferenceName Parallel (Parent-Child)', () => {
-    try {
+    expect(() => {
       new WorkflowDefinition({
         name: 'test',
         rev: '01',
@@ -339,10 +333,8 @@ describe('WorkflowDefinition', () => {
           },
         ],
       });
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
-    } catch (e) {
-      expect(e).toEqual([
+    }).toThrow(
+      new Error([
         {
           dataPath: '.tasks.0.taskReferenceName',
           keyword: 'uniq',
@@ -351,12 +343,12 @@ describe('WorkflowDefinition', () => {
             value: 'hihi1',
           },
         },
-      ]);
-    }
+      ] as any),
+    );
   });
 
   test('Duplicate taskReferenceName Parallel (Child-Child)', () => {
-    try {
+    expect(() => {
       new WorkflowDefinition({
         name: 'test',
         rev: '01',
@@ -398,10 +390,8 @@ describe('WorkflowDefinition', () => {
           },
         ],
       });
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
-    } catch (e) {
-      expect(e).toEqual([
+    }).toThrow(
+      new Error([
         {
           dataPath: '.tasks.0.parallelTasks.0.1.taskReferenceName',
           keyword: 'uniq',
@@ -410,12 +400,12 @@ describe('WorkflowDefinition', () => {
             value: 'hihix',
           },
         },
-      ]);
-    }
+      ] as any),
+    );
   });
 
   test('Duplicate taskReferenceName Parallel Diffirent line (Invalid)', () => {
-    try {
+    expect(() => {
       new WorkflowDefinition({
         name: 'test',
         rev: '01',
@@ -457,10 +447,8 @@ describe('WorkflowDefinition', () => {
           },
         ],
       });
-      // Fail test if above expression doesn't throw anything.
-      expect(true).toBe(false);
-    } catch (e) {
-      expect(e).toEqual([
+    }).toThrow(
+      new Error([
         {
           dataPath: '.tasks.0.parallelTasks.1.1.taskReferenceName',
           keyword: 'uniq',
@@ -469,7 +457,7 @@ describe('WorkflowDefinition', () => {
             value: 'hihiy',
           },
         },
-      ]);
-    }
+      ] as any),
+    );
   });
 });
