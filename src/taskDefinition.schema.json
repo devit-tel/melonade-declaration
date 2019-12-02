@@ -1,0 +1,82 @@
+{
+  "$ref": "#/definitions/ITaskDefinition",
+  "$schema": "http://json-schema.org/draft-07/schema#",
+  "definitions": {
+    "ITaskDefinition": {
+      "additionalProperties": false,
+      "properties": {
+        "ackTimeout": {
+          "default": 0,
+          "description": "The given time that task can ack before it timeout in miliseconds (0 is no timeout)",
+          "minimum": 0,
+          "type": "number"
+        },
+        "description": {
+          "description": "The task's description",
+          "type": "string"
+        },
+        "document": {
+          "additionalProperties": false,
+          "properties": {
+            "inputs": {
+              "default": {
+              },
+              "description": "Embedded json schema",
+              "type": "object"
+            },
+            "output": {
+              "default": 0,
+              "description": "Embedded json schema",
+              "type": "object"
+            }
+          },
+          "type": "object"
+        },
+        "name": {
+          "description": "The task's name",
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-_]+$",
+          "type": "string"
+        },
+        "retry": {
+          "additionalProperties": false,
+          "default": {
+            "delay": 0,
+            "limit": 0
+          },
+          "description": "Retry object",
+          "properties": {
+            "delay": {
+              "default": 0,
+              "description": "The delay before dispatch task",
+              "minimum": 0,
+              "type": "number"
+            },
+            "limit": {
+              "default": 0,
+              "description": "Retry limit number (0 is no retry)",
+              "minimum": 0,
+              "type": "number"
+            }
+          },
+          "required": [
+            "limit",
+            "delay"
+          ],
+          "type": "object"
+        },
+        "timeout": {
+          "default": 0,
+          "description": "The given time that task can finish before it timeout in miliseconds (0 is no timeout)",
+          "minimum": 0,
+          "type": "number"
+        }
+      },
+      "required": [
+        "name"
+      ],
+      "type": "object"
+    }
+  }
+}

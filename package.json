@@ -7,7 +7,6 @@
   },
   "main": "./build/index.js",
   "devDependencies": {
-    "@adobe/jsonschema2md": "^3.3.1",
     "@types/jest": "^24.0.23",
     "@types/node": "^10.17.5",
     "@types/ramda": "^0.26.33",
@@ -15,24 +14,26 @@
     "prettier": "^1.19.1",
     "rimraf": "^2.6.3",
     "ts-jest": "^24.0.0",
+    "ts-json-schema-generator": "^0.56.0",
     "ts-node": "^8.5.0",
     "tslint": "^5.20.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-microsoft-contrib": "^6.2.0",
     "tsutils": "^3.17.1",
-    "typescript": "^3.7.2",
-    "typescript-json-schema": "^0.40.0"
+    "typescript": "^3.7.2"
   },
   "scripts": {
     "clean": "rimraf coverage build tmp",
-    "build": "npm run clean & npm run jsonschema & tsc -p tsconfig.release.json",
-    "build:watch": "npm run clean & npm run jsonschema  & tsc -w -p tsconfig.release.json",
+    "build": "npm run clean & tsc -p tsconfig.release.json",
+    "build:watch": "npm run clean & tsc -w -p tsconfig.release.json",
     "lint": "tslint -t stylish --project \"tsconfig.json\"",
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "prepublishOnly": "npm run build & npm run build:docs",
-    "jsonschema": "typescript-json-schema \"./tsconfig.release.json\" \"*\" --required --defaultProps --noExtraProps --refs true --out ./src/schema.json",
-    "build:docs": "jsonschema2md -d src/schema.json -o ./docs"
+    "build:docs": "jsonschema2md -d src/schema.json -o ./docs",
+    "json-schema": "npm run json-schema:workflowDefinition & npm run json-schema:taskDefinition",
+    "json-schema:workflowDefinition": "ts-json-schema-generator --path ./src/**.*.ts --type IWorkflowDefinition --tsconfig \"./tsconfig.release.json\" > ./src/workflowDefinition.schema.json",
+    "json-schema:taskDefinition": "ts-json-schema-generator --path ./src/**.*.ts --type ITaskDefinition --tsconfig \"./tsconfig.release.json\" > ./src/taskDefinition.schema.json"
   },
   "license": "MIT",
   "dependencies": {

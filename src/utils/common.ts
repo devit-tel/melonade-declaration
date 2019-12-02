@@ -1,17 +1,15 @@
 import * as AJV from 'ajv';
 import * as R from 'ramda';
 
-export const schema = require('../schema.json');
+export const taskDefinitionSchema = require('../taskDefinition.schema.json');
+export const workflowDefinitionSchema = require('../workflowDefinition.schema.json');
 
 export const ajv = new AJV({
-  schemas: [schema],
   useDefaults: true,
-  allErrors: true,
-  removeAdditional: 'all',
 });
 
-export const validate = (schemaRef: string, data: any): any => {
-  if (ajv.validate(schemaRef, data)) {
+export const validate = (schema: object, data: any): any => {
+  if (ajv.validate(schema, data)) {
     return data;
   }
 

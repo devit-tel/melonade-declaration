@@ -110,7 +110,16 @@ describe('WorkflowDefinition', () => {
       // Fail test if above expression doesn't throw anything.
       expect(true).toBe(false);
     } catch (e) {
-      expect(e).toEqual([]);
+      expect(e).toEqual([
+        {
+          dataPath: '.tasks.0.taskReferenceName',
+          keyword: 'uniq',
+          message: "should have uniq property 'taskReferenceName'",
+          params: {
+            value: 'hihi2',
+          },
+        },
+      ]);
     }
   });
 });

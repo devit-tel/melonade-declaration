@@ -1,4 +1,4 @@
-import { validate } from './utils/common';
+import { taskDefinitionSchema, validate } from './utils/common';
 
 export interface ITaskDefinition {
   /**
@@ -81,7 +81,7 @@ export class TaskDefinition implements ITaskDefinition {
   document: ITaskDefinition['document'];
 
   constructor(taskDefinition: ITaskDefinition) {
-    const result = validate('#/definitions/ITaskDefinition', taskDefinition);
+    const result = validate(taskDefinitionSchema, taskDefinition);
 
     Object.assign(this, result);
   }

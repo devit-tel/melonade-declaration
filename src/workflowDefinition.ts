@@ -2,7 +2,7 @@ import * as R from 'ramda';
 import { Task } from '.';
 import { WorkflowFailureStrategies } from './state';
 import { TaskTypes } from './task';
-import { validate } from './utils/common';
+import { validate, workflowDefinitionSchema } from './utils/common';
 
 export interface IWorkflowRef {
   name: string;
@@ -142,9 +142,9 @@ export interface IWorkflowDefinition {
    */
   rev: string;
   /**
-   * The task's description
+   * The workflow's description
    *
-   * @default -
+   * @default "-"
    * @TJS-type string
    */
   description?: string;
@@ -152,7 +152,7 @@ export interface IWorkflowDefinition {
   /**
    * The workflow's failure strategies
    *
-   * @default FAILED
+   * @default "FAILED"
    * @TJS-type string
    */
   failureStrategy?: WorkflowFailureStrategies;
@@ -183,49 +183,76 @@ export interface IWorkflowDefinition {
   };
 }
 
+const checkDuplicateReferenceName = (
+  taskReferenceName: string,
+  tasksReferenceName: string[],
+  path: (string | number)[],
+) => {
+  if (tasksReferenceName.includes(taskReferenceName))
+    throw [
+      {
+        dataPath: ['.tasks', ...path, 'taskReferenceName'].join('.'),
+        keyword: 'uniq',
+        message: "should have uniq property 'taskReferenceName'",
+        params: {
+          value: taskReferenceName,
+        },
+      },
+    ];
+};
+
 const validateAllTaskReferenceName = (
   tasks: Tasks,
   path: (string | number)[] = [],
 ): string[] =>
-  tasks.reduce((tasksReference: string[], task: AllTaskType, index: number) => {
-    if (tasksReference.includes(task.taskReferenceName)) {
-      throw [
-        {
-          dataPath: ['.tasks', ...path, index, 'taskReferenceName'].join('.'),
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: {
-            value: task.taskReferenceName,
-          },
-        },
-      ];
-    }
+  tasks.reduce(
+    (tasksReferenceName: string[], task: AllTaskType, index: number) => {
+      const currentPath = [...path, index];
+      checkDuplicateReferenceName(
+        task.taskReferenceName,
+        tasksReferenceName,
+        currentPath,
+      );
 
-    switch (task.type) {
-      case Task.TaskTypes.Decision:
-        return [
-          ...tasksReference,
-          task.taskReferenceName,
-          ...R.flatten(
-            Object.keys(task.decisions).map((decisionCase: string) =>
-              validateAllTaskReferenceName(task.decisions[decisionCase], [
-                ...path,
-                'decisions',
-                decisionCase,
-              ]),
+      switch (task.type) {
+        // This's important diffirent case can have same ReferenceName
+        case Task.TaskTypes.Decision:
+          const defaultDecisionsReferenceName = validateAllTaskReferenceName(
+            task.defaultDecision,
+            [...path, 'defaultDecision'],
+          );
+
+          const eachDecisionsNames = Object.keys(
+            task.decisions,
+          ).map((decisionCase: string) =>
+            validateAllTaskReferenceName(task.decisions[decisionCase], [
+              ...path,
+              'decisions',
+              decisionCase,
+            ]),
+          );
+
+          checkDuplicateReferenceName(
+            task.taskReferenceName,
+            defaultDecisionsReferenceName,
+            currentPath,
+          );
+          eachDecisionsNames.forEach((eachDecisionsName: string[]) =>
+            checkDuplicateReferenceName(
+              task.taskReferenceName,
+              eachDecisionsName,
+              currentPath,
             ),
-          ),
-          ...validateAllTaskReferenceName(task.defaultDecision, [
-            ...path,
-            'defaultDecision',
-          ]),
-        ];
-      case Task.TaskTypes.Parallel:
-        return [
-          ...tasksReference,
-          task.taskReferenceName,
+          );
 
-          ...R.flatten(
+          return [
+            ...tasksReferenceName,
+            task.taskReferenceName,
+            ...R.flatten(eachDecisionsNames),
+            ...defaultDecisionsReferenceName,
+          ];
+        case Task.TaskTypes.Parallel:
+          const allParallelReferenceNames = R.flatten(
             task.parallelTasks.map((Paralleltasks: Tasks, index: number) =>
               validateAllTaskReferenceName(Paralleltasks, [
                 ...path,
@@ -233,14 +260,26 @@ const validateAllTaskReferenceName = (
                 index,
               ]),
             ),
-          ),
-        ];
-      case Task.TaskTypes.Compensate:
-      case Task.TaskTypes.Task:
-      default:
-        return [...tasksReference, task.taskReferenceName];
-    }
-  }, []);
+          );
+          checkDuplicateReferenceName(
+            task.taskReferenceName,
+            allParallelReferenceNames,
+            currentPath,
+          );
+
+          return [
+            ...tasksReferenceName,
+            task.taskReferenceName,
+            ...allParallelReferenceNames,
+          ];
+        case Task.TaskTypes.Compensate:
+        case Task.TaskTypes.Task:
+        default:
+          return [...tasksReferenceName, task.taskReferenceName];
+      }
+    },
+    [],
+  );
 
 export class WorkflowDefinition implements IWorkflowDefinition {
   name: IWorkflowDefinition['name'];
@@ -253,10 +292,7 @@ export class WorkflowDefinition implements IWorkflowDefinition {
   outputParameters: IWorkflowDefinition['outputParameters'];
 
   constructor(workflowDefinition: IWorkflowDefinition) {
-    const result = validate(
-      '#/definitions/IWorkflowDefinition',
-      workflowDefinition,
-    );
+    const result = validate(workflowDefinitionSchema, workflowDefinition);
 
     validateAllTaskReferenceName(workflowDefinition.tasks);
 
