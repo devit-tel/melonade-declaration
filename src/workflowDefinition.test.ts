@@ -460,4 +460,96 @@ describe('WorkflowDefinition', () => {
       ] as any),
     );
   });
+
+  test('No Duplicate taskReferenceName Parallel', () => {
+    expect(
+      new WorkflowDefinition({
+        name: 'test',
+        rev: '01',
+        tasks: [
+          {
+            taskReferenceName: 'hihi1',
+            type: TaskTypes.Parallel,
+            inputParameters: {},
+            parallelTasks: [
+              [
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihia',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihib',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+              ],
+              [
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihic',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+                {
+                  name: 'hihi',
+                  taskReferenceName: 'hihid',
+                  type: TaskTypes.Task,
+                  inputParameters: {},
+                },
+              ],
+            ],
+          },
+        ],
+      }),
+    ).toEqual({
+      description: '-',
+      failureStrategy: 'FAILED',
+      name: 'test',
+      outputParameters: {},
+      retry: {
+        limit: 0,
+      },
+      rev: '01',
+      tasks: [
+        {
+          inputParameters: {},
+          parallelTasks: [
+            [
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihia',
+                type: 'TASK',
+              },
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihib',
+                type: 'TASK',
+              },
+            ],
+            [
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihic',
+                type: 'TASK',
+              },
+              {
+                inputParameters: {},
+                name: 'hihi',
+                taskReferenceName: 'hihid',
+                type: 'TASK',
+              },
+            ],
+          ],
+          taskReferenceName: 'hihi1',
+          type: 'PARALLEL',
+        },
+      ],
+    });
+  });
 });
