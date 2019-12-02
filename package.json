@@ -20,6 +20,8 @@
     "tslint-config-prettier": "^1.18.0",
     "tslint-microsoft-contrib": "^6.2.0",
     "tsutils": "^3.17.1",
+    "typedoc": "^0.15.3",
+    "typedoc-plugin-markdown": "^2.2.11",
     "typescript": "^3.7.2"
   },
   "scripts": {
@@ -30,7 +32,7 @@
     "test": "jest --coverage",
     "test:watch": "jest --watch",
     "prepublishOnly": "npm run build & npm run build:docs",
-    "build:docs": "jsonschema2md -d src/schema.json -o ./docs",
+    "build:docs": "typedoc --plugin typedoc-plugin-markdown --theme markdown",
     "json-schema": "npm run json-schema:workflowDefinition & npm run json-schema:taskDefinition",
     "json-schema:workflowDefinition": "ts-json-schema-generator --path ./src/**.*.ts --type IWorkflowDefinition --tsconfig \"./tsconfig.release.json\" > ./src/workflowDefinition.schema.json",
     "json-schema:taskDefinition": "ts-json-schema-generator --path ./src/**.*.ts --type ITaskDefinition --tsconfig \"./tsconfig.release.json\" > ./src/taskDefinition.schema.json"
