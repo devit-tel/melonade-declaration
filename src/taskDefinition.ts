@@ -13,7 +13,7 @@ export interface ITaskDefinition {
   /**
    * The task's description
    *
-   * @default -
+   * @default "-"
    * @TJS-type string
    */
   description?: string;

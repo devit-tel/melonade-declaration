@@ -105,28 +105,8 @@ describe('TaskDefinition', () => {
           keyword: 'minimum',
           message: 'should be >= 0',
           params: { comparison: '>=', exclusive: false, limit: 0 },
-          schemaPath: '#/properties/ackTimeout/minimum',
-        },
-        {
-          dataPath: '.retry.delay',
-          keyword: 'minimum',
-          message: 'should be >= 0',
-          params: { comparison: '>=', exclusive: false, limit: 0 },
-          schemaPath: '#/properties/retry/properties/delay/minimum',
-        },
-        {
-          dataPath: '.retry.limit',
-          keyword: 'minimum',
-          message: 'should be >= 0',
-          params: { comparison: '>=', exclusive: false, limit: 0 },
-          schemaPath: '#/properties/retry/properties/limit/minimum',
-        },
-        {
-          dataPath: '.timeout',
-          keyword: 'minimum',
-          message: 'should be >= 0',
-          params: { comparison: '>=', exclusive: false, limit: 0 },
-          schemaPath: '#/properties/timeout/minimum',
+          schemaPath:
+            '#/definitions/ITaskDefinition/properties/ackTimeout/minimum',
         },
       ] as any),
     );

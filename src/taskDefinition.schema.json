@@ -12,6 +12,7 @@
           "type": "number"
         },
         "description": {
+          "default": "-",
           "description": "The task's description",
           "type": "string"
         },
