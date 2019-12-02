@@ -83,13 +83,6 @@ describe('WorkflowDefinition', () => {
         rev: '01',
         tasks: [
           {
-            name: 'hihi',
-            taskReferenceName: 'hihi',
-            type: TaskTypes.Task,
-            inputParameters: {},
-          },
-          {
-            name: 'hihi',
             taskReferenceName: 'hihi2',
             type: TaskTypes.Decision,
             inputParameters: {},
@@ -112,25 +105,12 @@ describe('WorkflowDefinition', () => {
               },
             ],
           },
-          {
-            name: 'hihi',
-            taskReferenceName: 'hihi4',
-            type: TaskTypes.Task,
-            inputParameters: {},
-          },
-        ] as any,
+        ],
       });
       // Fail test if above expression doesn't throw anything.
       expect(true).toBe(false);
     } catch (e) {
-      expect(e).toEqual([
-        {
-          dataPath: 'tasks.',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: { value: 'hihi3' },
-        },
-      ]);
+      expect(e).toEqual([]);
     }
   });
 });
