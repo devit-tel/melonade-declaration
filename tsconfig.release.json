@@ -6,6 +6,6 @@
     "removeComments": true,
     "resolveJsonModule": true
   },
-  "include": ["src/**/*.ts", "src/schema.json"],
+  "include": ["src/**/*.ts", "src/**.*.schema.json"],
   "exclude": ["src/**/*.test.ts"]
 }
