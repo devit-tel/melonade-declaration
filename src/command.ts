@@ -1,5 +1,5 @@
 import { ITask } from './task';
-import { IWorkflowRef } from './workflowDefinition';
+import { IWorkflowDefinition, IWorkflowRef } from './workflowDefinition';
 
 export enum CommandTypes {
   StartTransaction = 'START_TRANSACTION',
@@ -15,8 +15,10 @@ export interface IBaseCommand {
 
 export interface IStartTransactionCommand extends IBaseCommand {
   type: CommandTypes.StartTransaction;
-  workflow: IWorkflowRef;
+  workflowRef?: IWorkflowRef;
+  workflowDefinition?: IWorkflowDefinition;
   input: any;
+  tags?: string[];
 }
 
 export interface ICancelTransactionCommand extends IBaseCommand {
