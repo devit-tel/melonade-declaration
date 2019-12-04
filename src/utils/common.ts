@@ -13,7 +13,7 @@ export const validate = (schema: object, data: any): any => {
     return data;
   }
 
-  throw ajv.errors;
+  throw JSON.stringify(ajv.errors);
 };
 
 export const enumToList = R.compose(R.map(R.prop('1')), R.toPairs);

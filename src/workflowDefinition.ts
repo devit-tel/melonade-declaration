@@ -189,7 +189,7 @@ const checkDuplicateReferenceName = (
   path: (string | number)[],
 ) => {
   if (tasksReferenceName.includes(taskReferenceName))
-    throw [
+    throw JSON.stringify([
       {
         dataPath: ['.tasks', ...path, 'taskReferenceName'].join('.'),
         keyword: 'uniq',
@@ -198,7 +198,7 @@ const checkDuplicateReferenceName = (
           value: taskReferenceName,
         },
       },
-    ];
+    ]);
 };
 
 const validateAllTaskReferenceName = (
