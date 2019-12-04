@@ -221,16 +221,17 @@ const validateAllTaskReferenceName = (
           const defaultDecisionsReferenceName = validateAllTaskReferenceName(
             task.defaultDecision,
             [...currentPath, 'defaultDecision'],
+            tasksReferenceName,
           );
 
           const eachDecisionsNames = Object.keys(
             task.decisions,
           ).map((decisionCase: string) =>
-            validateAllTaskReferenceName(task.decisions[decisionCase], [
-              ...currentPath,
-              'decisions',
-              decisionCase,
-            ]),
+            validateAllTaskReferenceName(
+              task.decisions[decisionCase],
+              [...currentPath, 'decisions', decisionCase],
+              tasksReferenceName,
+            ),
           );
 
           checkDuplicateReferenceName(

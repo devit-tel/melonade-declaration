@@ -1,3 +1,4 @@
+import { WorkflowFailureStrategies } from './state';
 import { TaskTypes } from './task';
 import { WorkflowDefinition } from './workflowDefinition';
 
@@ -1226,10 +1227,108 @@ describe('WorkflowDefinition', () => {
     }).toThrow(
       new Error([
         {
-          dataPath: '.tasks.0.decisions.a.1.decisions.a.1.taskReferenceName',
+          dataPath: '.tasks.0.taskReferenceName',
           keyword: 'uniq',
           message: "should have uniq property 'taskReferenceName'",
-          params: { value: 'hihix' },
+          params: { value: 'hihi1' },
+        },
+      ] as any),
+    );
+  });
+
+  test('Decision on Decision duplicate', () => {
+    expect(() => {
+      new WorkflowDefinition({
+        failureStrategy: WorkflowFailureStrategies.CompensateThenRetry,
+        name: 'testtest',
+        rev: 'test',
+        retry: {
+          limit: 3,
+        },
+        tasks: [
+          {
+            type: TaskTypes.Task,
+            name: 'find_driver',
+            taskReferenceName: 'payment',
+            inputParameters: {},
+          },
+          {
+            taskReferenceName: 'check-payment',
+            inputParameters: {},
+            decisions: {
+              CASH: [
+                {
+                  name: 'wait_for_driver_recived_cash_from_customer',
+                  taskReferenceName: 'payment',
+                  inputParameters: {},
+                  type: TaskTypes.Task,
+                },
+                {
+                  name: 't1',
+                  taskReferenceName: 'send-notification-to-user',
+                  inputParameters: {},
+                  type: TaskTypes.Task,
+                },
+              ],
+              CREDIT_CARD: [
+                {
+                  name: 'take_money_from_credit_card',
+                  taskReferenceName: 'payment',
+                  inputParameters: {},
+                  type: TaskTypes.Task,
+                },
+                {
+                  taskReferenceName: 'test',
+                  inputParameters: {},
+                  decisions: {
+                    ccc: [
+                      {
+                        name: 'wait_for_driver_recived_cash_from_customer',
+                        taskReferenceName: 'payment',
+                        inputParameters: {},
+                        type: TaskTypes.Task,
+                      },
+                    ],
+                  },
+                  defaultDecision: [
+                    {
+                      name: 'driver_on_the_way_to_store',
+                      taskReferenceName: 'payment',
+                      inputParameters: {},
+                      type: TaskTypes.Task,
+                    },
+                  ],
+                  type: TaskTypes.Decision,
+                },
+              ],
+            },
+            defaultDecision: [
+              {
+                name: 'wait_for_driver_recived_cash_from_customer',
+                taskReferenceName: 'payment',
+                inputParameters: {},
+                type: TaskTypes.Task,
+              },
+              {
+                name: 't1',
+                taskReferenceName: 'send-notification-to-user',
+                inputParameters: {},
+                type: TaskTypes.Task,
+              },
+            ],
+            type: TaskTypes.Decision,
+          },
+        ],
+        description: '-',
+        outputParameters: {},
+      });
+    }).toThrow(
+      new Error([
+        {
+          dataPath: '.tasks.1.defaultDecision.0.taskReferenceName',
+          keyword: 'uniq',
+          message: "should have uniq property 'taskReferenceName'",
+          params: { value: 'payment' },
         },
       ] as any),
     );
