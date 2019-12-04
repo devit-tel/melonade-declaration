@@ -9,4 +9,5 @@ export interface ITransaction {
   createTime: number;
   endTime: number;
   workflowDefinition: IWorkflowDefinition;
+  tags?: string[];
 }
