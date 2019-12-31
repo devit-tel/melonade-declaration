@@ -1,4 +1,5 @@
 import { ITransactionEvent } from './event';
+import { ITransaction } from './transaction';
 
 export enum StoreType {
   ZooKeeper = 'ZOOKEEPER', // Greate for Definition
@@ -20,4 +21,9 @@ export interface ITaskExecutionTime {
 export interface ITransactionEventPaginate {
   total: number;
   events: ITransactionEvent[];
+}
+
+export interface ITransactionPaginate {
+  total: number;
+  events: ITransaction[];
 }
