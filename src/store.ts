@@ -25,5 +25,5 @@ export interface ITransactionEventPaginate {
 
 export interface ITransactionPaginate {
   total: number;
-  events: ITransaction[];
+  transactions: ITransaction[];
 }
