@@ -1,9 +1,7 @@
+import { TaskStates, TransactionStates, WorkflowStates } from './state';
 import { ITask } from './task';
-import { IWorkflow } from './workflow';
 import { ITransaction } from './transaction';
-import { TransactionStates } from './state';
-import { WorkflowStates } from './state';
-import { TaskStates } from './state';
+import { IWorkflow } from './workflow';
 
 export interface ITransactionUpdate {
   transactionId: string;
@@ -25,6 +23,7 @@ export interface ITaskUpdate {
   output?: any;
   logs?: any[] | any;
   isSystem: boolean;
+  doNotRetry: boolean;
 }
 
 interface IBaseEvent {
