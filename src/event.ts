@@ -22,8 +22,8 @@ export interface ITaskUpdate {
   status: TaskStates;
   output?: any;
   logs?: any[] | any;
-  isSystem: boolean;
-  doNotRetry: boolean;
+  isSystem?: boolean;
+  doNotRetry?: boolean;
 }
 
 interface IBaseEvent {
