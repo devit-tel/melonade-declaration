@@ -14,6 +14,8 @@
 
   ↳ [IDecisionTask](_workflowdefinition_.idecisiontask.md)
 
+  ↳ [IScheduleTask](_workflowdefinition_.ischeduletask.md)
+
 ## Index
 
 ### Properties
@@ -27,7 +29,7 @@
 
 • **inputParameters**: *object*
 
-*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/workflowDefinition.ts#L27)*
+*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflowDefinition.ts#L27)*
 
 The input to be mapping to workflow's data
 
@@ -43,7 +45,7 @@ ___
 
 • **taskReferenceName**: *string*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 

@@ -20,15 +20,15 @@
 
 • **cron**: *string*
 
-*Defined in [src/timer.ts:23](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/timer.ts#L23)*
+*Defined in [src/timer.ts:17](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/timer.ts#L17)*
 
 ___
 
 ###  type
 
-• **type**: *[cronWorkflow](../enums/_timer_.timertype.md#cronworkflow)*
+• **type**: *[cronWorkflow](../enums/_timer_.timertypes.md#cronworkflow)*
 
-*Defined in [src/timer.ts:22](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/timer.ts#L22)*
+*Defined in [src/timer.ts:16](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/timer.ts#L16)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **workflow**: *[IWorkflowRef](_workflowdefinition_.iworkflowref.md)*
 
-*Defined in [src/timer.ts:24](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/timer.ts#L24)*
+*Defined in [src/timer.ts:18](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/timer.ts#L18)*

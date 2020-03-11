@@ -10,7 +10,8 @@
 
 ### Properties
 
-* [isSystem](_event_.itaskupdate.md#issystem)
+* [doNotRetry](_event_.itaskupdate.md#optional-donotretry)
+* [isSystem](_event_.itaskupdate.md#optional-issystem)
 * [logs](_event_.itaskupdate.md#optional-logs)
 * [output](_event_.itaskupdate.md#optional-output)
 * [status](_event_.itaskupdate.md#status)
@@ -19,11 +20,19 @@
 
 ## Properties
 
-###  isSystem
+### `Optional` doNotRetry
 
-• **isSystem**: *boolean*
+• **doNotRetry**? : *boolean*
 
-*Defined in [src/event.ts:27](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/event.ts#L27)*
+*Defined in [src/event.ts:26](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L26)*
+
+___
+
+### `Optional` isSystem
+
+• **isSystem**? : *boolean*
+
+*Defined in [src/event.ts:25](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L25)*
 
 ___
 
@@ -31,7 +40,7 @@ ___
 
 • **logs**? : *any[] | any*
 
-*Defined in [src/event.ts:26](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/event.ts#L26)*
+*Defined in [src/event.ts:24](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L24)*
 
 ___
 
@@ -39,7 +48,7 @@ ___
 
 • **output**? : *any*
 
-*Defined in [src/event.ts:25](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/event.ts#L25)*
+*Defined in [src/event.ts:23](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L23)*
 
 ___
 
@@ -47,7 +56,7 @@ ___
 
 • **status**: *[TaskStates](../enums/_state_.taskstates.md)*
 
-*Defined in [src/event.ts:24](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/event.ts#L24)*
+*Defined in [src/event.ts:22](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L22)*
 
 ___
 
@@ -55,7 +64,7 @@ ___
 
 • **taskId**: *string*
 
-*Defined in [src/event.ts:23](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/event.ts#L23)*
+*Defined in [src/event.ts:21](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L21)*
 
 ___
 
@@ -63,4 +72,4 @@ ___
 
 • **transactionId**: *string*
 
-*Defined in [src/event.ts:22](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/event.ts#L22)*
+*Defined in [src/event.ts:20](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L20)*

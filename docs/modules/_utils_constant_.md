@@ -20,7 +20,7 @@
   },
 )
 
-*Defined in [src/utils/constant.ts:3](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/utils/constant.ts#L3)*
+*Defined in [src/utils/constant.ts:3](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/utils/constant.ts#L3)*
 
 #### Type declaration:
 

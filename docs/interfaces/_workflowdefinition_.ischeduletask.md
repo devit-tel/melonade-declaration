@@ -1,21 +1,20 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IParallelTask](_workflowdefinition_.iparalleltask.md)
+[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IScheduleTask](_workflowdefinition_.ischeduletask.md)
 
-# Interface: IParallelTask
+# Interface: IScheduleTask
 
 ## Hierarchy
 
 * [IBaseTask](_workflowdefinition_.ibasetask.md)
 
-  ↳ **IParallelTask**
+  ↳ **IScheduleTask**
 
 ## Index
 
 ### Properties
 
-* [inputParameters](_workflowdefinition_.iparalleltask.md#inputparameters)
-* [parallelTasks](_workflowdefinition_.iparalleltask.md#paralleltasks)
-* [taskReferenceName](_workflowdefinition_.iparalleltask.md#taskreferencename)
-* [type](_workflowdefinition_.iparalleltask.md#type)
+* [inputParameters](_workflowdefinition_.ischeduletask.md#inputparameters)
+* [taskReferenceName](_workflowdefinition_.ischeduletask.md#taskreferencename)
+* [type](_workflowdefinition_.ischeduletask.md#type)
 
 ## Properties
 
@@ -34,20 +33,6 @@ The input to be mapping to workflow's data
 #### Type declaration:
 
 * \[ **key**: *string*\]: string | number | object
-
-___
-
-###  parallelTasks
-
-• **parallelTasks**: *[Tasks](../modules/_workflowdefinition_.md#tasks)[]*
-
-*Defined in [src/workflowDefinition.ts:108](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflowDefinition.ts#L108)*
-
-The list of tasks that run parallely
-
-**`minitems`** 1
-
-**`tjs-type`** array
 
 ___
 
@@ -73,6 +58,6 @@ ___
 
 ###  type
 
-• **type**: *[Parallel](../enums/_task_.tasktypes.md#parallel)*
+• **type**: *[Schedule](../enums/_task_.tasktypes.md#schedule)*
 
-*Defined in [src/workflowDefinition.ts:101](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflowDefinition.ts#L101)*
+*Defined in [src/workflowDefinition.ts:120](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflowDefinition.ts#L120)*

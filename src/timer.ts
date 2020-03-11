@@ -4,6 +4,7 @@ import { IWorkflowRef } from './workflowDefinition';
 export enum TimerTypes {
   delayTask = 'DELAY_TASK',
   cronWorkflow = 'CRON_WORKFLOW',
+  scheduleTask = 'SCHEDULE_TASK',
 }
 
 export interface IDelayTaskTimer {
@@ -17,4 +18,14 @@ export interface ICronWorkflowTimer {
   workflow: IWorkflowRef;
 }
 
-export type AllTimerType = IDelayTaskTimer | ICronWorkflowTimer;
+export interface IScheduleTaskTimer {
+  type: TimerTypes.scheduleTask;
+  transactionId: string;
+  taskId: string;
+  completedAt: number;
+}
+
+export type AllTimerType =
+  | IDelayTaskTimer
+  | ICronWorkflowTimer
+  | IScheduleTaskTimer;

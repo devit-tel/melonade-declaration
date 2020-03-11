@@ -22,9 +22,13 @@
 
 ### `Const` SYSTEM_TASKS
 
-• **SYSTEM_TASKS**: *[TaskTypes](../enums/_task_.tasktypes.md)[]* =  [TaskTypes.Parallel, TaskTypes.Decision]
+• **SYSTEM_TASKS**: *[TaskTypes](../enums/_task_.tasktypes.md)[]* =  [
+  TaskTypes.Parallel,
+  TaskTypes.Decision,
+  TaskTypes.Schedule,
+]
 
-*Defined in [src/task.ts:12](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/task.ts#L12)*
+*Defined in [src/task.ts:13](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/task.ts#L13)*
 
 ___
 
@@ -32,7 +36,7 @@ ___
 
 • **TaskTypesList**: *unknown[]* =  enumToList(TaskTypes)
 
-*Defined in [src/task.ts:15](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/task.ts#L15)*
+*Defined in [src/task.ts:20](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/task.ts#L20)*
 
 ___
 
@@ -40,4 +44,4 @@ ___
 
 • **WORKER_TASKS**: *[TaskTypes](../enums/_task_.tasktypes.md)[]* =  [TaskTypes.Task, TaskTypes.Compensate]
 
-*Defined in [src/task.ts:13](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/task.ts#L13)*
+*Defined in [src/task.ts:18](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/task.ts#L18)*
