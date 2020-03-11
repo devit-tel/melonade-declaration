@@ -7,9 +7,14 @@ export enum TaskTypes {
   Compensate = 'COMPENSATE',
   Parallel = 'PARALLEL',
   Decision = 'DECISION',
+  Schedule = 'SCHEDULE',
 }
 
-export const SYSTEM_TASKS = [TaskTypes.Parallel, TaskTypes.Decision];
+export const SYSTEM_TASKS = [
+  TaskTypes.Parallel,
+  TaskTypes.Decision,
+  TaskTypes.Schedule,
+];
 export const WORKER_TASKS = [TaskTypes.Task, TaskTypes.Compensate];
 
 export const TaskTypesList = enumToList(TaskTypes);
