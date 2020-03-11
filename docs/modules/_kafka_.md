@@ -23,4 +23,4 @@
 
 • **topicPrefix**: *"melonade"* = "melonade"
 
-*Defined in [src/kafka.ts:1](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/kafka.ts#L1)*
+*Defined in [src/kafka.ts:1](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/kafka.ts#L1)*

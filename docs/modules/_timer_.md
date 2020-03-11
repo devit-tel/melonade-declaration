@@ -6,13 +6,13 @@
 
 ### Enumerations
 
-* [TimerType](../enums/_timer_.timertype.md)
+* [TimerTypes](../enums/_timer_.timertypes.md)
 
 ### Interfaces
 
 * [ICronWorkflowTimer](../interfaces/_timer_.icronworkflowtimer.md)
 * [IDelayTaskTimer](../interfaces/_timer_.idelaytasktimer.md)
-* [ITimerData](../interfaces/_timer_.itimerdata.md)
+* [IScheduleTaskTimer](../interfaces/_timer_.ischeduletasktimer.md)
 
 ### Type aliases
 
@@ -22,6 +22,6 @@
 
 ###  AllTimerType
 
-Ƭ **AllTimerType**: *[IDelayTaskTimer](../interfaces/_timer_.idelaytasktimer.md) | [ICronWorkflowTimer](../interfaces/_timer_.icronworkflowtimer.md)*
+Ƭ **AllTimerType**: *[IDelayTaskTimer](../interfaces/_timer_.idelaytasktimer.md) | [ICronWorkflowTimer](../interfaces/_timer_.icronworkflowtimer.md) | [IScheduleTaskTimer](../interfaces/_timer_.ischeduletasktimer.md)*
 
-*Defined in [src/timer.ts:27](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/timer.ts#L27)*
+*Defined in [src/timer.ts:28](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/timer.ts#L28)*

@@ -22,7 +22,7 @@
 
 • **task**: *[ITask](_task_.itask.md)*
 
-*Defined in [src/command.ts:37](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L37)*
+*Defined in [src/command.ts:39](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L39)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 *Inherited from [IBaseCommand](_command_.ibasecommand.md).[transactionId](_command_.ibasecommand.md#transactionid)*
 
-*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L13)*
+*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L13)*
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 • **type**: *[ReloadTask](../enums/_command_.commandtypes.md#reloadtask)*
 
-*Defined in [src/command.ts:36](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L36)*
+*Defined in [src/command.ts:38](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L38)*

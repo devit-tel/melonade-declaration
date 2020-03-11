@@ -15,6 +15,9 @@
         },
         {
           "$ref": "#/definitions/IDecisionTask"
+        },
+        {
+          "$ref": "#/definitions/IScheduleTask"
         }
       ]
     },
@@ -164,6 +167,47 @@
       "required": [
         "inputParameters",
         "parallelTasks",
+        "taskReferenceName",
+        "type"
+      ],
+      "type": "object"
+    },
+    "IScheduleTask": {
+      "additionalProperties": false,
+      "properties": {
+        "inputParameters": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          },
+          "description": "The input to be mapping to workflow's data",
+          "type": "object"
+        },
+        "taskReferenceName": {
+          "description": "The referance name using in workflow",
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-_]+$",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "SCHEDULE"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "inputParameters",
         "taskReferenceName",
         "type"
       ],

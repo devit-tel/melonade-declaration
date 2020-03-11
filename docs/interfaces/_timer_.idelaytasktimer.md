@@ -19,12 +19,12 @@
 
 • **task**: *[ITask](_task_.itask.md)*
 
-*Defined in [src/timer.ts:18](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/timer.ts#L18)*
+*Defined in [src/timer.ts:12](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/timer.ts#L12)*
 
 ___
 
 ###  type
 
-• **type**: *[delayTask](../enums/_timer_.timertype.md#delaytask)*
+• **type**: *[delayTask](../enums/_timer_.timertypes.md#delaytask)*
 
-*Defined in [src/timer.ts:17](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/timer.ts#L17)*
+*Defined in [src/timer.ts:11](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/timer.ts#L11)*

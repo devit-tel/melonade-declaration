@@ -23,7 +23,7 @@
 
 *Inherited from [IBaseCommand](_command_.ibasecommand.md).[transactionId](_command_.ibasecommand.md#transactionid)*
 
-*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L13)*
+*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L13)*
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 • **type**: *[ResumeTransaction](../enums/_command_.commandtypes.md#resumetransaction)*
 
-*Defined in [src/command.ts:32](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L32)*
+*Defined in [src/command.ts:34](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L34)*

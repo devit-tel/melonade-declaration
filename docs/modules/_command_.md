@@ -27,4 +27,4 @@
 
 Ƭ **AllCommand**: *[IStartTransactionCommand](../interfaces/_command_.istarttransactioncommand.md) | [ICancelTransactionCommand](../interfaces/_command_.icanceltransactioncommand.md) | [IPauseTransactionCommand](../interfaces/_command_.ipausetransactioncommand.md) | [IResumeTransactionCommand](../interfaces/_command_.iresumetransactioncommand.md) | [IReloadTaskCommand](../interfaces/_command_.ireloadtaskcommand.md)*
 
-*Defined in [src/command.ts:40](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L40)*
+*Defined in [src/command.ts:42](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L42)*

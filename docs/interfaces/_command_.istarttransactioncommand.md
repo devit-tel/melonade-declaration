@@ -13,9 +13,11 @@
 ### Properties
 
 * [input](_command_.istarttransactioncommand.md#input)
+* [tags](_command_.istarttransactioncommand.md#optional-tags)
 * [transactionId](_command_.istarttransactioncommand.md#transactionid)
 * [type](_command_.istarttransactioncommand.md#type)
-* [workflow](_command_.istarttransactioncommand.md#workflow)
+* [workflowDefinition](_command_.istarttransactioncommand.md#optional-workflowdefinition)
+* [workflowRef](_command_.istarttransactioncommand.md#optional-workflowref)
 
 ## Properties
 
@@ -23,7 +25,15 @@
 
 • **input**: *any*
 
-*Defined in [src/command.ts:19](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L19)*
+*Defined in [src/command.ts:20](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L20)*
+
+___
+
+### `Optional` tags
+
+• **tags**? : *string[]*
+
+*Defined in [src/command.ts:21](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L21)*
 
 ___
 
@@ -33,7 +43,7 @@ ___
 
 *Inherited from [IBaseCommand](_command_.ibasecommand.md).[transactionId](_command_.ibasecommand.md#transactionid)*
 
-*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L13)*
+*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L13)*
 
 ___
 
@@ -41,12 +51,20 @@ ___
 
 • **type**: *[StartTransaction](../enums/_command_.commandtypes.md#starttransaction)*
 
-*Defined in [src/command.ts:17](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L17)*
+*Defined in [src/command.ts:17](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L17)*
 
 ___
 
-###  workflow
+### `Optional` workflowDefinition
 
-• **workflow**: *[IWorkflowRef](_workflowdefinition_.iworkflowref.md)*
+• **workflowDefinition**? : *[IWorkflowDefinition](_workflowdefinition_.iworkflowdefinition.md)*
 
-*Defined in [src/command.ts:18](https://github.com/devit-tel/melonade-declaration/blob/2273da1/src/command.ts#L18)*
+*Defined in [src/command.ts:19](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L19)*
+
+___
+
+### `Optional` workflowRef
+
+• **workflowRef**? : *[IWorkflowRef](_workflowdefinition_.iworkflowref.md)*
+
+*Defined in [src/command.ts:18](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L18)*
