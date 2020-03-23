@@ -43,4 +43,5 @@ export interface ITask {
   retryDelay: number;
   ackTimeout: number;
   timeout: number;
+  taskPath: (string | number)[];
 }
