@@ -8,12 +8,14 @@ export enum TaskTypes {
   Parallel = 'PARALLEL',
   Decision = 'DECISION',
   Schedule = 'SCHEDULE',
+  SubTransaction = 'SUB_TRANSACTION',
 }
 
 export const SYSTEM_TASKS = [
   TaskTypes.Parallel,
   TaskTypes.Decision,
   TaskTypes.Schedule,
+  TaskTypes.SubTransaction,
 ];
 export const WORKER_TASKS = [TaskTypes.Task, TaskTypes.Compensate];
 

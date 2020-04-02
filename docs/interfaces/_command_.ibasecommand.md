@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["command"](../modules/_command_.md) › [IBaseCommand](_command_.ibasecommand.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["command"](../modules/_command_.md) › [IBaseCommand](_command_.ibasecommand.md)
 
 # Interface: IBaseCommand
 
@@ -28,4 +28,4 @@
 
 • **transactionId**: *string*
 
-*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L13)*
+*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L13)*

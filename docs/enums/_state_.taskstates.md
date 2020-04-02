@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["state"](../modules/_state_.md) › [TaskStates](_state_.taskstates.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["state"](../modules/_state_.md) › [TaskStates](_state_.taskstates.md)
 
 # Enumeration: TaskStates
 
@@ -19,7 +19,7 @@
 
 • **AckTimeOut**: = "ACK_TIMEOUT"
 
-*Defined in [src/state.ts:115](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/state.ts#L115)*
+*Defined in [src/state.ts:115](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L115)*
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **Completed**: = "COMPLETED"
 
-*Defined in [src/state.ts:112](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/state.ts#L112)*
+*Defined in [src/state.ts:112](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L112)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **Failed**: = "FAILED"
 
-*Defined in [src/state.ts:113](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/state.ts#L113)*
+*Defined in [src/state.ts:113](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L113)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **Inprogress**: = "INPROGRESS"
 
-*Defined in [src/state.ts:111](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/state.ts#L111)*
+*Defined in [src/state.ts:111](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L111)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **Scheduled**: = "SCHEDULED"
 
-*Defined in [src/state.ts:110](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/state.ts#L110)*
+*Defined in [src/state.ts:110](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L110)*
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 • **Timeout**: = "TIMEOUT"
 
-*Defined in [src/state.ts:114](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/state.ts#L114)*
+*Defined in [src/state.ts:114](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L114)*

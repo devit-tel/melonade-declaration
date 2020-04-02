@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IScheduleTask](_workflowdefinition_.ischeduletask.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IScheduleTask](_workflowdefinition_.ischeduletask.md)
 
 # Interface: IScheduleTask
 
@@ -24,7 +24,7 @@
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflowDefinition.ts#L27)*
+*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L27)*
 
 The input to be mapping to workflow's data
 
@@ -42,7 +42,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -60,4 +60,4 @@ ___
 
 • **type**: *[Schedule](../enums/_task_.tasktypes.md#schedule)*
 
-*Defined in [src/workflowDefinition.ts:120](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflowDefinition.ts#L120)*
+*Defined in [src/workflowDefinition.ts:120](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L120)*

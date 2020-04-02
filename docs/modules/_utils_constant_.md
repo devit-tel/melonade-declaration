@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["utils/constant"](_utils_constant_.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["utils/constant"](_utils_constant_.md)
 
 # External module: "utils/constant"
 
@@ -20,18 +20,18 @@
   },
 )
 
-*Defined in [src/utils/constant.ts:3](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/utils/constant.ts#L3)*
+*Defined in [src/utils/constant.ts:3](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/utils/constant.ts#L3)*
 
 #### Type declaration:
 
-▸ <**T**>(...`args`: Cast‹T, Gaps‹Parameters‹F›››): *GapsOf<T, Parameters<F>> extends infer G ? Cast<G, Tuple<any>>["length"] extends infer L ? L extends 0 ? Return<F> : L extends 1 ? (...args: Cast<G, Tuple<any>>) => Return<...> : Curry<...> : never : never*
+▸ <**L**>(...`args`: Cast‹L, Gaps‹Parameters‹F›››): *GapsOf<L, Parameters<F>> extends infer G ? Length<Cast<G, List>> extends infer L ? L extends 0 ? Return<F> : L extends 1 ? Curry<function> & function : Curry<function> : never : never*
 
 **Type parameters:**
 
-▪ **T**: *Tuple*
+▪ **L**: *List*
 
 **Parameters:**
 
 Name | Type |
 ------ | ------ |
-`...args` | Cast‹T, Gaps‹Parameters‹F››› |
+`...args` | Cast‹L, Gaps‹Parameters‹F››› |

@@ -7,22 +7,22 @@
   },
   "main": "./build/index.js",
   "devDependencies": {
-    "@types/jest": "^24.0.23",
-    "@types/node": "^10.17.5",
-    "@types/ramda": "^0.26.33",
-    "jest": "^24.9.0",
+    "@types/jest": "^24.9.1",
+    "@types/node": "^10.17.18",
+    "@types/ramda": "^0.26.44",
+    "jest": "^25.2.4",
     "prettier": "^1.19.1",
     "rimraf": "^2.6.3",
-    "ts-jest": "^24.0.0",
+    "ts-jest": "^25.3.0",
     "ts-json-schema-generator": "^0.56.0",
-    "ts-node": "^8.5.0",
-    "tslint": "^5.20.1",
+    "ts-node": "^8.8.1",
+    "tslint": "^6.1.1",
     "tslint-config-prettier": "^1.18.0",
     "tslint-microsoft-contrib": "^6.2.0",
     "tsutils": "^3.17.1",
-    "typedoc": "^0.15.3",
-    "typedoc-plugin-markdown": "^2.2.11",
-    "typescript": "^3.7.2"
+    "typedoc": "^0.15.8",
+    "typedoc-plugin-markdown": "^2.2.17",
+    "typescript": "^3.8.3"
   },
   "scripts": {
     "clean": "rimraf coverage build tmp",
@@ -39,7 +39,7 @@
   },
   "license": "MIT",
   "dependencies": {
-    "ajv": "^6.10.2",
+    "ajv": "^6.12.0",
     "ramda": "^0.26.1",
     "tslib": "~1.10.0"
   }

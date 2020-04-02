@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["task"](_task_.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["task"](_task_.md)
 
 # External module: "task"
 
@@ -26,9 +26,10 @@
   TaskTypes.Parallel,
   TaskTypes.Decision,
   TaskTypes.Schedule,
+  TaskTypes.SubTransaction,
 ]
 
-*Defined in [src/task.ts:13](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/task.ts#L13)*
+*Defined in [src/task.ts:14](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/task.ts#L14)*
 
 ___
 
@@ -36,7 +37,7 @@ ___
 
 • **TaskTypesList**: *unknown[]* =  enumToList(TaskTypes)
 
-*Defined in [src/task.ts:20](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/task.ts#L20)*
+*Defined in [src/task.ts:22](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/task.ts#L22)*
 
 ___
 
@@ -44,4 +45,4 @@ ___
 
 • **WORKER_TASKS**: *[TaskTypes](../enums/_task_.tasktypes.md)[]* =  [TaskTypes.Task, TaskTypes.Compensate]
 
-*Defined in [src/task.ts:18](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/task.ts#L18)*
+*Defined in [src/task.ts:20](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/task.ts#L20)*

@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["workflow"](../modules/_workflow_.md) › [WorkflowTypes](_workflow_.workflowtypes.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["workflow"](../modules/_workflow_.md) › [WorkflowTypes](_workflow_.workflowtypes.md)
 
 # Enumeration: WorkflowTypes
 
@@ -17,7 +17,7 @@
 
 • **CancelWorkflow**: = "CANCEL_WORKFLOW"
 
-*Defined in [src/workflow.ts:8](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflow.ts#L8)*
+*Defined in [src/workflow.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflow.ts#L8)*
 
 ___
 
@@ -25,7 +25,7 @@ ___
 
 • **CompensateThenRetryWorkflow**: = "COMPENSATE_THEN_RETRY_WORKFLOW"
 
-*Defined in [src/workflow.ts:7](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflow.ts#L7)*
+*Defined in [src/workflow.ts:7](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflow.ts#L7)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **CompensateWorkflow**: = "COMPENSATE_WORKFLOW"
 
-*Defined in [src/workflow.ts:6](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflow.ts#L6)*
+*Defined in [src/workflow.ts:6](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflow.ts#L6)*
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 • **Workflow**: = "WORKFLOW"
 
-*Defined in [src/workflow.ts:5](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/workflow.ts#L5)*
+*Defined in [src/workflow.ts:5](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflow.ts#L5)*

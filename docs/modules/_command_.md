@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["command"](_command_.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["command"](_command_.md)
 
 # External module: "command"
 
@@ -27,4 +27,4 @@
 
 Ƭ **AllCommand**: *[IStartTransactionCommand](../interfaces/_command_.istarttransactioncommand.md) | [ICancelTransactionCommand](../interfaces/_command_.icanceltransactioncommand.md) | [IPauseTransactionCommand](../interfaces/_command_.ipausetransactioncommand.md) | [IResumeTransactionCommand](../interfaces/_command_.iresumetransactioncommand.md) | [IReloadTaskCommand](../interfaces/_command_.ireloadtaskcommand.md)*
 
-*Defined in [src/command.ts:42](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L42)*
+*Defined in [src/command.ts:42](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L42)*

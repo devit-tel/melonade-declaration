@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["event"](../modules/_event_.md) › [ITransactionUpdate](_event_.itransactionupdate.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["event"](../modules/_event_.md) › [ITransactionUpdate](_event_.itransactionupdate.md)
 
 # Interface: ITransactionUpdate
 
@@ -20,7 +20,7 @@
 
 • **output**? : *any*
 
-*Defined in [src/event.ts:9](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L9)*
+*Defined in [src/event.ts:9](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/event.ts#L9)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **status**: *[TransactionStates](../enums/_state_.transactionstates.md)*
 
-*Defined in [src/event.ts:8](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L8)*
+*Defined in [src/event.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/event.ts#L8)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **transactionId**: *string*
 
-*Defined in [src/event.ts:7](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/event.ts#L7)*
+*Defined in [src/event.ts:7](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/event.ts#L7)*

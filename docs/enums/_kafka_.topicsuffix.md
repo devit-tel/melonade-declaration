@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["kafka"](../modules/_kafka_.md) › [topicSuffix](_kafka_.topicsuffix.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["kafka"](../modules/_kafka_.md) › [topicSuffix](_kafka_.topicsuffix.md)
 
 # Enumeration: topicSuffix
 
@@ -18,7 +18,7 @@
 
 • **command**: = "command"
 
-*Defined in [src/kafka.ts:7](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/kafka.ts#L7)*
+*Defined in [src/kafka.ts:7](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/kafka.ts#L7)*
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **event**: = "event"
 
-*Defined in [src/kafka.ts:4](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/kafka.ts#L4)*
+*Defined in [src/kafka.ts:4](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/kafka.ts#L4)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **store**: = "store"
 
-*Defined in [src/kafka.ts:5](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/kafka.ts#L5)*
+*Defined in [src/kafka.ts:5](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/kafka.ts#L5)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **task**: = "task"
 
-*Defined in [src/kafka.ts:6](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/kafka.ts#L6)*
+*Defined in [src/kafka.ts:6](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/kafka.ts#L6)*
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 • **timer**: = "timer"
 
-*Defined in [src/kafka.ts:8](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/kafka.ts#L8)*
+*Defined in [src/kafka.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/kafka.ts#L8)*

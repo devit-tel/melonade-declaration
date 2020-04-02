@@ -10,4 +10,8 @@ export interface ITransaction {
   endTime: number;
   workflowDefinition: IWorkflowDefinition;
   tags?: string[];
+  parent?: {
+    transactionId: string;
+    taskId: string;
+  };
 }
