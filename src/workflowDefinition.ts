@@ -120,12 +120,17 @@ export interface IScheduleTask extends IBaseTask {
   type: TaskTypes.Schedule;
 }
 
+export interface ISubTransactionTask extends IBaseTask {
+  type: TaskTypes.SubTransaction;
+}
+
 export type AllTaskType =
   | ITaskTask
   | ICompensateTask
   | IParallelTask
   | IDecisionTask
-  | IScheduleTask;
+  | IScheduleTask
+  | ISubTransactionTask;
 
 export interface IWorkflowDefinition {
   /**
@@ -290,6 +295,7 @@ const validateAllTaskReferenceName = (
         case Task.TaskTypes.Compensate:
         case Task.TaskTypes.Task:
         case Task.TaskTypes.Schedule:
+        case Task.TaskTypes.SubTransaction:
         default:
           return [...tasksReferenceName, task.taskReferenceName];
       }

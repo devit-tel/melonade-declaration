@@ -18,6 +18,9 @@
         },
         {
           "$ref": "#/definitions/IScheduleTask"
+        },
+        {
+          "$ref": "#/definitions/ISubTransactionTask"
         }
       ]
     },
@@ -202,6 +205,47 @@
         "type": {
           "enum": [
             "SCHEDULE"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "inputParameters",
+        "taskReferenceName",
+        "type"
+      ],
+      "type": "object"
+    },
+    "ISubTransactionTask": {
+      "additionalProperties": false,
+      "properties": {
+        "inputParameters": {
+          "additionalProperties": {
+            "anyOf": [
+              {
+                "type": "string"
+              },
+              {
+                "type": "number"
+              },
+              {
+                "type": "object"
+              }
+            ]
+          },
+          "description": "The input to be mapping to workflow's data",
+          "type": "object"
+        },
+        "taskReferenceName": {
+          "description": "The referance name using in workflow",
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-_]+$",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "SUB_TRANSACTION"
           ],
           "type": "string"
         }

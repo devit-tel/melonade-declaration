@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["store"](../modules/_store_.md) › [ITransactionPaginate](_store_.itransactionpaginate.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["store"](../modules/_store_.md) › [ITransactionPaginate](_store_.itransactionpaginate.md)
 
 # Interface: ITransactionPaginate
 
@@ -19,7 +19,7 @@
 
 • **total**: *number*
 
-*Defined in [src/store.ts:27](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/store.ts#L27)*
+*Defined in [src/store.ts:27](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/store.ts#L27)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **transactions**: *[ITransaction](_transaction_.itransaction.md)[]*
 
-*Defined in [src/store.ts:28](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/store.ts#L28)*
+*Defined in [src/store.ts:28](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/store.ts#L28)*

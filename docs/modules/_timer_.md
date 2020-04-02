@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["timer"](_timer_.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["timer"](_timer_.md)
 
 # External module: "timer"
 
@@ -24,4 +24,4 @@
 
 Ƭ **AllTimerType**: *[IDelayTaskTimer](../interfaces/_timer_.idelaytasktimer.md) | [ICronWorkflowTimer](../interfaces/_timer_.icronworkflowtimer.md) | [IScheduleTaskTimer](../interfaces/_timer_.ischeduletasktimer.md)*
 
-*Defined in [src/timer.ts:28](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/timer.ts#L28)*
+*Defined in [src/timer.ts:28](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/timer.ts#L28)*

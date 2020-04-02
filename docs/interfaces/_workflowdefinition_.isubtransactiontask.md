@@ -1,21 +1,20 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IParallelTask](_workflowdefinition_.iparalleltask.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [ISubTransactionTask](_workflowdefinition_.isubtransactiontask.md)
 
-# Interface: IParallelTask
+# Interface: ISubTransactionTask
 
 ## Hierarchy
 
 * [IBaseTask](_workflowdefinition_.ibasetask.md)
 
-  ↳ **IParallelTask**
+  ↳ **ISubTransactionTask**
 
 ## Index
 
 ### Properties
 
-* [inputParameters](_workflowdefinition_.iparalleltask.md#inputparameters)
-* [parallelTasks](_workflowdefinition_.iparalleltask.md#paralleltasks)
-* [taskReferenceName](_workflowdefinition_.iparalleltask.md#taskreferencename)
-* [type](_workflowdefinition_.iparalleltask.md#type)
+* [inputParameters](_workflowdefinition_.isubtransactiontask.md#inputparameters)
+* [taskReferenceName](_workflowdefinition_.isubtransactiontask.md#taskreferencename)
+* [type](_workflowdefinition_.isubtransactiontask.md#type)
 
 ## Properties
 
@@ -34,20 +33,6 @@ The input to be mapping to workflow's data
 #### Type declaration:
 
 * \[ **key**: *string*\]: string | number | object
-
-___
-
-###  parallelTasks
-
-• **parallelTasks**: *[Tasks](../modules/_workflowdefinition_.md#tasks)[]*
-
-*Defined in [src/workflowDefinition.ts:108](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L108)*
-
-The list of tasks that run parallely
-
-**`minitems`** 1
-
-**`tjs-type`** array
 
 ___
 
@@ -73,6 +58,6 @@ ___
 
 ###  type
 
-• **type**: *[Parallel](../enums/_task_.tasktypes.md#parallel)*
+• **type**: *[SubTransaction](../enums/_task_.tasktypes.md#subtransaction)*
 
-*Defined in [src/workflowDefinition.ts:101](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L101)*
+*Defined in [src/workflowDefinition.ts:124](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L124)*

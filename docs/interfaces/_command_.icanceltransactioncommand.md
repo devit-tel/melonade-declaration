@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration](../README.md) › [Globals](../globals.md) › ["command"](../modules/_command_.md) › [ICancelTransactionCommand](_command_.icanceltransactioncommand.md)
+[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["command"](../modules/_command_.md) › [ICancelTransactionCommand](_command_.icanceltransactioncommand.md)
 
 # Interface: ICancelTransactionCommand
 
@@ -22,7 +22,7 @@
 
 • **reason**: *string*
 
-*Defined in [src/command.ts:26](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L26)*
+*Defined in [src/command.ts:26](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L26)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 *Inherited from [IBaseCommand](_command_.ibasecommand.md).[transactionId](_command_.ibasecommand.md#transactionid)*
 
-*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L13)*
+*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L13)*
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 • **type**: *[CancelTransaction](../enums/_command_.commandtypes.md#canceltransaction)*
 
-*Defined in [src/command.ts:25](https://github.com/devit-tel/melonade-declaration/blob/f57d96e/src/command.ts#L25)*
+*Defined in [src/command.ts:25](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L25)*
