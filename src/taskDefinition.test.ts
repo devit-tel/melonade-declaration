@@ -73,15 +73,18 @@ describe('TaskDefinition', () => {
             'eieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieieiei',
         }),
     ).toThrow(
-      new Error([
-        {
-          dataPath: '.name',
-          keyword: 'maxLength',
-          message: 'should NOT be longer than 64 characters',
-          params: { limit: 64 },
-          schemaPath: '#/properties/name/maxLength',
-        },
-      ] as any),
+      new Error(
+        JSON.stringify([
+          {
+            keyword: 'maxLength',
+            dataPath: '.name',
+            schemaPath:
+              '#/definitions/ITaskDefinition/properties/name/maxLength',
+            params: { limit: 64 },
+            message: 'should NOT be longer than 64 characters',
+          },
+        ]),
+      ),
     );
   });
 
@@ -99,16 +102,18 @@ describe('TaskDefinition', () => {
           name: 'aa',
         }),
     ).toThrow(
-      new Error([
-        {
-          dataPath: '.ackTimeout',
-          keyword: 'minimum',
-          message: 'should be >= 0',
-          params: { comparison: '>=', exclusive: false, limit: 0 },
-          schemaPath:
-            '#/definitions/ITaskDefinition/properties/ackTimeout/minimum',
-        },
-      ] as any),
+      new Error(
+        JSON.stringify([
+          {
+            keyword: 'minimum',
+            dataPath: '.ackTimeout',
+            schemaPath:
+              '#/definitions/ITaskDefinition/properties/ackTimeout/minimum',
+            params: { comparison: '>=', limit: 0, exclusive: false },
+            message: 'should be >= 0',
+          },
+        ]),
+      ),
     );
   });
 });

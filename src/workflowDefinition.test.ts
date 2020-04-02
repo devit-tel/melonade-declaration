@@ -64,14 +64,16 @@ describe('WorkflowDefinition', () => {
         ],
       });
     }).toThrow(
-      new Error([
-        {
-          dataPath: '.tasks.1.taskReferenceName',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: { value: 'hihi' },
-        },
-      ] as any),
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.1.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: { value: 'hihi' },
+          },
+        ]),
+      ),
     );
   });
 
@@ -107,16 +109,18 @@ describe('WorkflowDefinition', () => {
         ],
       });
     }).toThrow(
-      new Error([
-        {
-          dataPath: '.tasks.0.taskReferenceName',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: {
-            value: 'hihi2',
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.0.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: {
+              value: 'hihi2',
+            },
           },
-        },
-      ] as any),
+        ]),
+      ),
     );
   });
 
@@ -158,16 +162,18 @@ describe('WorkflowDefinition', () => {
         ],
       });
     }).toThrow(
-      new Error([
-        {
-          dataPath: '.tasks.0.decisions.a.1.taskReferenceName',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: {
-            value: 'hihix',
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.0.decisions.a.1.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: {
+              value: 'hihix',
+            },
           },
-        },
-      ] as any),
+        ]),
+      ),
     );
   });
 
@@ -335,16 +341,18 @@ describe('WorkflowDefinition', () => {
         ],
       });
     }).toThrow(
-      new Error([
-        {
-          dataPath: '.tasks.0.taskReferenceName',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: {
-            value: 'hihi1',
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.0.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: {
+              value: 'hihi1',
+            },
           },
-        },
-      ] as any),
+        ]),
+      ),
     );
   });
 
@@ -392,16 +400,18 @@ describe('WorkflowDefinition', () => {
         ],
       });
     }).toThrow(
-      new Error([
-        {
-          dataPath: '.tasks.0.parallelTasks.0.1.taskReferenceName',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: {
-            value: 'hihix',
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.0.parallelTasks.0.1.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: {
+              value: 'hihix',
+            },
           },
-        },
-      ] as any),
+        ]),
+      ),
     );
   });
 
@@ -449,16 +459,18 @@ describe('WorkflowDefinition', () => {
         ],
       });
     }).toThrow(
-      new Error([
-        {
-          dataPath: '.tasks.0.parallelTasks.1.1.taskReferenceName',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: {
-            value: 'hihiy',
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.0.parallelTasks.1.1.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: {
+              value: 'hihiy',
+            },
           },
-        },
-      ] as any),
+        ]),
+      ),
     );
   });
 
@@ -1153,14 +1165,16 @@ describe('WorkflowDefinition', () => {
           ],
         }),
     ).toThrow(
-      new Error([
-        {
-          dataPath: '.tasks.0.taskReferenceName',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: { value: 'hihi1' },
-        },
-      ] as any),
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.0.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: { value: 'hihi1' },
+          },
+        ]),
+      ),
     );
   });
 
@@ -1225,14 +1239,16 @@ describe('WorkflowDefinition', () => {
         ],
       });
     }).toThrow(
-      new Error([
-        {
-          dataPath: '.tasks.0.taskReferenceName',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: { value: 'hihi1' },
-        },
-      ] as any),
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.0.decisions.a.1.decisions.a.0.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: { value: 'hihix' },
+          },
+        ]),
+      ),
     );
   });
 
@@ -1323,14 +1339,16 @@ describe('WorkflowDefinition', () => {
         outputParameters: {},
       });
     }).toThrow(
-      new Error([
-        {
-          dataPath: '.tasks.1.defaultDecision.0.taskReferenceName',
-          keyword: 'uniq',
-          message: "should have uniq property 'taskReferenceName'",
-          params: { value: 'payment' },
-        },
-      ] as any),
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.1.defaultDecision.0.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: { value: 'payment' },
+          },
+        ]),
+      ),
     );
   });
 
