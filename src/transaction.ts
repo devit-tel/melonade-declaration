@@ -1,4 +1,5 @@
 import { TransactionStates } from './state';
+import { TaskTypes } from './task';
 import { IWorkflowDefinition } from './workflowDefinition';
 
 export interface ITransaction {
@@ -13,5 +14,6 @@ export interface ITransaction {
   parent?: {
     transactionId: string;
     taskId: string;
+    taskType: TaskTypes.Task | TaskTypes.Compensate
   };
 }
