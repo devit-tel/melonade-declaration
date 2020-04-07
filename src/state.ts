@@ -12,7 +12,9 @@ export enum TransactionStates {
 }
 
 export const TransactionNextStates = {
-  [TransactionStates.Completed]: [],
+  [TransactionStates.Completed]: [
+    TransactionStates.Cancelled, // For cancel after transaction completed
+  ],
   [TransactionStates.Failed]: [],
   [TransactionStates.Running]: [
     TransactionStates.Completed,
