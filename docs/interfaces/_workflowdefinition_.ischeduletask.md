@@ -22,17 +22,17 @@
 
 • **inputParameters**: *object*
 
-*Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
+*Overrides [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L27)*
-
-The input to be mapping to workflow's data
-
-**`tjs-type`** object
+*Defined in [src/workflowDefinition.ts:124](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L124)*
 
 #### Type declaration:
 
-* \[ **key**: *string*\]: string | number | object
+* **completedAfter**: *number | string*
+
+* **completedAt**: *string*
+
+* **completedWhen**: *string*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -60,4 +60,4 @@ ___
 
 • **type**: *[Schedule](../enums/_task_.tasktypes.md#schedule)*
 
-*Defined in [src/workflowDefinition.ts:120](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L120)*
+*Defined in [src/workflowDefinition.ts:123](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L123)*

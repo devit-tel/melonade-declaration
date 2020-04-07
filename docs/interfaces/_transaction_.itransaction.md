@@ -14,6 +14,7 @@
 * [endTime](_transaction_.itransaction.md#endtime)
 * [input](_transaction_.itransaction.md#input)
 * [output](_transaction_.itransaction.md#output)
+* [parent](_transaction_.itransaction.md#optional-parent)
 * [status](_transaction_.itransaction.md#status)
 * [tags](_transaction_.itransaction.md#optional-tags)
 * [transactionId](_transaction_.itransaction.md#transactionid)
@@ -25,7 +26,7 @@
 
 • **createTime**: *number*
 
-*Defined in [src/transaction.ts:9](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/transaction.ts#L9)*
+*Defined in [src/transaction.ts:10](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/transaction.ts#L10)*
 
 ___
 
@@ -33,7 +34,7 @@ ___
 
 • **endTime**: *number*
 
-*Defined in [src/transaction.ts:10](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/transaction.ts#L10)*
+*Defined in [src/transaction.ts:11](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/transaction.ts#L11)*
 
 ___
 
@@ -41,7 +42,7 @@ ___
 
 • **input**: *any*
 
-*Defined in [src/transaction.ts:7](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/transaction.ts#L7)*
+*Defined in [src/transaction.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/transaction.ts#L8)*
 
 ___
 
@@ -49,7 +50,23 @@ ___
 
 • **output**: *any*
 
-*Defined in [src/transaction.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/transaction.ts#L8)*
+*Defined in [src/transaction.ts:9](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/transaction.ts#L9)*
+
+___
+
+### `Optional` parent
+
+• **parent**? : *object*
+
+*Defined in [src/transaction.ts:14](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/transaction.ts#L14)*
+
+#### Type declaration:
+
+* **taskId**: *string*
+
+* **taskType**: *[Task](../enums/_task_.tasktypes.md#task) | [Compensate](../enums/_task_.tasktypes.md#compensate)*
+
+* **transactionId**: *string*
 
 ___
 
@@ -57,7 +74,7 @@ ___
 
 • **status**: *[TransactionStates](../enums/_state_.transactionstates.md)*
 
-*Defined in [src/transaction.ts:6](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/transaction.ts#L6)*
+*Defined in [src/transaction.ts:7](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/transaction.ts#L7)*
 
 ___
 
@@ -65,7 +82,7 @@ ___
 
 • **tags**? : *string[]*
 
-*Defined in [src/transaction.ts:12](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/transaction.ts#L12)*
+*Defined in [src/transaction.ts:13](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/transaction.ts#L13)*
 
 ___
 
@@ -73,7 +90,7 @@ ___
 
 • **transactionId**: *string*
 
-*Defined in [src/transaction.ts:5](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/transaction.ts#L5)*
+*Defined in [src/transaction.ts:6](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/transaction.ts#L6)*
 
 ___
 
@@ -81,4 +98,4 @@ ___
 
 • **workflowDefinition**: *[IWorkflowDefinition](_workflowdefinition_.iworkflowdefinition.md)*
 
-*Defined in [src/transaction.ts:11](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/transaction.ts#L11)*
+*Defined in [src/transaction.ts:12](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/transaction.ts#L12)*

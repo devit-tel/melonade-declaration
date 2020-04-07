@@ -115,7 +115,7 @@ export interface IDecisionTask extends IBaseTask {
   };
   defaultDecision: Tasks;
   inputParameters: {
-    case: string;
+    case?: string;
   };
 }
 

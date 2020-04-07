@@ -18,7 +18,7 @@
 
 • **CancelTransaction**: = "CANCEL_TRANSACTION"
 
-*Defined in [src/command.ts:6](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L6)*
+*Defined in [src/command.ts:6](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/command.ts#L6)*
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **PauseTransaction**: = "PAUSE_TRANSACTION"
 
-*Defined in [src/command.ts:7](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L7)*
+*Defined in [src/command.ts:7](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/command.ts#L7)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **ReloadTask**: = "RELOAD_TASK"
 
-*Defined in [src/command.ts:9](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L9)*
+*Defined in [src/command.ts:9](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/command.ts#L9)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **ResumeTransaction**: = "RESUME_TRANSACTION"
 
-*Defined in [src/command.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L8)*
+*Defined in [src/command.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/command.ts#L8)*
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 • **StartTransaction**: = "START_TRANSACTION"
 
-*Defined in [src/command.ts:5](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/command.ts#L5)*
+*Defined in [src/command.ts:5](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/command.ts#L5)*

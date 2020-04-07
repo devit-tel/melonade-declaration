@@ -29,7 +29,7 @@
   TaskTypes.SubTransaction,
 ]
 
-*Defined in [src/task.ts:14](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/task.ts#L14)*
+*Defined in [src/task.ts:14](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/task.ts#L14)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **TaskTypesList**: *unknown[]* =  enumToList(TaskTypes)
 
-*Defined in [src/task.ts:22](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/task.ts#L22)*
+*Defined in [src/task.ts:22](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/task.ts#L22)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **WORKER_TASKS**: *[TaskTypes](../enums/_task_.tasktypes.md)[]* =  [TaskTypes.Task, TaskTypes.Compensate]
 
-*Defined in [src/task.ts:20](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/task.ts#L20)*
+*Defined in [src/task.ts:20](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/task.ts#L20)*

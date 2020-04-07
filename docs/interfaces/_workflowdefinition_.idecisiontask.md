@@ -24,7 +24,7 @@
 
 • **decisions**: *object*
 
-*Defined in [src/workflowDefinition.ts:113](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L113)*
+*Defined in [src/workflowDefinition.ts:113](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L113)*
 
 #### Type declaration:
 
@@ -36,7 +36,7 @@ ___
 
 • **defaultDecision**: *[Tasks](../modules/_workflowdefinition_.md#tasks)*
 
-*Defined in [src/workflowDefinition.ts:116](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L116)*
+*Defined in [src/workflowDefinition.ts:116](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L116)*
 
 ___
 
@@ -44,17 +44,13 @@ ___
 
 • **inputParameters**: *object*
 
-*Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
+*Overrides [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L27)*
-
-The input to be mapping to workflow's data
-
-**`tjs-type`** object
+*Defined in [src/workflowDefinition.ts:117](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L117)*
 
 #### Type declaration:
 
-* \[ **key**: *string*\]: string | number | object
+* **case**? : *string*
 
 ___
 
@@ -64,7 +60,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -82,4 +78,4 @@ ___
 
 • **type**: *[Decision](../enums/_task_.tasktypes.md#decision)*
 
-*Defined in [src/workflowDefinition.ts:112](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L112)*
+*Defined in [src/workflowDefinition.ts:112](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L112)*

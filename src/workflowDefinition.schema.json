@@ -86,20 +86,13 @@
           "$ref": "#/definitions/Tasks"
         },
         "inputParameters": {
-          "additionalProperties": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "object"
-              }
-            ]
-          },
+          "additionalProperties": false,
           "description": "The input to be mapping to workflow's data",
+          "properties": {
+            "case": {
+              "type": "string"
+            }
+          },
           "type": "object"
         },
         "taskReferenceName": {
@@ -179,20 +172,27 @@
       "additionalProperties": false,
       "properties": {
         "inputParameters": {
-          "additionalProperties": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "object"
-              }
-            ]
-          },
+          "additionalProperties": false,
           "description": "The input to be mapping to workflow's data",
+          "properties": {
+            "completedAfter": {
+              "type": [
+                "number",
+                "string"
+              ]
+            },
+            "completedAt": {
+              "type": "string"
+            },
+            "completedWhen": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "completedAfter",
+            "completedAt",
+            "completedWhen"
+          ],
           "type": "object"
         },
         "taskReferenceName": {
@@ -220,20 +220,23 @@
       "additionalProperties": false,
       "properties": {
         "inputParameters": {
-          "additionalProperties": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "object"
-              }
-            ]
-          },
+          "additionalProperties": false,
           "description": "The input to be mapping to workflow's data",
+          "properties": {
+            "input": {
+            },
+            "workflowName": {
+              "type": "string"
+            },
+            "workflowRev": {
+              "type": "string"
+            }
+          },
+          "required": [
+            "workflowName",
+            "workflowRev",
+            "input"
+          ],
           "type": "object"
         },
         "taskReferenceName": {

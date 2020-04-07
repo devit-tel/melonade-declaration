@@ -19,7 +19,7 @@
 
 • **name**: *string*
 
-*Defined in [src/workflowDefinition.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L8)*
+*Defined in [src/workflowDefinition.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L8)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **rev**: *string*
 
-*Defined in [src/workflowDefinition.ts:9](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/workflowDefinition.ts#L9)*
+*Defined in [src/workflowDefinition.ts:9](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflowDefinition.ts#L9)*

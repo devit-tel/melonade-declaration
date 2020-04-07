@@ -19,7 +19,7 @@
 
 • **Cancelled**: = "CANCELLED"
 
-*Defined in [src/state.ts:65](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L65)*
+*Defined in [src/state.ts:67](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/state.ts#L67)*
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **Completed**: = "COMPLETED"
 
-*Defined in [src/state.ts:60](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L60)*
+*Defined in [src/state.ts:62](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/state.ts#L62)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **Failed**: = "FAILED"
 
-*Defined in [src/state.ts:61](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L61)*
+*Defined in [src/state.ts:63](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/state.ts#L63)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **Paused**: = "PAUSED"
 
-*Defined in [src/state.ts:64](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L64)*
+*Defined in [src/state.ts:66](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/state.ts#L66)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **Running**: = "RUNNING"
 
-*Defined in [src/state.ts:63](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L63)*
+*Defined in [src/state.ts:65](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/state.ts#L65)*
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 • **Timeout**: = "TIMEOUT"
 
-*Defined in [src/state.ts:62](https://github.com/devit-tel/melonade-declaration/blob/3679b49/src/state.ts#L62)*
+*Defined in [src/state.ts:64](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/state.ts#L64)*
