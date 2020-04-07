@@ -114,14 +114,27 @@ export interface IDecisionTask extends IBaseTask {
     [decision: string]: Tasks;
   };
   defaultDecision: Tasks;
+  inputParameters: {
+    case: string;
+  };
 }
 
 export interface IScheduleTask extends IBaseTask {
   type: TaskTypes.Schedule;
+  inputParameters: {
+    completedAfter: number | string;
+    completedAt: string,
+    completedWhen: string
+  };
 }
 
 export interface ISubTransactionTask extends IBaseTask {
   type: TaskTypes.SubTransaction;
+  inputParameters: {
+    workflowName: string;
+    workflowRev: string,
+    input: any
+  };
 }
 
 export type AllTaskType =
@@ -271,13 +284,13 @@ const validateAllTaskReferenceName = (
                 paralleltasks: Tasks,
                 index: number,
               ) => [
-                ...parallelReferenceNames,
-                ...validateAllTaskReferenceName(
-                  paralleltasks,
-                  [...currentPath, 'parallelTasks', index],
-                  parallelReferenceNames,
-                ),
-              ],
+                  ...parallelReferenceNames,
+                  ...validateAllTaskReferenceName(
+                    paralleltasks,
+                    [...currentPath, 'parallelTasks', index],
+                    parallelReferenceNames,
+                  ),
+                ],
               [],
             ),
           );
