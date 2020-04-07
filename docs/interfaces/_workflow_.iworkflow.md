@@ -28,7 +28,7 @@
 
 • **createTime**: *number*
 
-*Defined in [src/workflow.ts:23](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L23)*
+*Defined in [src/workflow.ts:23](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L23)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **endTime**: *number*
 
-*Defined in [src/workflow.ts:25](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L25)*
+*Defined in [src/workflow.ts:25](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L25)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **input**: *object*
 
-*Defined in [src/workflow.ts:17](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L17)*
+*Defined in [src/workflow.ts:17](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L17)*
 
 #### Type declaration:
 
@@ -56,7 +56,7 @@ ___
 
 • **output**: *object*
 
-*Defined in [src/workflow.ts:20](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L20)*
+*Defined in [src/workflow.ts:20](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L20)*
 
 #### Type declaration:
 
@@ -68,7 +68,7 @@ ___
 
 • **retries**: *number*
 
-*Defined in [src/workflow.ts:16](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L16)*
+*Defined in [src/workflow.ts:16](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L16)*
 
 ___
 
@@ -76,7 +76,7 @@ ___
 
 • **startTime**: *number*
 
-*Defined in [src/workflow.ts:24](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L24)*
+*Defined in [src/workflow.ts:24](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L24)*
 
 ___
 
@@ -84,7 +84,7 @@ ___
 
 • **status**: *[WorkflowStates](../enums/_state_.workflowstates.md)*
 
-*Defined in [src/workflow.ts:15](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L15)*
+*Defined in [src/workflow.ts:15](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L15)*
 
 ___
 
@@ -92,7 +92,7 @@ ___
 
 • **transactionId**: *string*
 
-*Defined in [src/workflow.ts:12](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L12)*
+*Defined in [src/workflow.ts:12](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L12)*
 
 ___
 
@@ -100,7 +100,7 @@ ___
 
 • **type**: *[WorkflowTypes](../enums/_workflow_.workflowtypes.md)*
 
-*Defined in [src/workflow.ts:14](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L14)*
+*Defined in [src/workflow.ts:14](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L14)*
 
 ___
 
@@ -108,7 +108,7 @@ ___
 
 • **workflowDefinition**: *[IWorkflowDefinition](_workflowdefinition_.iworkflowdefinition.md)*
 
-*Defined in [src/workflow.ts:26](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L26)*
+*Defined in [src/workflow.ts:26](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L26)*
 
 ___
 
@@ -116,4 +116,4 @@ ___
 
 • **workflowId**: *string*
 
-*Defined in [src/workflow.ts:13](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/workflow.ts#L13)*
+*Defined in [src/workflow.ts:13](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflow.ts#L13)*

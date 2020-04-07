@@ -19,7 +19,7 @@
 
 • **total**: *number*
 
-*Defined in [src/store.ts:27](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/store.ts#L27)*
+*Defined in [src/store.ts:27](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/store.ts#L27)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **transactions**: *[ITransaction](_transaction_.itransaction.md)[]*
 
-*Defined in [src/store.ts:28](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/store.ts#L28)*
+*Defined in [src/store.ts:28](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/store.ts#L28)*

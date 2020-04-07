@@ -188,11 +188,6 @@
               "type": "string"
             }
           },
-          "required": [
-            "completedAfter",
-            "completedAt",
-            "completedWhen"
-          ],
           "type": "object"
         },
         "taskReferenceName": {
@@ -234,8 +229,7 @@
           },
           "required": [
             "workflowName",
-            "workflowRev",
-            "input"
+            "workflowRev"
           ],
           "type": "object"
         },

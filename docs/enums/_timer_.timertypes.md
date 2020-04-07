@@ -16,7 +16,7 @@
 
 • **cronWorkflow**: = "CRON_WORKFLOW"
 
-*Defined in [src/timer.ts:6](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/timer.ts#L6)*
+*Defined in [src/timer.ts:6](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/timer.ts#L6)*
 
 ___
 
@@ -24,7 +24,7 @@ ___
 
 • **delayTask**: = "DELAY_TASK"
 
-*Defined in [src/timer.ts:5](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/timer.ts#L5)*
+*Defined in [src/timer.ts:5](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/timer.ts#L5)*
 
 ___
 
@@ -32,4 +32,4 @@ ___
 
 • **scheduleTask**: = "SCHEDULE_TASK"
 
-*Defined in [src/timer.ts:7](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/timer.ts#L7)*
+*Defined in [src/timer.ts:7](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/timer.ts#L7)*

@@ -17,7 +17,7 @@
 
 • **Memory**: = "MEMORY"
 
-*Defined in [src/store.ts:8](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/store.ts#L8)*
+*Defined in [src/store.ts:8](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/store.ts#L8)*
 
 ___
 
@@ -25,7 +25,7 @@ ___
 
 • **MongoDB**: = "MONGODB"
 
-*Defined in [src/store.ts:6](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/store.ts#L6)*
+*Defined in [src/store.ts:6](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/store.ts#L6)*
 
 ___
 
@@ -33,7 +33,7 @@ ___
 
 • **Redis**: = "REDIS"
 
-*Defined in [src/store.ts:7](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/store.ts#L7)*
+*Defined in [src/store.ts:7](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/store.ts#L7)*
 
 ___
 
@@ -41,4 +41,4 @@ ___
 
 • **ZooKeeper**: = "ZOOKEEPER"
 
-*Defined in [src/store.ts:5](https://github.com/devit-tel/melonade-declaration/blob/3e3ea40/src/store.ts#L5)*
+*Defined in [src/store.ts:5](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/store.ts#L5)*
