@@ -24,4 +24,5 @@ export interface IWorkflow {
   startTime: number;
   endTime: number;
   workflowDefinition: IWorkflowDefinition;
+  transactionDepth: number;
 }

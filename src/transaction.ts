@@ -13,6 +13,7 @@ export interface ITransaction {
   parent?: {
     transactionId: string;
     taskId: string;
-    isCompensate: boolean;
+    isCompensate: boolean; // If the parent task is compensate
+    depth: number; // depth of sub transaction (depth = 2 if it's child of child of parent) ~main transaction level = 0 and ++
   };
 }
