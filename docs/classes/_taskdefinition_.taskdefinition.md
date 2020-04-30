@@ -31,7 +31,7 @@
 
 \+ **new TaskDefinition**(`taskDefinition`: [ITaskDefinition](../interfaces/_taskdefinition_.itaskdefinition.md)): *[TaskDefinition](_taskdefinition_.taskdefinition.md)*
 
-*Defined in [src/taskDefinition.ts:81](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/taskDefinition.ts#L81)*
+*Defined in [src/taskDefinition.ts:81](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/taskDefinition.ts#L81)*
 
 **Parameters:**
 
@@ -49,7 +49,7 @@ Name | Type |
 
 *Implementation of [ITaskDefinition](../interfaces/_taskdefinition_.itaskdefinition.md).[ackTimeout](../interfaces/_taskdefinition_.itaskdefinition.md#optional-acktimeout)*
 
-*Defined in [src/taskDefinition.ts:78](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/taskDefinition.ts#L78)*
+*Defined in [src/taskDefinition.ts:78](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/taskDefinition.ts#L78)*
 
 ___
 
@@ -59,7 +59,7 @@ ___
 
 *Implementation of [ITaskDefinition](../interfaces/_taskdefinition_.itaskdefinition.md).[description](../interfaces/_taskdefinition_.itaskdefinition.md#optional-description)*
 
-*Defined in [src/taskDefinition.ts:77](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/taskDefinition.ts#L77)*
+*Defined in [src/taskDefinition.ts:77](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/taskDefinition.ts#L77)*
 
 ___
 
@@ -69,7 +69,7 @@ ___
 
 *Implementation of [ITaskDefinition](../interfaces/_taskdefinition_.itaskdefinition.md).[document](../interfaces/_taskdefinition_.itaskdefinition.md#optional-document)*
 
-*Defined in [src/taskDefinition.ts:81](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/taskDefinition.ts#L81)*
+*Defined in [src/taskDefinition.ts:81](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/taskDefinition.ts#L81)*
 
 ___
 
@@ -79,7 +79,7 @@ ___
 
 *Implementation of [ITaskDefinition](../interfaces/_taskdefinition_.itaskdefinition.md).[name](../interfaces/_taskdefinition_.itaskdefinition.md#name)*
 
-*Defined in [src/taskDefinition.ts:76](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/taskDefinition.ts#L76)*
+*Defined in [src/taskDefinition.ts:76](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/taskDefinition.ts#L76)*
 
 ___
 
@@ -89,7 +89,7 @@ ___
 
 *Implementation of [ITaskDefinition](../interfaces/_taskdefinition_.itaskdefinition.md).[retry](../interfaces/_taskdefinition_.itaskdefinition.md#optional-retry)*
 
-*Defined in [src/taskDefinition.ts:80](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/taskDefinition.ts#L80)*
+*Defined in [src/taskDefinition.ts:80](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/taskDefinition.ts#L80)*
 
 ___
 
@@ -99,4 +99,4 @@ ___
 
 *Implementation of [ITaskDefinition](../interfaces/_taskdefinition_.itaskdefinition.md).[timeout](../interfaces/_taskdefinition_.itaskdefinition.md#optional-timeout)*
 
-*Defined in [src/taskDefinition.ts:79](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/taskDefinition.ts#L79)*
+*Defined in [src/taskDefinition.ts:79](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/taskDefinition.ts#L79)*

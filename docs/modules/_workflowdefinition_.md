@@ -36,7 +36,7 @@
 
 Ƭ **AllTaskType**: *[ITaskTask](../interfaces/_workflowdefinition_.itasktask.md) | [ICompensateTask](../interfaces/_workflowdefinition_.icompensatetask.md) | [IParallelTask](../interfaces/_workflowdefinition_.iparalleltask.md) | [IDecisionTask](../interfaces/_workflowdefinition_.idecisiontask.md) | [IScheduleTask](../interfaces/_workflowdefinition_.ischeduletask.md) | [ISubTransactionTask](../interfaces/_workflowdefinition_.isubtransactiontask.md)*
 
-*Defined in [src/workflowDefinition.ts:140](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflowDefinition.ts#L140)*
+*Defined in [src/workflowDefinition.ts:138](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L138)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 Ƭ **Tasks**: *[AllTaskType](_workflowdefinition_.md#alltasktype)[]*
 
-*Defined in [src/workflowDefinition.ts:85](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflowDefinition.ts#L85)*
+*Defined in [src/workflowDefinition.ts:83](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L83)*
 
 The tasks in workflow (can not be empty)
 
@@ -58,7 +58,7 @@ The tasks in workflow (can not be empty)
 
 ▸ **checkDuplicateReferenceName**(`taskReferenceName`: string, `tasksReferenceName`: string[], `path`: string | number[]): *void*
 
-*Defined in [src/workflowDefinition.ts:209](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflowDefinition.ts#L209)*
+*Defined in [src/workflowDefinition.ts:207](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L207)*
 
 **Parameters:**
 
@@ -76,7 +76,7 @@ ___
 
 ▸ **validateAllTaskReferenceName**(`tasks`: [Tasks](_workflowdefinition_.md#tasks), `path`: string | number[], `extraTasksReferenceName`: string[]): *string[]*
 
-*Defined in [src/workflowDefinition.ts:227](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflowDefinition.ts#L227)*
+*Defined in [src/workflowDefinition.ts:225](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L225)*
 
 **Parameters:**
 

@@ -24,9 +24,7 @@ export interface IBaseTask {
    *
    * @TJS-type object
    */
-  inputParameters: {
-    [key: string]: string | number | object;
-  };
+  inputParameters: any;
 }
 
 export interface ITaskTask extends IBaseTask {

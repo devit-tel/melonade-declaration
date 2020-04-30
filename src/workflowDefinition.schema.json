@@ -28,21 +28,7 @@
       "additionalProperties": false,
       "properties": {
         "inputParameters": {
-          "additionalProperties": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "object"
-              }
-            ]
-          },
-          "description": "The input to be mapping to workflow's data",
-          "type": "object"
+          "description": "The input to be mapping to workflow's data"
         },
         "name": {
           "description": "The task's name",
@@ -122,21 +108,7 @@
       "additionalProperties": false,
       "properties": {
         "inputParameters": {
-          "additionalProperties": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "object"
-              }
-            ]
-          },
-          "description": "The input to be mapping to workflow's data",
-          "type": "object"
+          "description": "The input to be mapping to workflow's data"
         },
         "parallelTasks": {
           "description": "The list of tasks that run parallely",
@@ -263,21 +235,7 @@
           "type": "number"
         },
         "inputParameters": {
-          "additionalProperties": {
-            "anyOf": [
-              {
-                "type": "string"
-              },
-              {
-                "type": "number"
-              },
-              {
-                "type": "object"
-              }
-            ]
-          },
-          "description": "The input to be mapping to workflow's data",
-          "type": "object"
+          "description": "The input to be mapping to workflow's data"
         },
         "name": {
           "description": "The task's name",

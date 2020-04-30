@@ -29,17 +29,13 @@
 
 ###  inputParameters
 
-• **inputParameters**: *object*
+• **inputParameters**: *any*
 
-*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflowDefinition.ts#L27)*
+*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L27)*
 
 The input to be mapping to workflow's data
 
 **`tjs-type`** object
-
-#### Type declaration:
-
-* \[ **key**: *string*\]: string | number | object
 
 ___
 
@@ -47,7 +43,7 @@ ___
 
 • **taskReferenceName**: *string*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/e7e9481/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
