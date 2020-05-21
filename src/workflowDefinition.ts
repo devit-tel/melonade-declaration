@@ -114,7 +114,7 @@ export interface IDynamicTask extends IBaseTask {
    * @minItems 0
    * @TJS-type array
    */
-  dynamicTasks: Tasks;
+  dynamicTasks: AllTaskType[];
   inputParameters: {
     tasks?: string;
   };
@@ -237,7 +237,7 @@ const checkDuplicateReferenceName = (
     ]);
 };
 
-const validateAllTaskReferenceName = (
+export const validateAllTaskReferenceName = (
   tasks: Tasks,
   path: (string | number)[] = [],
   extraTasksReferenceName: string[] = [],
@@ -319,10 +319,13 @@ const validateAllTaskReferenceName = (
             ...allParallelReferenceNames,
           ];
         case Task.TaskTypes.DynamicTask:
-          const dynamicTaskReferenceNames = validateAllTaskReferenceName(
-            task.dynamicTasks,
-            [...currentPath, 'dynamicTasks'],
-          );
+          const dynamicTaskReferenceNames = task.dynamicTasks
+            ? validateAllTaskReferenceName(
+                task.dynamicTasks,
+                [...currentPath, 'dynamicTasks'],
+                tasksReferenceName,
+              )
+            : [];
 
           checkDuplicateReferenceName(
             task.taskReferenceName,
@@ -362,6 +365,4 @@ export class WorkflowDefinition implements IWorkflowDefinition {
 
     Object.assign(this, result);
   }
-
-  //Expose validate function to use it at Run-Time
 }

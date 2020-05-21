@@ -111,9 +111,12 @@
       "additionalProperties": false,
       "properties": {
         "dynamicTasks": {
-          "$ref": "#/definitions/Tasks",
           "description": "The list of tasks that create dynamically",
-          "minItems": 0
+          "items": {
+            "$ref": "#/definitions/AllTaskType"
+          },
+          "minItems": 0,
+          "type": "array"
         },
         "inputParameters": {
           "additionalProperties": false,
