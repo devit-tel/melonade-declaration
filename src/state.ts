@@ -12,8 +12,31 @@ export enum TransactionStates {
 }
 
 export const TransactionNextStates = {
+  [TransactionStates.Completed]: [],
+  [TransactionStates.Failed]: [],
+  [TransactionStates.Running]: [
+    TransactionStates.Completed,
+    TransactionStates.Failed,
+    TransactionStates.Running,
+    TransactionStates.Paused,
+    TransactionStates.Cancelled,
+    TransactionStates.Compensated,
+  ],
+  [TransactionStates.Paused]: [
+    TransactionStates.Completed,
+    TransactionStates.Failed,
+    TransactionStates.Running,
+    TransactionStates.Cancelled,
+    TransactionStates.Compensated,
+  ],
+  [TransactionStates.Cancelled]: [],
+  [TransactionStates.Compensated]: [],
+};
+
+export const SubTransactionNextStates = {
   [TransactionStates.Completed]: [
-    TransactionStates.Cancelled, // For cancel after transaction completed
+    TransactionStates.Cancelled,
+    TransactionStates.Failed,
   ],
   [TransactionStates.Failed]: [],
   [TransactionStates.Running]: [
