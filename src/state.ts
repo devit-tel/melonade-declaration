@@ -81,6 +81,29 @@ export const TransactionPrevStates = {
   ),
 };
 
+const subTransactionPrevStateGetter = getPrevState(TransactionNextStates);
+
+export const SubTransactionPrevStates = {
+  [TransactionStates.Completed]: subTransactionPrevStateGetter(
+    TransactionStates.Completed,
+  ),
+  [TransactionStates.Failed]: subTransactionPrevStateGetter(
+    TransactionStates.Failed,
+  ),
+  [TransactionStates.Running]: subTransactionPrevStateGetter(
+    TransactionStates.Running,
+  ),
+  [TransactionStates.Paused]: subTransactionPrevStateGetter(
+    TransactionStates.Paused,
+  ),
+  [TransactionStates.Cancelled]: subTransactionPrevStateGetter(
+    TransactionStates.Cancelled,
+  ),
+  [TransactionStates.Compensated]: subTransactionPrevStateGetter(
+    TransactionStates.Compensated,
+  ),
+};
+
 export enum WorkflowStates {
   Completed = 'COMPLETED',
   Failed = 'FAILED',
