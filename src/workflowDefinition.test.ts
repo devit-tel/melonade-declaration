@@ -1474,4 +1474,158 @@ describe('WorkflowDefinition', () => {
       });
     }).not.toThrow();
   });
+
+  test('Duplicate taskReferenceName DynamicTask (Parent-Child)', () => {
+    expect(() => {
+      new WorkflowDefinition({
+        name: 'test',
+        rev: '01',
+        tasks: [
+          {
+            taskReferenceName: 'dynamic1',
+            type: TaskTypes.DynamicTask,
+            inputParameters: {},
+            dynamicTasks: [
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic1',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic2',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic3',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic4',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+            ],
+          },
+        ],
+      });
+    }).toThrow(
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.0.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: {
+              value: 'dynamic1',
+            },
+          },
+        ]),
+      ),
+    );
+  });
+  test('Duplicate taskReferenceName DynamicTask (Child-Child)', () => {
+    expect(() => {
+      new WorkflowDefinition({
+        name: 'test',
+        rev: '01',
+        tasks: [
+          {
+            taskReferenceName: 'dynamic1',
+            type: TaskTypes.DynamicTask,
+            inputParameters: {},
+            dynamicTasks: [
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic11',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic12',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic13',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic11',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+            ],
+          },
+        ],
+      });
+    }).toThrow(
+      new Error(
+        JSON.stringify([
+          {
+            dataPath: '.tasks.0.dynamicTasks.3.taskReferenceName',
+            keyword: 'uniq',
+            message: "should have uniq property 'taskReferenceName'",
+            params: {
+              value: 'dynamic11',
+            },
+          },
+        ]),
+      ),
+    );
+  });
+
+  test('No Duplicate taskReferenceName DynamicTask', () => {
+    expect(() => {
+      new WorkflowDefinition({
+        name: 'test',
+        rev: '01',
+        tasks: [
+          {
+            taskReferenceName: 'dynamic1',
+            type: TaskTypes.DynamicTask,
+            inputParameters: {},
+            dynamicTasks: [
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic11',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic12',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic13',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+              {
+                name: 't1',
+                taskReferenceName: 'dynamic14',
+                type: TaskTypes.Task,
+                inputParameters: {},
+              },
+            ],
+          },
+        ],
+      });
+    }).not.toThrow();
+  });
 });

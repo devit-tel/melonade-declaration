@@ -106,6 +106,20 @@ export interface IParallelTask extends IBaseTask {
   parallelTasks: Tasks[];
 }
 
+export interface IDynamicTask extends IBaseTask {
+  type: TaskTypes.DynamicTask;
+  /**
+   * The list of tasks that create dynamically
+   *
+   * @minItems 0
+   * @TJS-type array
+   */
+  dynamicTasks: Tasks;
+  inputParameters: {
+    tasks?: string;
+  };
+}
+
 export interface IDecisionTask extends IBaseTask {
   type: TaskTypes.Decision;
   decisions: {
@@ -141,7 +155,8 @@ export type AllTaskType =
   | IParallelTask
   | IDecisionTask
   | IScheduleTask
-  | ISubTransactionTask;
+  | ISubTransactionTask
+  | IDynamicTask;
 
 export interface IWorkflowDefinition {
   /**
@@ -303,6 +318,22 @@ const validateAllTaskReferenceName = (
             task.taskReferenceName,
             ...allParallelReferenceNames,
           ];
+        case Task.TaskTypes.DynamicTask:
+          const dynamicTaskReferenceNames = validateAllTaskReferenceName(
+            task.dynamicTasks,
+            [...currentPath, 'dynamicTasks'],
+          );
+
+          checkDuplicateReferenceName(
+            task.taskReferenceName,
+            dynamicTaskReferenceNames,
+            currentPath,
+          );
+          return [
+            ...tasksReferenceName,
+            task.taskReferenceName,
+            ...dynamicTaskReferenceNames,
+          ];
         case Task.TaskTypes.Compensate:
         case Task.TaskTypes.Task:
         case Task.TaskTypes.Schedule:
@@ -331,4 +362,6 @@ export class WorkflowDefinition implements IWorkflowDefinition {
 
     Object.assign(this, result);
   }
+
+  //Expose validate function to use it at Run-Time
 }

@@ -21,6 +21,9 @@
         },
         {
           "$ref": "#/definitions/ISubTransactionTask"
+        },
+        {
+          "$ref": "#/definitions/IDynamicTask"
         }
       ]
     },
@@ -45,18 +48,11 @@
           "type": "string"
         },
         "type": {
-          "enum": [
-            "COMPENSATE"
-          ],
+          "enum": ["COMPENSATE"],
           "type": "string"
         }
       },
-      "required": [
-        "inputParameters",
-        "name",
-        "taskReferenceName",
-        "type"
-      ],
+      "required": ["inputParameters", "name", "taskReferenceName", "type"],
       "type": "object"
     },
     "IDecisionTask": {
@@ -89,9 +85,7 @@
           "type": "string"
         },
         "type": {
-          "enum": [
-            "DECISION"
-          ],
+          "enum": ["DECISION"],
           "type": "string"
         }
       },
@@ -126,9 +120,7 @@
           "type": "string"
         },
         "type": {
-          "enum": [
-            "PARALLEL"
-          ],
+          "enum": ["PARALLEL"],
           "type": "string"
         }
       },
@@ -148,10 +140,7 @@
           "description": "The input to be mapping to workflow's data",
           "properties": {
             "completedAfter": {
-              "type": [
-                "number",
-                "string"
-              ]
+              "type": ["number", "string"]
             },
             "completedAt": {
               "type": "string"
@@ -170,17 +159,11 @@
           "type": "string"
         },
         "type": {
-          "enum": [
-            "SCHEDULE"
-          ],
+          "enum": ["SCHEDULE"],
           "type": "string"
         }
       },
-      "required": [
-        "inputParameters",
-        "taskReferenceName",
-        "type"
-      ],
+      "required": ["inputParameters", "taskReferenceName", "type"],
       "type": "object"
     },
     "ISubTransactionTask": {
@@ -190,8 +173,7 @@
           "additionalProperties": false,
           "description": "The input to be mapping to workflow's data",
           "properties": {
-            "input": {
-            },
+            "input": {},
             "workflowName": {
               "type": "string"
             },
@@ -199,10 +181,7 @@
               "type": "string"
             }
           },
-          "required": [
-            "workflowName",
-            "workflowRev"
-          ],
+          "required": ["workflowName", "workflowRev"],
           "type": "object"
         },
         "taskReferenceName": {
@@ -213,17 +192,11 @@
           "type": "string"
         },
         "type": {
-          "enum": [
-            "SUB_TRANSACTION"
-          ],
+          "enum": ["SUB_TRANSACTION"],
           "type": "string"
         }
       },
-      "required": [
-        "inputParameters",
-        "taskReferenceName",
-        "type"
-      ],
+      "required": ["inputParameters", "taskReferenceName", "type"],
       "type": "object"
     },
     "ITaskTask": {
@@ -274,18 +247,11 @@
           "type": "number"
         },
         "type": {
-          "enum": [
-            "TASK"
-          ],
+          "enum": ["TASK"],
           "type": "string"
         }
       },
-      "required": [
-        "inputParameters",
-        "name",
-        "taskReferenceName",
-        "type"
-      ],
+      "required": ["inputParameters", "name", "taskReferenceName", "type"],
       "type": "object"
     },
     "IWorkflowDefinition": {
@@ -314,12 +280,10 @@
               {
                 "type": "string"
               },
-              {
-              }
+              {}
             ]
           },
-          "default": {
-          },
+          "default": {},
           "description": "The workflow's output mapping",
           "type": "object"
         },
@@ -340,9 +304,7 @@
               "type": "number"
             }
           },
-          "required": [
-            "limit"
-          ],
+          "required": ["limit"],
           "type": "object"
         },
         "rev": {
@@ -356,11 +318,7 @@
           "$ref": "#/definitions/Tasks"
         }
       },
-      "required": [
-        "name",
-        "rev",
-        "tasks"
-      ],
+      "required": ["name", "rev", "tasks"],
       "type": "object"
     },
     "IWorkflowRef": {
@@ -373,10 +331,7 @@
           "type": "string"
         }
       },
-      "required": [
-        "name",
-        "rev"
-      ],
+      "required": ["name", "rev"],
       "type": "object"
     },
     "Tasks": {
@@ -386,6 +341,48 @@
       },
       "minItems": 1,
       "type": "array"
+    },
+    "IDynamicTask": {
+      "additionalProperties": false,
+      "properties": {
+        "inputParameters": {
+          "additionalProperties": false,
+          "description": "The input to be mapping to workflow's data",
+          "properties": {
+            "tasks": {
+              "description": "The list of tasks that will dynamically created",
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "dynamicTasks": {
+          "description": "The list of tasks that will dynamically created",
+          "items": {
+            "$ref": "#/definitions/AllTaskType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "taskReferenceName": {
+          "description": "The referance name using in workflow",
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-_]+$",
+          "type": "string"
+        },
+        "type": {
+          "enum": ["DYNAMIC_TASK"],
+          "type": "string"
+        }
+      },
+      "required": [
+        "inputParameters",
+        "dynamicTasks",
+        "taskReferenceName",
+        "type"
+      ],
+      "type": "object"
     },
     "WorkflowFailureStrategies": {
       "enum": [
