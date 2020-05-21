@@ -106,6 +106,20 @@ export interface IParallelTask extends IBaseTask {
   parallelTasks: Tasks[];
 }
 
+export interface IDynamicTask extends IBaseTask {
+  type: TaskTypes.DynamicTask;
+  /**
+   * The list of tasks that create dynamically
+   *
+   * @minItems 0
+   * @TJS-type array
+   */
+  dynamicTasks: AllTaskType[];
+  inputParameters: {
+    tasks?: string;
+  };
+}
+
 export interface IDecisionTask extends IBaseTask {
   type: TaskTypes.Decision;
   decisions: {
@@ -141,7 +155,8 @@ export type AllTaskType =
   | IParallelTask
   | IDecisionTask
   | IScheduleTask
-  | ISubTransactionTask;
+  | ISubTransactionTask
+  | IDynamicTask;
 
 export interface IWorkflowDefinition {
   /**
@@ -222,7 +237,7 @@ const checkDuplicateReferenceName = (
     ]);
 };
 
-const validateAllTaskReferenceName = (
+export const validateAllTaskReferenceName = (
   tasks: Tasks,
   path: (string | number)[] = [],
   extraTasksReferenceName: string[] = [],
@@ -302,6 +317,25 @@ const validateAllTaskReferenceName = (
             ...tasksReferenceName,
             task.taskReferenceName,
             ...allParallelReferenceNames,
+          ];
+        case Task.TaskTypes.DynamicTask:
+          const dynamicTaskReferenceNames = task.dynamicTasks
+            ? validateAllTaskReferenceName(
+                task.dynamicTasks,
+                [...currentPath, 'dynamicTasks'],
+                tasksReferenceName,
+              )
+            : [];
+
+          checkDuplicateReferenceName(
+            task.taskReferenceName,
+            dynamicTaskReferenceNames,
+            currentPath,
+          );
+          return [
+            ...tasksReferenceName,
+            task.taskReferenceName,
+            ...dynamicTaskReferenceNames,
           ];
         case Task.TaskTypes.Compensate:
         case Task.TaskTypes.Task:

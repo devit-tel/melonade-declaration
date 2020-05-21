@@ -9,6 +9,7 @@ export enum TaskTypes {
   Decision = 'DECISION',
   Schedule = 'SCHEDULE',
   SubTransaction = 'SUB_TRANSACTION',
+  DynamicTask = 'DYNAMIC_TASK',
 }
 
 export const SYSTEM_TASKS = [
@@ -16,6 +17,7 @@ export const SYSTEM_TASKS = [
   TaskTypes.Decision,
   TaskTypes.Schedule,
   TaskTypes.SubTransaction,
+  TaskTypes.DynamicTask,
 ];
 export const WORKER_TASKS = [TaskTypes.Task, TaskTypes.Compensate];
 
@@ -38,6 +40,7 @@ export interface ITask {
   logs?: any[];
   type: TaskTypes;
   parallelTasks?: AllTaskType[][];
+  dynamicTasks?: AllTaskType[];
   decisions?: {
     [decision: string]: AllTaskType[];
   };

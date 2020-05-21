@@ -24,7 +24,7 @@
 
 • **decisions**: *object*
 
-*Defined in [src/workflowDefinition.ts:111](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L111)*
+*Defined in [src/workflowDefinition.ts:125](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L125)*
 
 #### Type declaration:
 
@@ -36,7 +36,7 @@ ___
 
 • **defaultDecision**: *[Tasks](../modules/_workflowdefinition_.md#tasks)*
 
-*Defined in [src/workflowDefinition.ts:114](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L114)*
+*Defined in [src/workflowDefinition.ts:128](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L128)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 *Overrides [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:115](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L115)*
+*Defined in [src/workflowDefinition.ts:129](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L129)*
 
 #### Type declaration:
 
@@ -60,7 +60,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -78,4 +78,4 @@ ___
 
 • **type**: *[Decision](../enums/_task_.tasktypes.md#decision)*
 
-*Defined in [src/workflowDefinition.ts:110](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L110)*
+*Defined in [src/workflowDefinition.ts:124](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L124)*

@@ -23,7 +23,7 @@
 
 • **key**: *string*
 
-*Defined in [src/kafka.ts:14](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/kafka.ts#L14)*
+*Defined in [src/kafka.ts:14](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/kafka.ts#L14)*
 
 ___
 
@@ -31,7 +31,7 @@ ___
 
 • **offset**: *number*
 
-*Defined in [src/kafka.ts:16](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/kafka.ts#L16)*
+*Defined in [src/kafka.ts:16](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/kafka.ts#L16)*
 
 ___
 
@@ -39,7 +39,7 @@ ___
 
 • **partition**: *number*
 
-*Defined in [src/kafka.ts:17](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/kafka.ts#L17)*
+*Defined in [src/kafka.ts:17](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/kafka.ts#L17)*
 
 ___
 
@@ -47,7 +47,7 @@ ___
 
 • **size**: *number*
 
-*Defined in [src/kafka.ts:13](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/kafka.ts#L13)*
+*Defined in [src/kafka.ts:13](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/kafka.ts#L13)*
 
 ___
 
@@ -55,7 +55,7 @@ ___
 
 • **topic**: *string*
 
-*Defined in [src/kafka.ts:15](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/kafka.ts#L15)*
+*Defined in [src/kafka.ts:15](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/kafka.ts#L15)*
 
 ___
 
@@ -63,4 +63,4 @@ ___
 
 • **value**: *Buffer*
 
-*Defined in [src/kafka.ts:12](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/kafka.ts#L12)*
+*Defined in [src/kafka.ts:12](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/kafka.ts#L12)*

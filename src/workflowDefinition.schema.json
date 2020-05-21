@@ -21,6 +21,9 @@
         },
         {
           "$ref": "#/definitions/ISubTransactionTask"
+        },
+        {
+          "$ref": "#/definitions/IDynamicTask"
         }
       ]
     },
@@ -98,6 +101,49 @@
       "required": [
         "decisions",
         "defaultDecision",
+        "inputParameters",
+        "taskReferenceName",
+        "type"
+      ],
+      "type": "object"
+    },
+    "IDynamicTask": {
+      "additionalProperties": false,
+      "properties": {
+        "dynamicTasks": {
+          "description": "The list of tasks that create dynamically",
+          "items": {
+            "$ref": "#/definitions/AllTaskType"
+          },
+          "minItems": 0,
+          "type": "array"
+        },
+        "inputParameters": {
+          "additionalProperties": false,
+          "description": "The input to be mapping to workflow's data",
+          "properties": {
+            "tasks": {
+              "type": "string"
+            }
+          },
+          "type": "object"
+        },
+        "taskReferenceName": {
+          "description": "The referance name using in workflow",
+          "maxLength": 64,
+          "minLength": 1,
+          "pattern": "^[a-zA-Z0-9-_]+$",
+          "type": "string"
+        },
+        "type": {
+          "enum": [
+            "DYNAMIC_TASK"
+          ],
+          "type": "string"
+        }
+      },
+      "required": [
+        "dynamicTasks",
         "inputParameters",
         "taskReferenceName",
         "type"

@@ -33,7 +33,7 @@
 
 \+ **new WorkflowDefinition**(`workflowDefinition`: [IWorkflowDefinition](../interfaces/_workflowdefinition_.iworkflowdefinition.md)): *[WorkflowDefinition](_workflowdefinition_.workflowdefinition.md)*
 
-*Defined in [src/workflowDefinition.ts:325](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L325)*
+*Defined in [src/workflowDefinition.ts:356](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L356)*
 
 **Parameters:**
 
@@ -51,7 +51,7 @@ Name | Type |
 
 *Implementation of [IWorkflowDefinition](../interfaces/_workflowdefinition_.iworkflowdefinition.md).[description](../interfaces/_workflowdefinition_.iworkflowdefinition.md#optional-description)*
 
-*Defined in [src/workflowDefinition.ts:320](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L320)*
+*Defined in [src/workflowDefinition.ts:351](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L351)*
 
 ___
 
@@ -61,7 +61,7 @@ ___
 
 *Implementation of [IWorkflowDefinition](../interfaces/_workflowdefinition_.iworkflowdefinition.md).[failureStrategy](../interfaces/_workflowdefinition_.iworkflowdefinition.md#optional-failurestrategy)*
 
-*Defined in [src/workflowDefinition.ts:322](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L322)*
+*Defined in [src/workflowDefinition.ts:353](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L353)*
 
 ___
 
@@ -71,7 +71,7 @@ ___
 
 *Implementation of [IWorkflowDefinition](../interfaces/_workflowdefinition_.iworkflowdefinition.md).[name](../interfaces/_workflowdefinition_.iworkflowdefinition.md#name)*
 
-*Defined in [src/workflowDefinition.ts:318](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L318)*
+*Defined in [src/workflowDefinition.ts:349](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L349)*
 
 ___
 
@@ -81,7 +81,7 @@ ___
 
 *Implementation of [IWorkflowDefinition](../interfaces/_workflowdefinition_.iworkflowdefinition.md).[outputParameters](../interfaces/_workflowdefinition_.iworkflowdefinition.md#optional-outputparameters)*
 
-*Defined in [src/workflowDefinition.ts:325](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L325)*
+*Defined in [src/workflowDefinition.ts:356](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L356)*
 
 ___
 
@@ -91,7 +91,7 @@ ___
 
 *Implementation of [IWorkflowDefinition](../interfaces/_workflowdefinition_.iworkflowdefinition.md).[recoveryWorkflow](../interfaces/_workflowdefinition_.iworkflowdefinition.md#optional-recoveryworkflow)*
 
-*Defined in [src/workflowDefinition.ts:324](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L324)*
+*Defined in [src/workflowDefinition.ts:355](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L355)*
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 *Implementation of [IWorkflowDefinition](../interfaces/_workflowdefinition_.iworkflowdefinition.md).[retry](../interfaces/_workflowdefinition_.iworkflowdefinition.md#optional-retry)*
 
-*Defined in [src/workflowDefinition.ts:323](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L323)*
+*Defined in [src/workflowDefinition.ts:354](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L354)*
 
 ___
 
@@ -111,7 +111,7 @@ ___
 
 *Implementation of [IWorkflowDefinition](../interfaces/_workflowdefinition_.iworkflowdefinition.md).[rev](../interfaces/_workflowdefinition_.iworkflowdefinition.md#rev)*
 
-*Defined in [src/workflowDefinition.ts:319](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L319)*
+*Defined in [src/workflowDefinition.ts:350](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L350)*
 
 ___
 
@@ -121,4 +121,4 @@ ___
 
 *Implementation of [IWorkflowDefinition](../interfaces/_workflowdefinition_.iworkflowdefinition.md).[tasks](../interfaces/_workflowdefinition_.iworkflowdefinition.md#tasks)*
 
-*Defined in [src/workflowDefinition.ts:321](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L321)*
+*Defined in [src/workflowDefinition.ts:352](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L352)*

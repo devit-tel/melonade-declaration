@@ -13,6 +13,7 @@
 * [IBaseTask](../interfaces/_workflowdefinition_.ibasetask.md)
 * [ICompensateTask](../interfaces/_workflowdefinition_.icompensatetask.md)
 * [IDecisionTask](../interfaces/_workflowdefinition_.idecisiontask.md)
+* [IDynamicTask](../interfaces/_workflowdefinition_.idynamictask.md)
 * [IParallelTask](../interfaces/_workflowdefinition_.iparalleltask.md)
 * [IScheduleTask](../interfaces/_workflowdefinition_.ischeduletask.md)
 * [ISubTransactionTask](../interfaces/_workflowdefinition_.isubtransactiontask.md)
@@ -34,9 +35,9 @@
 
 ###  AllTaskType
 
-Ƭ **AllTaskType**: *[ITaskTask](../interfaces/_workflowdefinition_.itasktask.md) | [ICompensateTask](../interfaces/_workflowdefinition_.icompensatetask.md) | [IParallelTask](../interfaces/_workflowdefinition_.iparalleltask.md) | [IDecisionTask](../interfaces/_workflowdefinition_.idecisiontask.md) | [IScheduleTask](../interfaces/_workflowdefinition_.ischeduletask.md) | [ISubTransactionTask](../interfaces/_workflowdefinition_.isubtransactiontask.md)*
+Ƭ **AllTaskType**: *[ITaskTask](../interfaces/_workflowdefinition_.itasktask.md) | [ICompensateTask](../interfaces/_workflowdefinition_.icompensatetask.md) | [IParallelTask](../interfaces/_workflowdefinition_.iparalleltask.md) | [IDecisionTask](../interfaces/_workflowdefinition_.idecisiontask.md) | [IScheduleTask](../interfaces/_workflowdefinition_.ischeduletask.md) | [ISubTransactionTask](../interfaces/_workflowdefinition_.isubtransactiontask.md) | [IDynamicTask](../interfaces/_workflowdefinition_.idynamictask.md)*
 
-*Defined in [src/workflowDefinition.ts:138](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L138)*
+*Defined in [src/workflowDefinition.ts:152](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L152)*
 
 ___
 
@@ -44,7 +45,7 @@ ___
 
 Ƭ **Tasks**: *[AllTaskType](_workflowdefinition_.md#alltasktype)[]*
 
-*Defined in [src/workflowDefinition.ts:83](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L83)*
+*Defined in [src/workflowDefinition.ts:83](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L83)*
 
 The tasks in workflow (can not be empty)
 
@@ -58,7 +59,7 @@ The tasks in workflow (can not be empty)
 
 ▸ **checkDuplicateReferenceName**(`taskReferenceName`: string, `tasksReferenceName`: string[], `path`: string | number[]): *void*
 
-*Defined in [src/workflowDefinition.ts:207](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L207)*
+*Defined in [src/workflowDefinition.ts:222](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L222)*
 
 **Parameters:**
 
@@ -76,7 +77,7 @@ ___
 
 ▸ **validateAllTaskReferenceName**(`tasks`: [Tasks](_workflowdefinition_.md#tasks), `path`: string | number[], `extraTasksReferenceName`: string[]): *string[]*
 
-*Defined in [src/workflowDefinition.ts:225](https://github.com/devit-tel/melonade-declaration/blob/7d6c74f/src/workflowDefinition.ts#L225)*
+*Defined in [src/workflowDefinition.ts:240](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L240)*
 
 **Parameters:**
 
