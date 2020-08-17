@@ -41,17 +41,13 @@ export interface ITaskTask extends IBaseTask {
   /**
    * The given time that task can ack before it timeout in miliseconds (0 is no timeout)
    *
-   * @minimum 0
-   * @TJS-type integer
    */
-  ackTimeout?: number;
+  ackTimeout?: number | string;
   /**
    * The given time that task can finish before it timeout in miliseconds (0 is no timeout)
    *
-   * @minimum 0
-   * @TJS-type integer
    */
-  timeout?: number;
+  timeout?: number | string;
   /**
    * Retry object
    *

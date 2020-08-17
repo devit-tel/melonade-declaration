@@ -21,9 +21,9 @@
 
 ###  dynamicTasks
 
-• **dynamicTasks**: *[Tasks](../modules/_workflowdefinition_.md#tasks)*
+• **dynamicTasks**: *[AllTaskType](../modules/_workflowdefinition_.md#alltasktype)[]*
 
-*Defined in [src/workflowDefinition.ts:117](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L117)*
+*Defined in [src/workflowDefinition.ts:113](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L113)*
 
 The list of tasks that create dynamically
 
@@ -39,7 +39,7 @@ ___
 
 *Overrides [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:118](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L118)*
+*Defined in [src/workflowDefinition.ts:114](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L114)*
 
 #### Type declaration:
 
@@ -53,7 +53,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -71,4 +71,4 @@ ___
 
 • **type**: *[DynamicTask](../enums/_task_.tasktypes.md#dynamictask)*
 
-*Defined in [src/workflowDefinition.ts:110](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L110)*
+*Defined in [src/workflowDefinition.ts:106](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L106)*

@@ -29,7 +29,7 @@
 
 • **description**? : *string*
 
-*Defined in [src/workflowDefinition.ts:186](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L186)*
+*Defined in [src/workflowDefinition.ts:182](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L182)*
 
 The workflow's description
 
@@ -43,7 +43,7 @@ ___
 
 • **failureStrategy**? : *[WorkflowFailureStrategies](../enums/_state_.workflowfailurestrategies.md)*
 
-*Defined in [src/workflowDefinition.ts:194](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L194)*
+*Defined in [src/workflowDefinition.ts:190](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L190)*
 
 The workflow's failure strategies
 
@@ -57,7 +57,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/workflowDefinition.ts:170](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L170)*
+*Defined in [src/workflowDefinition.ts:166](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L166)*
 
 The workflow's name
 
@@ -75,7 +75,7 @@ ___
 
 • **outputParameters**? : *object*
 
-*Defined in [src/workflowDefinition.ts:217](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L217)*
+*Defined in [src/workflowDefinition.ts:213](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L213)*
 
 The workflow's output mapping
 
@@ -93,7 +93,7 @@ ___
 
 • **recoveryWorkflow**? : *[IWorkflowRef](_workflowdefinition_.iworkflowref.md)*
 
-*Defined in [src/workflowDefinition.ts:210](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L210)*
+*Defined in [src/workflowDefinition.ts:206](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L206)*
 
 ___
 
@@ -101,7 +101,7 @@ ___
 
 • **retry**? : *object*
 
-*Defined in [src/workflowDefinition.ts:200](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L200)*
+*Defined in [src/workflowDefinition.ts:196](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L196)*
 
 Retry object
 
@@ -117,7 +117,7 @@ ___
 
 • **rev**: *string*
 
-*Defined in [src/workflowDefinition.ts:179](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L179)*
+*Defined in [src/workflowDefinition.ts:175](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L175)*
 
 The workflow's revision
 
@@ -135,4 +135,4 @@ ___
 
 • **tasks**: *[Tasks](../modules/_workflowdefinition_.md#tasks)*
 
-*Defined in [src/workflowDefinition.ts:187](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/workflowDefinition.ts#L187)*
+*Defined in [src/workflowDefinition.ts:183](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L183)*

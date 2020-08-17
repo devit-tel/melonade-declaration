@@ -20,7 +20,7 @@
 
 • **output**? : *any*
 
-*Defined in [src/event.ts:10](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/event.ts#L10)*
+*Defined in [src/event.ts:10](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L10)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **status**: *[TransactionStates](../enums/_state_.transactionstates.md)*
 
-*Defined in [src/event.ts:9](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/event.ts#L9)*
+*Defined in [src/event.ts:9](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L9)*
 
 ___
 
@@ -36,4 +36,4 @@ ___
 
 • **transactionId**: *string*
 
-*Defined in [src/event.ts:8](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/event.ts#L8)*
+*Defined in [src/event.ts:8](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L8)*

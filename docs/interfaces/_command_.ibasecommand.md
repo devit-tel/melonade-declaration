@@ -28,4 +28,4 @@
 
 • **transactionId**: *string*
 
-*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/command.ts#L13)*
+*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/command.ts#L13)*
