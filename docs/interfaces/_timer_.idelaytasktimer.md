@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["timer"](../modules/_timer_.md) › [IDelayTaskTimer](_timer_.idelaytasktimer.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["timer"](../modules/_timer_.md) › [IDelayTaskTimer](_timer_.idelaytasktimer.md)
 
 # Interface: IDelayTaskTimer
 
@@ -19,7 +19,7 @@
 
 • **task**: *[ITask](_task_.itask.md)*
 
-*Defined in [src/timer.ts:12](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/timer.ts#L12)*
+*Defined in [src/timer.ts:12](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/timer.ts#L12)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **type**: *[delayTask](../enums/_timer_.timertypes.md#delaytask)*
 
-*Defined in [src/timer.ts:11](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/timer.ts#L11)*
+*Defined in [src/timer.ts:11](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/timer.ts#L11)*

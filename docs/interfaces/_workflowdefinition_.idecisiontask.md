@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IDecisionTask](_workflowdefinition_.idecisiontask.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IDecisionTask](_workflowdefinition_.idecisiontask.md)
 
 # Interface: IDecisionTask
 
@@ -24,7 +24,7 @@
 
 • **decisions**: *object*
 
-*Defined in [src/workflowDefinition.ts:121](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L121)*
+*Defined in [src/workflowDefinition.ts:108](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L108)*
 
 #### Type declaration:
 
@@ -36,7 +36,7 @@ ___
 
 • **defaultDecision**: *[Tasks](../modules/_workflowdefinition_.md#tasks)*
 
-*Defined in [src/workflowDefinition.ts:124](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L124)*
+*Defined in [src/workflowDefinition.ts:111](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L111)*
 
 ___
 
@@ -46,7 +46,7 @@ ___
 
 *Overrides [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:125](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L125)*
+*Defined in [src/workflowDefinition.ts:112](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L112)*
 
 #### Type declaration:
 
@@ -60,7 +60,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -78,4 +78,4 @@ ___
 
 • **type**: *[Decision](../enums/_task_.tasktypes.md#decision)*
 
-*Defined in [src/workflowDefinition.ts:120](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L120)*
+*Defined in [src/workflowDefinition.ts:107](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L107)*

@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["kafka"](_kafka_.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["kafka"](_kafka_.md)
 
 # External module: "kafka"
 
@@ -23,4 +23,4 @@
 
 • **topicPrefix**: *"melonade"* = "melonade"
 
-*Defined in [src/kafka.ts:1](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/kafka.ts#L1)*
+*Defined in [src/kafka.ts:1](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/kafka.ts#L1)*

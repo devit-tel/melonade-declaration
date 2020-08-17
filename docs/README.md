@@ -1,6 +1,6 @@
-[@melonade/melonade-declaration - v0.7.7](README.md) › [Globals](globals.md)
+[@melonade/melonade-declaration - v0.8.0](README.md) › [Globals](globals.md)
 
-# @melonade/melonade-declaration - v0.7.7
+# @melonade/melonade-declaration - v0.8.0
 
 # melonade-declaration
 
@@ -14,6 +14,10 @@ Type declaration of melonade
 
   npm install
   npm run json-schema
+  npm run build:docs
+
+  npm run test
+  # npm publish
 ```
 
 ## Tasks

@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["store"](../modules/_store_.md) › [IHistogramCount](_store_.ihistogramcount.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["store"](../modules/_store_.md) › [IHistogramCount](_store_.ihistogramcount.md)
 
 # Interface: IHistogramCount
 
@@ -19,7 +19,7 @@
 
 • **count**: *number*
 
-*Defined in [src/store.ts:13](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/store.ts#L13)*
+*Defined in [src/store.ts:13](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/store.ts#L13)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **date**: *number | Date*
 
-*Defined in [src/store.ts:12](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/store.ts#L12)*
+*Defined in [src/store.ts:12](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/store.ts#L12)*

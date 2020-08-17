@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [ITaskTask](_workflowdefinition_.itasktask.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [ITaskTask](_workflowdefinition_.itasktask.md)
 
 # Interface: ITaskTask
 
@@ -26,7 +26,7 @@
 
 • **ackTimeout**? : *number | string*
 
-*Defined in [src/workflowDefinition.ts:45](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L45)*
+*Defined in [src/workflowDefinition.ts:45](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L45)*
 
 The given time that task can ack before it timeout in miliseconds (0 is no timeout)
 
@@ -38,7 +38,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L27)*
+*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L27)*
 
 The input to be mapping to workflow's data
 
@@ -50,7 +50,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/workflowDefinition.ts:39](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L39)*
+*Defined in [src/workflowDefinition.ts:39](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L39)*
 
 The task's name
 
@@ -68,15 +68,15 @@ ___
 
 • **retry**? : *object*
 
-*Defined in [src/workflowDefinition.ts:55](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L55)*
+*Defined in [src/workflowDefinition.ts:55](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L55)*
 
 Retry object
 
 #### Type declaration:
 
-* **delay**? : *number*
+* **delay**? : *number | string*
 
-* **limit**? : *number*
+* **limit**? : *number | string*
 
 ___
 
@@ -86,7 +86,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -104,7 +104,7 @@ ___
 
 • **timeout**? : *number | string*
 
-*Defined in [src/workflowDefinition.ts:50](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L50)*
+*Defined in [src/workflowDefinition.ts:50](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L50)*
 
 The given time that task can finish before it timeout in miliseconds (0 is no timeout)
 
@@ -114,4 +114,4 @@ ___
 
 • **type**: *[Task](../enums/_task_.tasktypes.md#task)*
 
-*Defined in [src/workflowDefinition.ts:40](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L40)*
+*Defined in [src/workflowDefinition.ts:40](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L40)*

@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IDynamicTask](_workflowdefinition_.idynamictask.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IDynamicTask](_workflowdefinition_.idynamictask.md)
 
 # Interface: IDynamicTask
 
@@ -23,7 +23,7 @@
 
 • **dynamicTasks**: *[AllTaskType](../modules/_workflowdefinition_.md#alltasktype)[]*
 
-*Defined in [src/workflowDefinition.ts:113](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L113)*
+*Defined in [src/workflowDefinition.ts:100](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L100)*
 
 The list of tasks that create dynamically
 
@@ -39,7 +39,7 @@ ___
 
 *Overrides [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:114](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L114)*
+*Defined in [src/workflowDefinition.ts:101](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L101)*
 
 #### Type declaration:
 
@@ -53,7 +53,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -71,4 +71,4 @@ ___
 
 • **type**: *[DynamicTask](../enums/_task_.tasktypes.md#dynamictask)*
 
-*Defined in [src/workflowDefinition.ts:106](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L106)*
+*Defined in [src/workflowDefinition.ts:93](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L93)*

@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IParallelTask](_workflowdefinition_.iparalleltask.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IParallelTask](_workflowdefinition_.iparalleltask.md)
 
 # Interface: IParallelTask
 
@@ -25,7 +25,7 @@
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L27)*
+*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L27)*
 
 The input to be mapping to workflow's data
 
@@ -37,7 +37,7 @@ ___
 
 • **parallelTasks**: *[Tasks](../modules/_workflowdefinition_.md#tasks)[]*
 
-*Defined in [src/workflowDefinition.ts:102](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L102)*
+*Defined in [src/workflowDefinition.ts:89](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L89)*
 
 The list of tasks that run parallely
 
@@ -53,7 +53,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -71,4 +71,4 @@ ___
 
 • **type**: *[Parallel](../enums/_task_.tasktypes.md#parallel)*
 
-*Defined in [src/workflowDefinition.ts:95](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L95)*
+*Defined in [src/workflowDefinition.ts:82](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L82)*

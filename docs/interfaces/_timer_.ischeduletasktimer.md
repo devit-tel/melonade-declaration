@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["timer"](../modules/_timer_.md) › [IScheduleTaskTimer](_timer_.ischeduletasktimer.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["timer"](../modules/_timer_.md) › [IScheduleTaskTimer](_timer_.ischeduletasktimer.md)
 
 # Interface: IScheduleTaskTimer
 
@@ -21,7 +21,7 @@
 
 • **completedAt**: *number*
 
-*Defined in [src/timer.ts:25](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/timer.ts#L25)*
+*Defined in [src/timer.ts:25](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/timer.ts#L25)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **taskId**: *string*
 
-*Defined in [src/timer.ts:24](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/timer.ts#L24)*
+*Defined in [src/timer.ts:24](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/timer.ts#L24)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **transactionId**: *string*
 
-*Defined in [src/timer.ts:23](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/timer.ts#L23)*
+*Defined in [src/timer.ts:23](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/timer.ts#L23)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **type**: *[scheduleTask](../enums/_timer_.timertypes.md#scheduletask)*
 
-*Defined in [src/timer.ts:22](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/timer.ts#L22)*
+*Defined in [src/timer.ts:22](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/timer.ts#L22)*

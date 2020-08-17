@@ -74,7 +74,7 @@ export interface ITaskTask extends IBaseTask {
  */
 export type Tasks = AllTaskType[];
 
-export interface ICompensateTask extends Omit<IBaseTask, 'type'> {
+export interface ICompensateTask extends Omit<ITaskTask, 'type'> {
   type: TaskTypes.Compensate;
 }
 

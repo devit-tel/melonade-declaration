@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["taskDefinition"](_taskdefinition_.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["taskDefinition"](_taskdefinition_.md)
 
 # External module: "taskDefinition"
 

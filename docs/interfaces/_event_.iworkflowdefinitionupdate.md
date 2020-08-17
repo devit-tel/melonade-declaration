@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["event"](../modules/_event_.md) › [IWorkflowDefinitionUpdate](_event_.iworkflowdefinitionupdate.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["event"](../modules/_event_.md) › [IWorkflowDefinitionUpdate](_event_.iworkflowdefinitionupdate.md)
 
 # Interface: IWorkflowDefinitionUpdate
 
@@ -21,7 +21,7 @@
 
 • **output**? : *any*
 
-*Defined in [src/event.ts:24](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L24)*
+*Defined in [src/event.ts:24](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/event.ts#L24)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **transactionId**: *string*
 
-*Defined in [src/event.ts:21](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L21)*
+*Defined in [src/event.ts:21](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/event.ts#L21)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **workflowDefinition**: *[IWorkflowDefinition](_workflowdefinition_.iworkflowdefinition.md)*
 
-*Defined in [src/event.ts:23](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L23)*
+*Defined in [src/event.ts:23](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/event.ts#L23)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **workflowId**: *string*
 
-*Defined in [src/event.ts:22](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L22)*
+*Defined in [src/event.ts:22](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/event.ts#L22)*

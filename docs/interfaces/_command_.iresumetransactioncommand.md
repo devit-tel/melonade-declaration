@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["command"](../modules/_command_.md) › [IResumeTransactionCommand](_command_.iresumetransactioncommand.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["command"](../modules/_command_.md) › [IResumeTransactionCommand](_command_.iresumetransactioncommand.md)
 
 # Interface: IResumeTransactionCommand
 
@@ -23,7 +23,7 @@
 
 *Inherited from [IBaseCommand](_command_.ibasecommand.md).[transactionId](_command_.ibasecommand.md#transactionid)*
 
-*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/command.ts#L13)*
+*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/command.ts#L13)*
 
 ___
 
@@ -31,4 +31,4 @@ ___
 
 • **type**: *[ResumeTransaction](../enums/_command_.commandtypes.md#resumetransaction)*
 
-*Defined in [src/command.ts:34](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/command.ts#L34)*
+*Defined in [src/command.ts:34](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/command.ts#L34)*

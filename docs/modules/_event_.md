@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["event"](_event_.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["event"](_event_.md)
 
 # External module: "event"
 
@@ -30,4 +30,4 @@
 
 Ƭ **AllEvent**: *[ITransactionEvent](../interfaces/_event_.itransactionevent.md) | [ITransactionErrorEvent](../interfaces/_event_.itransactionerrorevent.md) | [IWorkflowEvent](../interfaces/_event_.iworkflowevent.md) | [IWorkflowErrorEvent](../interfaces/_event_.iworkflowerrorevent.md) | [ITaskEvent](../interfaces/_event_.itaskevent.md) | [ITaskErrorEvent](../interfaces/_event_.itaskerrorevent.md) | [ISystemEvent](../interfaces/_event_.isystemevent.md) | [ISystemErrorEvent](../interfaces/_event_.isystemerrorevent.md)*
 
-*Defined in [src/event.ts:94](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L94)*
+*Defined in [src/event.ts:94](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/event.ts#L94)*

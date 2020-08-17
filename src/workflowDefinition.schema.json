@@ -30,6 +30,13 @@
     "ICompensateTask": {
       "additionalProperties": false,
       "properties": {
+        "ackTimeout": {
+          "description": "The given time that task can ack before it timeout in miliseconds (0 is no timeout)",
+          "type": [
+            "number",
+            "string"
+          ]
+        },
         "inputParameters": {
           "description": "The input to be mapping to workflow's data"
         },
@@ -40,12 +47,40 @@
           "pattern": "^[a-zA-Z0-9-_]+$",
           "type": "string"
         },
+        "retry": {
+          "additionalProperties": false,
+          "description": "Retry object",
+          "properties": {
+            "delay": {
+              "description": "The delay before dispatch task",
+              "type": [
+                "number",
+                "string"
+              ]
+            },
+            "limit": {
+              "description": "Retry limit number (0 is no retry)",
+              "type": [
+                "number",
+                "string"
+              ]
+            }
+          },
+          "type": "object"
+        },
         "taskReferenceName": {
           "description": "The referance name using in workflow",
           "maxLength": 64,
           "minLength": 1,
           "pattern": "^[a-zA-Z0-9-_]+$",
           "type": "string"
+        },
+        "timeout": {
+          "description": "The given time that task can finish before it timeout in miliseconds (0 is no timeout)",
+          "type": [
+            "number",
+            "string"
+          ]
         },
         "type": {
           "enum": [
@@ -298,13 +333,17 @@
           "properties": {
             "delay": {
               "description": "The delay before dispatch task",
-              "minimum": 0,
-              "type": "number"
+              "type": [
+                "number",
+                "string"
+              ]
             },
             "limit": {
               "description": "Retry limit number (0 is no retry)",
-              "minimum": 0,
-              "type": "number"
+              "type": [
+                "number",
+                "string"
+              ]
             }
           },
           "type": "object"

@@ -1,4 +1,4 @@
-[@melonade/melonade-declaration - v0.7.7](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IWorkflowRef](_workflowdefinition_.iworkflowref.md)
+[@melonade/melonade-declaration - v0.8.0](../README.md) › [Globals](../globals.md) › ["workflowDefinition"](../modules/_workflowdefinition_.md) › [IWorkflowRef](_workflowdefinition_.iworkflowref.md)
 
 # Interface: IWorkflowRef
 
@@ -19,7 +19,7 @@
 
 • **name**: *string*
 
-*Defined in [src/workflowDefinition.ts:8](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L8)*
+*Defined in [src/workflowDefinition.ts:8](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L8)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **rev**: *string*
 
-*Defined in [src/workflowDefinition.ts:9](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/workflowDefinition.ts#L9)*
+*Defined in [src/workflowDefinition.ts:9](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L9)*
