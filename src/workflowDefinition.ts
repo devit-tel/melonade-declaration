@@ -56,17 +56,13 @@ export interface ITaskTask extends IBaseTask {
     /**
      * Retry limit number (0 is no retry)
      *
-     * @minimum 0
-     * @TJS-type integer
      */
-    limit?: number;
+    limit?: number | string;
     /**
      * The delay before dispatch task
      *
-     * @minimum 0
-     * @TJS-type integer
      */
-    delay?: number;
+    delay?: number | string;
   };
 }
 
@@ -78,16 +74,7 @@ export interface ITaskTask extends IBaseTask {
  */
 export type Tasks = AllTaskType[];
 
-export interface ICompensateTask extends IBaseTask {
-  /**
-   * The task's name
-   *
-   * @minLength 1
-   * @maxLength 64
-   * @pattern ^[a-zA-Z0-9-_]+$
-   * @TJS-type string
-   */
-  name: string;
+export interface ICompensateTask extends Omit<IBaseTask, 'type'> {
   type: TaskTypes.Compensate;
 }
 
