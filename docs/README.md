@@ -6,6 +6,16 @@
 
 Type declaration of melonade
 
+# To update
+
+```bash
+  nvm install v10.16.3
+  nvm use
+
+  npm install
+  npm run json-schema
+```
+
 ## Tasks
 
 - [x] Test

@@ -24,7 +24,7 @@
 
 • **details**: *[ITask](_task_.itask.md)*
 
-*Defined in [src/event.ts:70](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/event.ts#L70)*
+*Defined in [src/event.ts:70](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L70)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 • **isError**: *false*
 
-*Defined in [src/event.ts:71](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/event.ts#L71)*
+*Defined in [src/event.ts:71](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L71)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 *Inherited from [IBaseEvent](_event_.ibaseevent.md).[timestamp](_event_.ibaseevent.md#timestamp)*
 
-*Defined in [src/event.ts:39](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/event.ts#L39)*
+*Defined in [src/event.ts:39](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L39)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 *Inherited from [IBaseEvent](_event_.ibaseevent.md).[transactionId](_event_.ibaseevent.md#transactionid)*
 
-*Defined in [src/event.ts:38](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/event.ts#L38)*
+*Defined in [src/event.ts:38](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L38)*
 
 ___
 
@@ -60,4 +60,4 @@ ___
 
 • **type**: *"TASK"*
 
-*Defined in [src/event.ts:69](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/event.ts#L69)*
+*Defined in [src/event.ts:69](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/event.ts#L69)*

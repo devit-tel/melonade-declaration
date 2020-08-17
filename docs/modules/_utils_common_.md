@@ -26,7 +26,7 @@
   useDefaults: true,
 })
 
-*Defined in [src/utils/common.ts:7](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/utils/common.ts#L7)*
+*Defined in [src/utils/common.ts:7](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/utils/common.ts#L7)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **enumToList**: *Object* =  R.compose(R.map(R.prop('1')), R.toPairs)
 
-*Defined in [src/utils/common.ts:19](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/utils/common.ts#L19)*
+*Defined in [src/utils/common.ts:19](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/utils/common.ts#L19)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **taskDefinitionSchema**: *any* =  require('../taskDefinition.schema.json')
 
-*Defined in [src/utils/common.ts:4](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/utils/common.ts#L4)*
+*Defined in [src/utils/common.ts:4](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/utils/common.ts#L4)*
 
 ___
 
@@ -50,7 +50,7 @@ ___
 
 • **workflowDefinitionSchema**: *any* =  require('../workflowDefinition.schema.json')
 
-*Defined in [src/utils/common.ts:5](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/utils/common.ts#L5)*
+*Defined in [src/utils/common.ts:5](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/utils/common.ts#L5)*
 
 ## Functions
 
@@ -58,7 +58,7 @@ ___
 
 ▸ **concatArray**(`target`: any[], `items`: any[] | any): *any[]*
 
-*Defined in [src/utils/common.ts:21](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/utils/common.ts#L21)*
+*Defined in [src/utils/common.ts:21](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/utils/common.ts#L21)*
 
 **Parameters:**
 
@@ -75,7 +75,7 @@ ___
 
 ▸ **jsonTryParse**(`jsonString`: string, `defaultValue`: any): *any*
 
-*Defined in [src/utils/common.ts:27](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/utils/common.ts#L27)*
+*Defined in [src/utils/common.ts:27](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/utils/common.ts#L27)*
 
 **Parameters:**
 
@@ -92,7 +92,7 @@ ___
 
 ▸ **toObjectByKey**(`targets`: object[], `key`: string): *object*
 
-*Defined in [src/utils/common.ts:35](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/utils/common.ts#L35)*
+*Defined in [src/utils/common.ts:35](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/utils/common.ts#L35)*
 
 **Parameters:**
 
@@ -109,7 +109,7 @@ ___
 
 ▸ **validate**(`schema`: object, `data`: any): *any*
 
-*Defined in [src/utils/common.ts:11](https://github.com/devit-tel/melonade-declaration/blob/4a3ce57/src/utils/common.ts#L11)*
+*Defined in [src/utils/common.ts:11](https://github.com/devit-tel/melonade-declaration/blob/43597e6/src/utils/common.ts#L11)*
 
 **Parameters:**
 

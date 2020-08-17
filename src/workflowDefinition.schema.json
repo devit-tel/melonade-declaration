@@ -277,8 +277,10 @@
       "properties": {
         "ackTimeout": {
           "description": "The given time that task can ack before it timeout in miliseconds (0 is no timeout)",
-          "minimum": 0,
-          "type": "number"
+          "type": [
+            "number",
+            "string"
+          ]
         },
         "inputParameters": {
           "description": "The input to be mapping to workflow's data"
@@ -316,8 +318,10 @@
         },
         "timeout": {
           "description": "The given time that task can finish before it timeout in miliseconds (0 is no timeout)",
-          "minimum": 0,
-          "type": "number"
+          "type": [
+            "number",
+            "string"
+          ]
         },
         "type": {
           "enum": [
