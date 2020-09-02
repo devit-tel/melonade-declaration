@@ -348,6 +348,11 @@
           },
           "type": "object"
         },
+        "syncWorker": {
+          "default": false,
+          "description": "The flag marked task as sync worker (worker that use sync api to update it's state)\nAffect while cancel,or other task in parallel failed, and need to compensate\nWorkflow will start compensate without waiting for the task to finished",
+          "type": "boolean"
+        },
         "taskReferenceName": {
           "description": "The referance name using in workflow",
           "maxLength": 64,

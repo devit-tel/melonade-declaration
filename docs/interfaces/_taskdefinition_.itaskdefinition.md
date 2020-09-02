@@ -19,6 +19,7 @@
 * [document](_taskdefinition_.itaskdefinition.md#optional-document)
 * [name](_taskdefinition_.itaskdefinition.md#name)
 * [retry](_taskdefinition_.itaskdefinition.md#optional-retry)
+* [syncWorker](_taskdefinition_.itaskdefinition.md#optional-syncworker)
 * [timeout](_taskdefinition_.itaskdefinition.md#optional-timeout)
 
 ## Properties
@@ -27,7 +28,7 @@
 
 • **ackTimeout**? : *number*
 
-*Defined in [src/taskDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/taskDefinition.ts#L27)*
+*Defined in [src/taskDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/taskDefinition.ts#L27)*
 
 The given time that task can ack before it timeout in miliseconds (0 is no timeout)
 
@@ -43,7 +44,7 @@ ___
 
 • **description**? : *string*
 
-*Defined in [src/taskDefinition.ts:19](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/taskDefinition.ts#L19)*
+*Defined in [src/taskDefinition.ts:19](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/taskDefinition.ts#L19)*
 
 The task's description
 
@@ -57,7 +58,7 @@ ___
 
 • **document**? : *object*
 
-*Defined in [src/taskDefinition.ts:59](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/taskDefinition.ts#L59)*
+*Defined in [src/taskDefinition.ts:59](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/taskDefinition.ts#L59)*
 
 #### Type declaration:
 
@@ -71,7 +72,7 @@ ___
 
 • **name**: *string*
 
-*Defined in [src/taskDefinition.ts:12](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/taskDefinition.ts#L12)*
+*Defined in [src/taskDefinition.ts:12](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/taskDefinition.ts#L12)*
 
 The task's name
 
@@ -89,7 +90,7 @@ ___
 
 • **retry**? : *object*
 
-*Defined in [src/taskDefinition.ts:41](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/taskDefinition.ts#L41)*
+*Defined in [src/taskDefinition.ts:41](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/taskDefinition.ts#L41)*
 
 Retry object
 
@@ -103,11 +104,27 @@ Retry object
 
 ___
 
+### `Optional` syncWorker
+
+• **syncWorker**? : *boolean*
+
+*Defined in [src/taskDefinition.ts:81](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/taskDefinition.ts#L81)*
+
+The flag marked task as sync worker (worker that use sync api to update it's state)
+Affect while cancel,or other task in parallel failed, and need to compensate
+Workflow will start compensate without waiting for the task to finished
+
+**`default`** false
+
+**`tjs-type`** boolean
+
+___
+
 ### `Optional` timeout
 
 • **timeout**? : *number*
 
-*Defined in [src/taskDefinition.ts:35](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/taskDefinition.ts#L35)*
+*Defined in [src/taskDefinition.ts:35](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/taskDefinition.ts#L35)*
 
 The given time that task can finish before it timeout in miliseconds (0 is no timeout)
 

@@ -30,7 +30,7 @@
   TaskTypes.DynamicTask,
 ]
 
-*Defined in [src/task.ts:15](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L15)*
+*Defined in [src/task.ts:15](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L15)*
 
 ___
 
@@ -38,7 +38,7 @@ ___
 
 • **TaskTypesList**: *unknown[]* =  enumToList(TaskTypes)
 
-*Defined in [src/task.ts:24](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L24)*
+*Defined in [src/task.ts:24](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L24)*
 
 ___
 
@@ -46,4 +46,4 @@ ___
 
 • **WORKER_TASKS**: *[TaskTypes](../enums/_task_.tasktypes.md)[]* =  [TaskTypes.Task, TaskTypes.Compensate]
 
-*Defined in [src/task.ts:22](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L22)*
+*Defined in [src/task.ts:22](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L22)*

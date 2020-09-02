@@ -22,7 +22,7 @@
 
 • **reason**: *string*
 
-*Defined in [src/command.ts:26](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/command.ts#L26)*
+*Defined in [src/command.ts:26](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/command.ts#L26)*
 
 ___
 
@@ -32,7 +32,7 @@ ___
 
 *Inherited from [IBaseCommand](_command_.ibasecommand.md).[transactionId](_command_.ibasecommand.md#transactionid)*
 
-*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/command.ts#L13)*
+*Defined in [src/command.ts:13](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/command.ts#L13)*
 
 ___
 
@@ -40,4 +40,4 @@ ___
 
 • **type**: *[CancelTransaction](../enums/_command_.commandtypes.md#canceltransaction)*
 
-*Defined in [src/command.ts:25](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/command.ts#L25)*
+*Defined in [src/command.ts:25](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/command.ts#L25)*

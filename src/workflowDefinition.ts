@@ -64,6 +64,15 @@ export interface ITaskTask extends IBaseTask {
      */
     delay?: number | string;
   };
+  /**
+   * The flag marked task as sync worker (worker that use sync api to update it's state)
+   * Affect while cancel,or other task in parallel failed, and need to compensate
+   * Workflow will start compensate without waiting for the task to finished
+   *
+   * @default false
+   * @TJS-type boolean
+   */
+  syncWorker?: boolean;
 }
 
 /**
@@ -74,7 +83,8 @@ export interface ITaskTask extends IBaseTask {
  */
 export type Tasks = AllTaskType[];
 
-export interface ICompensateTask extends Omit<ITaskTask, 'type'> {
+export interface ICompensateTask
+  extends Omit<ITaskTask, 'type' | 'syncWorker'> {
   type: TaskTypes.Compensate;
 }
 

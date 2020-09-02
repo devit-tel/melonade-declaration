@@ -18,7 +18,7 @@
 
 • **Compensate**: = "COMPENSATE"
 
-*Defined in [src/state.ts:120](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L120)*
+*Defined in [src/state.ts:120](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L120)*
 
 ___
 
@@ -26,7 +26,7 @@ ___
 
 • **CompensateThenRetry**: = "COMPENSATE_THEN_RETRY"
 
-*Defined in [src/state.ts:121](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L121)*
+*Defined in [src/state.ts:121](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L121)*
 
 ___
 
@@ -34,7 +34,7 @@ ___
 
 • **Failed**: = "FAILED"
 
-*Defined in [src/state.ts:117](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L117)*
+*Defined in [src/state.ts:117](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L117)*
 
 ___
 
@@ -42,7 +42,7 @@ ___
 
 • **RecoveryWorkflow**: = "RECOVERY_WORKFLOW"
 
-*Defined in [src/state.ts:118](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L118)*
+*Defined in [src/state.ts:118](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L118)*
 
 ___
 
@@ -50,4 +50,4 @@ ___
 
 • **Retry**: = "RETRY"
 
-*Defined in [src/state.ts:119](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L119)*
+*Defined in [src/state.ts:119](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L119)*
