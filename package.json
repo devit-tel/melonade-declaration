@@ -35,7 +35,8 @@
     "build:docs": "typedoc --plugin typedoc-plugin-markdown --theme markdown",
     "json-schema": "npm run json-schema:workflowDefinition & npm run json-schema:taskDefinition",
     "json-schema:workflowDefinition": "ts-json-schema-generator --path ./src/workflowDefinition.ts --type IWorkflowDefinition --tsconfig \"./tsconfig.release.json\" > ./src/workflowDefinition.schema.json",
-    "json-schema:taskDefinition": "ts-json-schema-generator --path ./src/taskDefinition.ts --type ITaskDefinition --tsconfig \"./tsconfig.release.json\" > ./src/taskDefinition.schema.json"
+    "json-schema:taskDefinition": "ts-json-schema-generator --path ./src/taskDefinition.ts --type ITaskDefinition --tsconfig \"./tsconfig.release.json\" > ./src/taskDefinition.schema.json",
+    "build:all": "npm run json-schema && npm run build:docs && npm run build"
   },
   "license": "MIT",
   "dependencies": {

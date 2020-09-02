@@ -19,7 +19,7 @@
 
 • **AckTimeOut**: = "ACK_TIMEOUT"
 
-*Defined in [src/state.ts:163](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L163)*
+*Defined in [src/state.ts:163](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L163)*
 
 ___
 
@@ -27,7 +27,7 @@ ___
 
 • **Completed**: = "COMPLETED"
 
-*Defined in [src/state.ts:160](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L160)*
+*Defined in [src/state.ts:160](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L160)*
 
 ___
 
@@ -35,7 +35,7 @@ ___
 
 • **Failed**: = "FAILED"
 
-*Defined in [src/state.ts:161](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L161)*
+*Defined in [src/state.ts:161](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L161)*
 
 ___
 
@@ -43,7 +43,7 @@ ___
 
 • **Inprogress**: = "INPROGRESS"
 
-*Defined in [src/state.ts:159](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L159)*
+*Defined in [src/state.ts:159](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L159)*
 
 ___
 
@@ -51,7 +51,7 @@ ___
 
 • **Scheduled**: = "SCHEDULED"
 
-*Defined in [src/state.ts:158](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L158)*
+*Defined in [src/state.ts:158](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L158)*
 
 ___
 
@@ -59,4 +59,4 @@ ___
 
 • **Timeout**: = "TIMEOUT"
 
-*Defined in [src/state.ts:162](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/state.ts#L162)*
+*Defined in [src/state.ts:162](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/state.ts#L162)*

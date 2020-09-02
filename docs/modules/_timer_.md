@@ -24,4 +24,4 @@
 
 Ƭ **AllTimerType**: *[IDelayTaskTimer](../interfaces/_timer_.idelaytasktimer.md) | [ICronWorkflowTimer](../interfaces/_timer_.icronworkflowtimer.md) | [IScheduleTaskTimer](../interfaces/_timer_.ischeduletasktimer.md)*
 
-*Defined in [src/timer.ts:28](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/timer.ts#L28)*
+*Defined in [src/timer.ts:28](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/timer.ts#L28)*

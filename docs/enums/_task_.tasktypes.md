@@ -20,7 +20,7 @@
 
 • **Compensate**: = "COMPENSATE"
 
-*Defined in [src/task.ts:7](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L7)*
+*Defined in [src/task.ts:7](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L7)*
 
 ___
 
@@ -28,7 +28,7 @@ ___
 
 • **Decision**: = "DECISION"
 
-*Defined in [src/task.ts:9](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L9)*
+*Defined in [src/task.ts:9](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L9)*
 
 ___
 
@@ -36,7 +36,7 @@ ___
 
 • **DynamicTask**: = "DYNAMIC_TASK"
 
-*Defined in [src/task.ts:12](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L12)*
+*Defined in [src/task.ts:12](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L12)*
 
 ___
 
@@ -44,7 +44,7 @@ ___
 
 • **Parallel**: = "PARALLEL"
 
-*Defined in [src/task.ts:8](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L8)*
+*Defined in [src/task.ts:8](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L8)*
 
 ___
 
@@ -52,7 +52,7 @@ ___
 
 • **Schedule**: = "SCHEDULE"
 
-*Defined in [src/task.ts:10](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L10)*
+*Defined in [src/task.ts:10](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L10)*
 
 ___
 
@@ -60,7 +60,7 @@ ___
 
 • **SubTransaction**: = "SUB_TRANSACTION"
 
-*Defined in [src/task.ts:11](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L11)*
+*Defined in [src/task.ts:11](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L11)*
 
 ___
 
@@ -68,4 +68,4 @@ ___
 
 • **Task**: = "TASK"
 
-*Defined in [src/task.ts:6](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/task.ts#L6)*
+*Defined in [src/task.ts:6](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/task.ts#L6)*

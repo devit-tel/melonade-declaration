@@ -24,7 +24,7 @@
 
 *Overrides [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:128](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L128)*
+*Defined in [src/workflowDefinition.ts:138](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L138)*
 
 #### Type declaration:
 
@@ -42,7 +42,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -60,4 +60,4 @@ ___
 
 • **type**: *[SubTransaction](../enums/_task_.tasktypes.md#subtransaction)*
 
-*Defined in [src/workflowDefinition.ts:127](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L127)*
+*Defined in [src/workflowDefinition.ts:137](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L137)*

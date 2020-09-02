@@ -19,7 +19,7 @@
 
 • **executionTime**: *number*
 
-*Defined in [src/store.ts:17](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/store.ts#L17)*
+*Defined in [src/store.ts:17](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/store.ts#L17)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **taskName**: *string*
 
-*Defined in [src/store.ts:18](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/store.ts#L18)*
+*Defined in [src/store.ts:18](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/store.ts#L18)*

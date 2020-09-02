@@ -20,4 +20,4 @@
 
 • **type**: *[Compensate](../enums/_task_.tasktypes.md#compensate)*
 
-*Defined in [src/workflowDefinition.ts:78](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/workflowDefinition.ts#L78)*
+*Defined in [src/workflowDefinition.ts:88](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L88)*

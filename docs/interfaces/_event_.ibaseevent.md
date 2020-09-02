@@ -35,7 +35,7 @@
 
 • **timestamp**: *number*
 
-*Defined in [src/event.ts:39](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/event.ts#L39)*
+*Defined in [src/event.ts:39](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/event.ts#L39)*
 
 ___
 
@@ -43,4 +43,4 @@ ___
 
 • **transactionId**: *string*
 
-*Defined in [src/event.ts:38](https://github.com/devit-tel/melonade-declaration/blob/26b2f11/src/event.ts#L38)*
+*Defined in [src/event.ts:38](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/event.ts#L38)*
