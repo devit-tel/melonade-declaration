@@ -70,6 +70,15 @@ export interface ITaskDefinition {
      */
     output?: object;
   };
+  /**
+   * The flag marked task as sync worker (worker that use sync api to update it's state)
+   * Affect while cancel,or other task in parallel failed, and need to compensate
+   * Workflow will start compensate without waiting for the task to finished
+   *
+   * @default false
+   * @TJS-type boolean
+   */
+  syncWorker?: boolean;
 }
 
 export class TaskDefinition implements ITaskDefinition {
