@@ -19,7 +19,7 @@
 
 • **count**: *number*
 
-*Defined in [src/store.ts:13](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/store.ts#L13)*
+*Defined in [src/store.ts:13](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/store.ts#L13)*
 
 ___
 
@@ -27,4 +27,4 @@ ___
 
 • **date**: *number | Date*
 
-*Defined in [src/store.ts:12](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/store.ts#L12)*
+*Defined in [src/store.ts:12](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/store.ts#L12)*

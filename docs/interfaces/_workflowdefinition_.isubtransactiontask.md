@@ -13,6 +13,7 @@
 ### Properties
 
 * [inputParameters](_workflowdefinition_.isubtransactiontask.md#inputparameters)
+* [retry](_workflowdefinition_.isubtransactiontask.md#optional-retry)
 * [taskReferenceName](_workflowdefinition_.isubtransactiontask.md#taskreferencename)
 * [type](_workflowdefinition_.isubtransactiontask.md#type)
 
@@ -24,7 +25,7 @@
 
 *Overrides [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:138](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L138)*
+*Defined in [src/workflowDefinition.ts:138](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/workflowDefinition.ts#L138)*
 
 #### Type declaration:
 
@@ -36,13 +37,29 @@
 
 ___
 
+### `Optional` retry
+
+• **retry**? : *object*
+
+*Defined in [src/workflowDefinition.ts:147](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/workflowDefinition.ts#L147)*
+
+Retry object
+
+#### Type declaration:
+
+* **delay**? : *number | string*
+
+* **limit**? : *number | string*
+
+___
+
 ###  taskReferenceName
 
 • **taskReferenceName**: *string*
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -60,4 +77,4 @@ ___
 
 • **type**: *[SubTransaction](../enums/_task_.tasktypes.md#subtransaction)*
 
-*Defined in [src/workflowDefinition.ts:137](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L137)*
+*Defined in [src/workflowDefinition.ts:137](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/workflowDefinition.ts#L137)*

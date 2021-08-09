@@ -25,7 +25,7 @@
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[inputParameters](_workflowdefinition_.ibasetask.md#inputparameters)*
 
-*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L27)*
+*Defined in [src/workflowDefinition.ts:27](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/workflowDefinition.ts#L27)*
 
 The input to be mapping to workflow's data
 
@@ -37,7 +37,7 @@ ___
 
 • **parallelTasks**: *[Tasks](../modules/_workflowdefinition_.md#tasks)[]*
 
-*Defined in [src/workflowDefinition.ts:99](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L99)*
+*Defined in [src/workflowDefinition.ts:99](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/workflowDefinition.ts#L99)*
 
 The list of tasks that run parallely
 
@@ -53,7 +53,7 @@ ___
 
 *Inherited from [IBaseTask](_workflowdefinition_.ibasetask.md).[taskReferenceName](_workflowdefinition_.ibasetask.md#taskreferencename)*
 
-*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L21)*
+*Defined in [src/workflowDefinition.ts:21](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/workflowDefinition.ts#L21)*
 
 The referance name using in workflow
 
@@ -71,4 +71,4 @@ ___
 
 • **type**: *[Parallel](../enums/_task_.tasktypes.md#parallel)*
 
-*Defined in [src/workflowDefinition.ts:92](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/workflowDefinition.ts#L92)*
+*Defined in [src/workflowDefinition.ts:92](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/workflowDefinition.ts#L92)*

@@ -286,6 +286,27 @@
           ],
           "type": "object"
         },
+        "retry": {
+          "additionalProperties": false,
+          "description": "Retry object",
+          "properties": {
+            "delay": {
+              "description": "The delay before dispatch task",
+              "type": [
+                "number",
+                "string"
+              ]
+            },
+            "limit": {
+              "description": "Retry limit number (0 is no retry)",
+              "type": [
+                "number",
+                "string"
+              ]
+            }
+          },
+          "type": "object"
+        },
         "taskReferenceName": {
           "description": "The referance name using in workflow",
           "maxLength": 64,

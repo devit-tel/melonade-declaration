@@ -140,6 +140,22 @@ export interface ISubTransactionTask extends IBaseTask {
     workflowRev: string;
     input?: any;
   };
+  /**
+   * Retry object
+   *
+   */
+  retry?: {
+    /**
+     * Retry limit number (0 is no retry)
+     *
+     */
+    limit?: number | string;
+    /**
+     * The delay before dispatch task
+     *
+     */
+    delay?: number | string;
+  };
 }
 
 export type AllTaskType =

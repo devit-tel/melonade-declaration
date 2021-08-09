@@ -21,7 +21,7 @@
 
 • **output**? : *any*
 
-*Defined in [src/event.ts:17](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/event.ts#L17)*
+*Defined in [src/event.ts:17](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/event.ts#L17)*
 
 ___
 
@@ -29,7 +29,7 @@ ___
 
 • **status**: *[WorkflowStates](../enums/_state_.workflowstates.md)*
 
-*Defined in [src/event.ts:16](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/event.ts#L16)*
+*Defined in [src/event.ts:16](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/event.ts#L16)*
 
 ___
 
@@ -37,7 +37,7 @@ ___
 
 • **transactionId**: *string*
 
-*Defined in [src/event.ts:14](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/event.ts#L14)*
+*Defined in [src/event.ts:14](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/event.ts#L14)*
 
 ___
 
@@ -45,4 +45,4 @@ ___
 
 • **workflowId**: *string*
 
-*Defined in [src/event.ts:15](https://github.com/devit-tel/melonade-declaration/blob/eb487fd/src/event.ts#L15)*
+*Defined in [src/event.ts:15](https://github.com/devit-tel/melonade-declaration/blob/f3ec67f/src/event.ts#L15)*
